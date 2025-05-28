@@ -64,6 +64,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html 
       lang="fa-IR"
+      dir="rtl"
       className="selection:bg-primary selection:text-primary"
      >
       <body
