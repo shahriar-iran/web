@@ -63,7 +63,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html 
       lang="fa-IR"
-      className="selection:bg-primary/25 selection:text-primary"
+      className="selection:bg-primary selection:text-primary"
      >
       <body
         className={`${YekanBakh.className} antialiased`}
