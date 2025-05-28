@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "./providers";
 import { YekanBakh } from "@/lib/font";
 import { rootConfig } from "@/config/root";
+import { Layout } from "@/components/Layout/Layout";
 
 
 
@@ -69,7 +70,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         className={`${YekanBakh.className} antialiased`}
       >
         <Providers>
-          {children}
+          <Layout>
+            {children}
+          </Layout>
         </Providers>
       </body>
     </html>
