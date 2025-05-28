@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-import {MenuItem, MenuItemProps} from '@/components/Layout/Header/Menu/MenuItem';
+import {MenuItem, MenuItemProps} from '@/components/Layout/Header/Menu/MenuItem/MenuItem';
 import { ScrollShadow } from "@heroui/react";
 import {motion} from 'framer-motion';
 
