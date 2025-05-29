@@ -16,7 +16,7 @@ export const Logo: React.FC<LogoProps> = (props) => {
     } = props
 
     return(
-        <div className="w-20" style={{width: size}}>
+        <div className="w-36" style={{width: size}}>
               <svg
             viewBox="0 0 129 54"
             fill="none"

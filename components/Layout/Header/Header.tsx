@@ -60,7 +60,7 @@ export const Header = (props : HeaderProps) => {
                 <Button
                     variant="bordered"
                     className={clsx(
-                        "flex items-center justify-start gap-2 transition-colors border rounded-2xl px-2 min-w-10 h-14 w-40 us:w-auto us:px-4 bg-primary/15 border-primary text-primary dark:text-white z-0"
+                        "flex items-center justify-start gap-2 transition-colors border rounded-2xl px-2 min-w-10 h-14 sm:w-40 us:w-auto us:px-4 bg-primary/15 border-primary text-primary dark:text-white z-0"
                     )}
                     as="a"
                     href="/"
@@ -70,7 +70,7 @@ export const Header = (props : HeaderProps) => {
                         className="!h-[26px] bg-white p-1.5 rounded-xl"
                      />
                     <span
-                        className={clsx("text-sm text-primary us:block")}
+                        className={clsx("text-sm hidden text-primary sm:block")}
                     >
                         پـیش ‌ثبت‌نـام
                     </span>
@@ -78,7 +78,7 @@ export const Header = (props : HeaderProps) => {
                 <Button
                     variant="solid"
                     className={clsx(
-                        "flex items-center justify-start gap-4 transition-colors border rounded-2xl px-2 min-w-10 h-14 w-40 us:w-auto us:px-4 bg-foreground border-foreground text-primary dark:text-white z-0"
+                        "flex items-center justify-start gap-4 transition-colors border rounded-2xl px-2 min-w-10 h-14 sm:w-40 us:w-auto us:px-4 bg-foreground border-foreground text-primary dark:text-white z-0"
                     )}
                     as="a"
                     href="/"
@@ -88,7 +88,7 @@ export const Header = (props : HeaderProps) => {
                         className="!h-[26px] bg-white p-1.5 rounded-xl"
                      />
                     <span
-                        className={clsx("text-sm text-white us:block")}
+                        className={clsx("text-sm hidden text-white sm:block")}
                     >
                         ورود/عضویت
                     </span>
