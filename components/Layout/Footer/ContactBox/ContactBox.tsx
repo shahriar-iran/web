@@ -28,7 +28,7 @@ export const ContactBox: React.FC<ContactBoxProps> = (props) => {
             </li>
             <li className="flex items-center gap-2">
 
-                <div className="flex items-center w-full gap-2 justify-between">
+                <div className="flex items-center w-full gap-2 ">
                     <span>051-38662080</span> 
                     <span>051-35026311</span>
                 </div>

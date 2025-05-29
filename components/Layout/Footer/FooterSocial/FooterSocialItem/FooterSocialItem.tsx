@@ -31,7 +31,7 @@ export const FooterSocialItem: React.FC<FooterSocialItemPropsType> = (props) => 
                 target="_blank"
             >
                 <div
-                    className="rounded-2xl bg-foreground/5 hover:bg-primary hover:text-white flex justify-center items-center transition cursor-pointer duration-500 w-12 h-12 p-2.5"
+                    className="rounded-2xl bg-foreground/5 hover:bg-primary hover:text-white flex justify-center items-center transition cursor-pointer duration-500 w-8 h-8 p-1.5 md:w-12 md:h-12 md:p-2.5"
                 >
                     <FontAwesomeIcon 
                         icon={icon}
