@@ -28,18 +28,18 @@ export const Footer: React.FC<FooterPropsType> = () => {
                     </FooterBox>
                     <FooterBox
                         title="لینک‌های اصلی"
-                        className="col-span-12 sm:col-span-6 md:col-span-5 xl:col-span-2"
+                        className="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-2"
                     >
                         <LinksBox/>
                     </FooterBox>
                     <FooterBox
                         title="آدرس و شماره تماس"
-                        className="col-span-12 sm:col-span-6 md:col-span-5 xl:col-span-3"
+                        className="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3"
                     >
                         <ContactBox/>
                     </FooterBox>
                     <FooterBox
-                        className="col-span-12 sm:col-span-12 md:col-span-2 lg:col-span-2"
+                        className="col-span-12 sm:col-span-12 md:col-span-4 xl:col-span-2"
                     >
                         <div className="grid grid-cols-2 gap-3">
                             <SymbolBox className="col-span-2">

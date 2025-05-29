@@ -25,7 +25,7 @@ export const SymbolBox: React.FC<SymbolBoxProps> = (props) => {
             fullWidth
             className={clsx("", className)}
         >
-            <CardBody className="justify-center items-center max-h-16">
+            <CardBody className="justify-center overflow-hidden items-center max-h-16">
                 {children}
             </CardBody>
         </Card>
