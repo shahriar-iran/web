@@ -4,6 +4,9 @@ import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, Dropdown
 import { Menu } from "./Menu/Menu";
 import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import clsx from "clsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
+
 // import {signOut} from "@/auth";
 
 
@@ -17,7 +20,7 @@ export interface HeaderProps {
     items: {
         title: string;
         id: string;
-        inMenu?: boolean;
+        isMenu?: boolean;
     }[];
 }
 
@@ -46,9 +49,9 @@ export const Header = (props : HeaderProps) => {
     
     return(
         <header
-            className={clsx("sticky shrink-0 z-50 top-0 overflow-hidden transition-colors duration-500 bg-red-500  w-full p-3 rounded-2xl flex justify-center items-center")}
+            className={clsx("sticky shrink-0 z-50 top-0 overflow-hidden transition-colors duration-500 bg-white shadow-xl w-full p-3 rounded-2xl flex justify-center items-center")}
         >
-            <div className="max-w-screen-2xl flex justify-between items-center w-full gap-3">
+            <div className="max-w-screen-7xl flex justify-between items-center w-full gap-3">
                 <HeaderLogo/>
                 <Menu
                     items={items}
@@ -57,61 +60,43 @@ export const Header = (props : HeaderProps) => {
                 <Button
                     variant="bordered"
                     className={clsx(
-                        "flex items-center gap-2 transition-colors border rounded-[1px] px-0 min-w-10 h-14 w-14 us:w-auto us:px-4 hover:bg-primary hover:text-white bg-primary/10 border-primary text-primary dark:text-white z-0"
+                        "flex items-center justify-start gap-2 transition-colors border rounded-2xl px-2 min-w-10 h-14 w-40 us:w-auto us:px-4 bg-primary/15 border-primary text-primary dark:text-white z-0"
                     )}
                     as="a"
                     href="/"
                 >
-                    <i className={clsx("")}>
-                        {/* <HeaderShopIcon/> */}
-                    </i>
+                    <FontAwesomeIcon
+                        icon={faCircleUser} 
+                        className="!h-[26px] bg-white p-1.5 rounded-xl"
+                     />
                     <span
-                        className={clsx("text-sm hidden us:block")}
+                        className={clsx("text-sm text-primary us:block")}
                     >
-                        فروشگاه راهساز ماشین
+                        پـیش ‌ثبت‌نـام
                     </span>
                 </Button>
                 <Button
-                    variant="bordered"
+                    variant="solid"
                     className={clsx(
-                        "flex items-center gap-2 transition-colors border rounded-[1px] px-0 min-w-10 h-14 w-14 us:w-auto us:px-4 hover:bg-primary hover:text-white bg-primary/10 border-primary text-primary dark:text-white z-0"
+                        "flex items-center justify-start gap-4 transition-colors border rounded-2xl px-2 min-w-10 h-14 w-40 us:w-auto us:px-4 bg-foreground border-foreground text-primary dark:text-white z-0"
                     )}
                     as="a"
                     href="/"
                 >
-                    <i className={clsx("")}>
-                        {/* <HeaderShopIcon/> */}
-                    </i>
+                    <FontAwesomeIcon
+                        icon={faCircleUser} 
+                        className="!h-[26px] bg-white p-1.5 rounded-xl"
+                     />
                     <span
-                        className={clsx("text-sm hidden us:block")}
+                        className={clsx("text-sm text-white us:block")}
                     >
-                        فروشگاه راهساز ماشین
+                        ورود/عضویت
                     </span>
                 </Button>
                 
                 
                 
                 
-                
-                {/* <Dropdown radius="none" size="lg">
-                    <DropdownTrigger>
-                        <Button
-                            isIconOnly
-                            className={clsx(
-                                "border rounded-[1px] h-14 w-14 transition-colors border-[#0C0E16] bg-[#0C0E16] text-white dark:border-white dark:bg-white dark:text-[#0C0E16] z-0"
-                            )}
-                            as="a"
-                            href="#"
-                        >
-                            <i>
-                                <HeaderUserIcon/>
-                            </i>
-                        </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="User Menu">
-                        <DropdownItem key="menu-item">Menu Item</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown> */}
             </div>
         </header>
     )

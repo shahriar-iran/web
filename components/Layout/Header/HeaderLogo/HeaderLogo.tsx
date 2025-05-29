@@ -14,7 +14,7 @@ export const HeaderLogo = (props: HeaderLogoProps) => {
     const {className} = props;
 
     return (
-        <Link href="#home" className={clsx(" h-14 w-14 rounded-[1px] justify-center items-center hidden md:flex", className)}>
+        <Link href="#home" className={clsx("h-14 w-14 rounded-[1px] justify-center items-center flex", className)}>
             <Logo
                 size={48}
             />

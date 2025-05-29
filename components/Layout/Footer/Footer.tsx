@@ -17,7 +17,7 @@ type FooterPropsType = {
 export const Footer: React.FC<FooterPropsType> = () => {
 
     return (
-        <footer className="flex flex-col gap-0">
+        <footer className="flex flex-col gap-0 bg-white">
             <div className="bg-primary/5 py-6 px-4 rounded-t-3xl">
                 <div className="grid gap-y-6 sm:gap-x-6 grid-cols-12 mx-auto w-full max-w-7xl">
                     <FooterBox
