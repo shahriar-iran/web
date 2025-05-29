@@ -62,10 +62,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html 
+    <html
       lang="fa-IR"
       dir="rtl"
-      className="selection:bg-primary selection:text-primary"
+      className="selection:bg-primary selection:text-primary-100"
      >
       <body
         className={`${YekanBakh.className} antialiased`}

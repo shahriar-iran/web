@@ -53,7 +53,8 @@ export const Header = (props : HeaderProps) => {
                 <Menu
                     items={items}
                 />
-                {/* <Button
+                
+                <Button
                     variant="bordered"
                     className={clsx(
                         "flex items-center gap-2 transition-colors border rounded-[1px] px-0 min-w-10 h-14 w-14 us:w-auto us:px-4 hover:bg-primary hover:text-white bg-primary/10 border-primary text-primary dark:text-white z-0"
@@ -62,14 +63,31 @@ export const Header = (props : HeaderProps) => {
                     href="/"
                 >
                     <i className={clsx("")}>
-                        <HeaderShopIcon/>
+                        {/* <HeaderShopIcon/> */}
                     </i>
                     <span
                         className={clsx("text-sm hidden us:block")}
                     >
                         فروشگاه راهساز ماشین
                     </span>
-                </Button> */}
+                </Button>
+                <Button
+                    variant="bordered"
+                    className={clsx(
+                        "flex items-center gap-2 transition-colors border rounded-[1px] px-0 min-w-10 h-14 w-14 us:w-auto us:px-4 hover:bg-primary hover:text-white bg-primary/10 border-primary text-primary dark:text-white z-0"
+                    )}
+                    as="a"
+                    href="/"
+                >
+                    <i className={clsx("")}>
+                        {/* <HeaderShopIcon/> */}
+                    </i>
+                    <span
+                        className={clsx("text-sm hidden us:block")}
+                    >
+                        فروشگاه راهساز ماشین
+                    </span>
+                </Button>
                 
                 
                 
