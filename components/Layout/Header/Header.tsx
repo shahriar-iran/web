@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import {Avatar, Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger} from "@heroui/react";
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger} from "@heroui/react";
 import { Menu } from "./Menu/Menu";
 import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import clsx from "clsx";
@@ -45,14 +46,14 @@ export const Header = (props : HeaderProps) => {
     
     return(
         <header
-            className={clsx("sticky shrink-0 z-50 top-0 overflow-hidden transition-colors duration-500 bg-background/10 backdrop-blur-3xl w-full p-3 border border-solid flex justify-center items-center border-[#FBFCFF03]")}
+            className={clsx("sticky shrink-0 z-50 top-0 overflow-hidden transition-colors duration-500 bg-red-500  w-full p-3 rounded-2xl flex justify-center items-center")}
         >
             <div className="max-w-screen-2xl flex justify-between items-center w-full gap-3">
                 <HeaderLogo/>
                 <Menu
                     items={items}
                 />
-                <Button
+                {/* <Button
                     variant="bordered"
                     className={clsx(
                         "flex items-center gap-2 transition-colors border rounded-[1px] px-0 min-w-10 h-14 w-14 us:w-auto us:px-4 hover:bg-primary hover:text-white bg-primary/10 border-primary text-primary dark:text-white z-0"
@@ -61,15 +62,20 @@ export const Header = (props : HeaderProps) => {
                     href="/"
                 >
                     <i className={clsx("")}>
-                        {/* <HeaderShopIcon/> */}
+                        <HeaderShopIcon/>
                     </i>
                     <span
                         className={clsx("text-sm hidden us:block")}
                     >
                         فروشگاه راهساز ماشین
                     </span>
-                </Button>
-                <Dropdown radius="none" size="lg">
+                </Button> */}
+                
+                
+                
+                
+                
+                {/* <Dropdown radius="none" size="lg">
                     <DropdownTrigger>
                         <Button
                             isIconOnly
@@ -80,14 +86,14 @@ export const Header = (props : HeaderProps) => {
                             href="#"
                         >
                             <i>
-                                {/* <HeaderUserIcon/> */}
+                                <HeaderUserIcon/>
                             </i>
                         </Button>
                     </DropdownTrigger>
                     <DropdownMenu aria-label="User Menu">
                         <DropdownItem key="menu-item">Menu Item</DropdownItem>
                     </DropdownMenu>
-                </Dropdown>
+                </Dropdown> */}
             </div>
         </header>
     )

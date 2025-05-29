@@ -14,8 +14,8 @@ export const Menu = (props : MenuProps) => {
     } = props;
 
     const [isOpen, setOpen] = React.useState(false);
-    const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
-    const [dotPosition, setDotPosition] = React.useState({ left: 0, width: 0 });
+    // const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+    // const [dotPosition, setDotPosition] = React.useState({ left: 0, width: 0 });
 
     return (
         <div
@@ -39,7 +39,7 @@ export const Menu = (props : MenuProps) => {
                                 key={idx}
                                 id={item.id}
                                 title={item.title}
-                                isActive={activeIndex === idx}
+                                // isActive={activeIndex === idx}
                                 isMenu={item.isMenu}
                             />
                         )
@@ -47,11 +47,11 @@ export const Menu = (props : MenuProps) => {
                 </ul>
                 <motion.div
                     className="absolute h-2 bg-[#0C0E16] dark:bg-white rounded-full hidden md:block"
-                    animate={{
-                        left: dotPosition.left,
-                        width: dotPosition.width,
-                        opacity: activeIndex !== null ? 1 : 0,
-                    }}
+                    // animate={{
+                    //     left: dotPosition.left,
+                    //     width: dotPosition.width,
+                    //     opacity: activeIndex !== null ? 1 : 0,
+                    // }}
                     transition={{type: "linear", stiffness: 300, damping: 20}}
                 />
             </ScrollShadow>   

@@ -10,8 +10,8 @@ export const Layout: React.FC<LayoutPropsType> = (props) => {
 
     const menuItems = [
         {
-            title: "خانه",
-            id: "/",
+            title: "مدرسه هیبریدی",
+            id: "/hybrid",
             inMenu: true
         },
         {
@@ -20,13 +20,18 @@ export const Layout: React.FC<LayoutPropsType> = (props) => {
             inMenu: true
         },
         {
-            title: "تماس با ما",
-            id: "/contact",
+            title: "افتخارات",
+            id: "/honors",
             inMenu: true
         },
         {
-            title: "محصولات",
-            id: "/products",
+            title: "خاطره‌بازی",
+            id: "/memorise",
+            inMenu: true
+        },
+        {
+            title: "تیم شهریار",
+            id: "/team",
             inMenu: true
         }
     ];
