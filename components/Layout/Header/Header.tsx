@@ -6,16 +6,14 @@ import { Button } from "@heroui/button";
 import { Menu } from "./Menu/Menu";
 import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import clsx from "clsx";
+import { MenuItemProps } from "./Menu/MenuItem/MenuItem";
+import { Icon } from '@iconify/react';
 
 
 
 
 export interface HeaderProps {
-    items: {
-        title: string;
-        id: string;
-        isMenu?: boolean;
-    }[];
+    items: MenuItemProps[];
 }
 
 
@@ -38,7 +36,6 @@ export const Header = (props : HeaderProps) => {
                 <HeaderLogo/>
                 <Menu
                     items={items}
-                    isOpenMenu={isOpenMenu}
                 />
                 <div className="flex gap-3 items-center justify-center">
                     <Button
@@ -51,8 +48,8 @@ export const Header = (props : HeaderProps) => {
                         as="a"
                         href="/"
                         startContent={(
-                            <div className="h-full aspect-square bg-primary bg-white rounded-xl">
-
+                            <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
+                                <Icon icon="fluent:lightbulb-person-28-regular" width="24" height="24" />
                             </div>
                         )}
                     >
@@ -68,8 +65,8 @@ export const Header = (props : HeaderProps) => {
                         as="a"
                         href="/"
                         startContent={(
-                            <div className="h-full aspect-square bg-primary bg-white rounded-xl">
-
+                            <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
+                                <Icon icon="fluent:person-circle-28-filled" width="24" height="24" />
                             </div>
                         )}
                     >
@@ -80,12 +77,16 @@ export const Header = (props : HeaderProps) => {
                         color="primary"
                         size="md"
                         className={clsx(
-                            "border-2 border-primary px-1 pe-3 text-sm gap-2 py-1 h-10 rounded-2xl flex md:hidden"
+                            "border-2 border-primary px-1 text-sm gap-2 py-1 h-10 rounded-2xl flex items-center justify-center md:hidden"
                         )}
                         onPress={() => setOpenMenu((p) => (!p))}
                         isIconOnly
                     >
-                        
+                        <Icon 
+                            icon={isOpenMenu ? "fluent:dismiss-24-filled" : "fluent:line-horizontal-3-16-filled"}
+                            width="24"
+                            height="24" 
+                        />
                     </Button>
                 </div>
             </div>

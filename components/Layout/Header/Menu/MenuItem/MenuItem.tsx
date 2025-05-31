@@ -8,7 +8,6 @@ export interface MenuItemProps {
     id: string;
     isActive?: boolean;
     title: string;
-    isMenu?: boolean;
 }
 
 

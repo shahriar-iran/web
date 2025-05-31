@@ -10,29 +10,29 @@ export const Layout: React.FC<LayoutPropsType> = (props) => {
 
     const menuItems = [
         {
+            id: "hybrid",
             title: "مدرسه هیبریدی",
-            id: "/hybrid",
-            inMenu: true
+            path: "/hybrid",
         },
         {
+            id: "about",
             title: "درباره ما",
-            id: "/about",
-            inMenu: true
+            path: "/about",
         },
         {
+            id: "honors",
             title: "افتخارات",
-            id: "/honors",
-            inMenu: true
+            path: "/honors",
         },
         {
+            id: "memorise",
             title: "خاطره‌بازی",
-            id: "/memorise",
-            inMenu: true
+            path: "/memorise",
         },
         {
+            id: "team",
             title: "تیم شهریار",
-            id: "/team",
-            inMenu: true
+            path: "/team",
         }
     ];
 

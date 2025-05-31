@@ -6,17 +6,16 @@ import { ScrollShadow } from "@heroui/scroll-shadow";
 import { usePathname } from 'next/navigation';
 import clsx from "clsx";
 import { Button } from "@heroui/button";
+import { Icon } from "@iconify/react";
 
 
 export interface MenuProps {
     items: MenuItemProps[];
-    isOpenMenu: boolean;
 }
 
 export const Menu = (props : MenuProps) => {
     const {
         items,
-        isOpenMenu,
     } = props;
 
     const pathname = usePathname()
@@ -27,20 +26,13 @@ export const Menu = (props : MenuProps) => {
         <div 
             className="flex-1 min-w-full md:min-w-auto md:w-0 order-last md:order-none flex justify-start items-center md:h-12"
         >
-            <div className="relative bg-white md:bg-transparent overflow-hidden flex flex-col gap-3 max-w-full w-full md:w-fit h-0 group-data-[menu-open=true]/header:h-fit md:!h-full">
+            <div className="relative bg-white md:bg-transparent overflow-hidden flex flex-col gap-3 max-w-full w-full md:w-fit h-0 group-data-[menu-open=true]/header:h-[100px] transition-all md:!h-full">
             <ScrollShadow
                 hideScrollBar
                 orientation="horizontal"
                 size={20}
                 as="nav"
-                className={clsx(
-                    "relative",
-                    "flex flex-row items-center",
-                    "p-0",
-                    "",
-                    "transition-all z-10",
-                    "right-0 top-0",
-                )}
+                className="relative flex flex-row items-center p-0 z-10 right-0 top-0"
             >
                 <ul className="relative flex-row gap-x-2 items-center justify-start h-fit md:w-fit w-full flex">
                     {items.map((item, idx) => (
@@ -49,7 +41,6 @@ export const Menu = (props : MenuProps) => {
                             id={item.id}
                             title={item.title}
                             isActive={pathname === item.id}
-                            isMenu={item.isMenu}
                         />
                     ))}
                 </ul>
@@ -65,8 +56,8 @@ export const Menu = (props : MenuProps) => {
                         as="a"
                         href="/"
                         startContent={(
-                            <div className="h-full aspect-square bg-primary bg-white rounded-lg">
-
+                            <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
+                                <Icon icon="fluent:lightbulb-person-28-regular" width="24" height="24" />
                             </div>
                         )}
                     >
@@ -82,8 +73,8 @@ export const Menu = (props : MenuProps) => {
                         as="a"
                         href="/"
                         startContent={(
-                            <div className="h-full aspect-square bg-primary bg-white rounded-lg">
-
+                            <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
+                                <Icon icon="fluent:person-circle-28-filled" width="24" height="24" />
                             </div>
                         )}
                     >
