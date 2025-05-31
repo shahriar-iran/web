@@ -32,9 +32,9 @@ export const Header = (props : HeaderProps) => {
     return(
         <header
             data-menu-open={isOpenMenu}
-            className={clsx("sticky group/header shrink-0 z-50 top-0 py-2 px-2 w-full flex justify-center items-center")}
+            className={clsx("fixed group/header shrink-0 z-50 top-0 py-2 px-2 w-full flex justify-center items-center")}
         >
-            <div className="mx-auto w-full max-w-7xl items-start flex flex-row flex-wrap md:flex-nowrap justify-between items-center gap-x-3 p-2 md:p-5 rounded-3xl md:rounded-4xl bg-white shadow-xl relative">
+            <div className="mx-auto w-full max-w-7xl items-start flex flex-row flex-wrap md:flex-nowrap justify-between gap-x-3 p-2 md:p-5 rounded-3xl md:rounded-4xl bg-white shadow-xl relative">
                 <HeaderLogo/>
                 <Menu
                     items={items}
