@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 
 
@@ -5,6 +6,7 @@ import React from "react";
 
 export interface LogoProps {
     size?: number;
+    className?: string;
 }
 
 
@@ -13,15 +15,17 @@ export const Logo: React.FC<LogoProps> = (props) => {
 
     const {
         size = 40,
+        className,
     } = props
 
     return(
-        <div className="w-36" style={{width: size}}>
-              <svg
-            viewBox="0 0 129 54"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
+        <div className={clsx("relative h-full flex justify-center items-center", className)}>
+            <svg
+                viewBox="0 0 129 54"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                height={size}
+            >
             <path
             d="M120.62 6.99194L116.353 9.48674C114.553 10.5387 113.443 12.4848 113.443 14.5908V21.4035L115.771 22.7643V21.168C115.771 18.36 117.249 15.7659 119.651 14.3619L126.442 10.3939L120.62 6.99194Z"
             fill="#17DC38"
@@ -325,7 +329,7 @@ export const Logo: React.FC<LogoProps> = (props) => {
                 <stop offset={1} stopColor="#0B72FF" />
             </linearGradient>
             </defs>
-  </svg>
+            </svg>
         </div>
     )
 }

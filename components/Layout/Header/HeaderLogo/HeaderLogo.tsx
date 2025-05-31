@@ -5,18 +5,23 @@ import Link from "next/link";
 
 
 export interface HeaderLogoProps {
-    className?: string
+
 }
 
 
 export const HeaderLogo = (props: HeaderLogoProps) => {
 
-    const {className} = props;
+    const {} = props;
 
     return (
-        <Link href="#home" className={clsx("h-14 w-14 rounded-[1px] justify-center items-center flex", className)}>
+        <Link href="/" >
             <Logo
-                size={128}
+                size={48}
+                className="hidden md:block"
+            />
+            <Logo
+                size={40}
+                className="block md:hidden"
             />
         </Link>
     )

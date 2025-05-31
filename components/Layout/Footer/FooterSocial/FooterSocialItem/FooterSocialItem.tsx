@@ -1,5 +1,3 @@
-// "use client"
-
 import * as React from "react"
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

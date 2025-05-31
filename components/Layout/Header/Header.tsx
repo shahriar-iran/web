@@ -1,13 +1,11 @@
-"use client";
 import React from "react";
-import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger} from "@heroui/react";
+import { Button } from "@heroui/button";
 import { Menu } from "./Menu/Menu";
 import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
 
-// import {signOut} from "@/auth";
 
 
 
@@ -49,51 +47,59 @@ export const Header = (props : HeaderProps) => {
     
     return(
         <header
-            className={clsx("sticky shrink-0 z-50 top-0 overflow-hidden transition-colors duration-500 bg-white shadow-xl w-full p-3 rounded-2xl flex justify-center items-center")}
+            className={clsx("sticky shrink-0 z-50 top-0 py-2 px-2  w-full flex justify-center items-center")}
         >
-            <div className="max-w-screen-7xl flex justify-between items-center w-full gap-3">
+            <div className="mx-auto w-full max-w-7xl flex justify-between items-center gap-3 p-2 md:p-5 rounded-3xl md:rounded-4xl bg-white shadow-xl relative">
                 <HeaderLogo/>
                 <Menu
                     items={items}
                 />
                 
                 <Button
-                    variant="bordered"
+                    variant="flat"
+                    color="primary"
+                    size="lg"
                     className={clsx(
-                        "flex items-center justify-start gap-2 transition-colors border rounded-2xl px-2 min-w-10 h-14 sm:w-40 us:w-auto us:px-4 bg-primary/15 border-primary text-primary dark:text-white z-0"
+                        "border-2 border-primary px-1 pe-3 text-sm gap-2 py-1 h-12 rounded-2xl hidden md:flex"
                     )}
                     as="a"
                     href="/"
+                    startContent={(
+                        <div className="h-full aspect-square bg-primary bg-white rounded-xl">
+
+                        </div>
+                    )}
                 >
-                    <FontAwesomeIcon
-                        icon={faCircleUser} 
-                        className="!h-[26px] bg-white p-1.5 rounded-xl"
-                     />
-                    <span
-                        className={clsx("text-sm hidden text-primary sm:block")}
-                    >
-                        پـیش ‌ثبت‌نـام
-                    </span>
+                    پـیش ‌ثبت‌نـام
                 </Button>
                 <Button
                     variant="solid"
+                    color="primary"
+                    size="lg"
                     className={clsx(
-                        "flex items-center justify-start gap-4 transition-colors border rounded-2xl px-2 min-w-10 h-14 sm:w-40 us:w-auto us:px-4 bg-foreground border-foreground text-primary dark:text-white z-0"
+                        "border-2 border-foreground bg-foreground text-sm px-1 pe-3 gap-2 py-1 h-12 rounded-2xl hidden md:flex"
                     )}
                     as="a"
                     href="/"
+                    startContent={(
+                        <div className="h-full aspect-square bg-primary bg-white rounded-xl">
+
+                        </div>
+                    )}
                 >
-                    <FontAwesomeIcon
-                        icon={faCircleUser} 
-                        className="!h-[26px] bg-white p-1.5 rounded-xl"
-                     />
-                    <span
-                        className={clsx("text-sm hidden text-white sm:block")}
-                    >
-                        ورود/عضویت
-                    </span>
+                    ورود/عضویت
                 </Button>
-                
+                <Button
+                    variant="solid"
+                    color="primary"
+                    size="md"
+                    className={clsx(
+                        "border-2 border-primary px-1 pe-3 text-sm gap-2 py-1 h-10 rounded-2xl flex md:hidden"
+                    )}
+                    isIconOnly
+                >
+                    
+                </Button>
                 
                 
                 

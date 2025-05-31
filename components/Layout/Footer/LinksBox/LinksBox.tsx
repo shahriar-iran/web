@@ -45,7 +45,7 @@ export const LinksBox: React.FC<LinksBoxProps> = (props) => {
     ]
 
     return(
-        <ul className="grid grid-cols-2 gap-3 font-normal text-sm select-none">
+        <ul className="grid grid-cols-2 gap-3 font-normal text-sm">
             {links.map(({title, url}, idx) => (
                 <li key={idx} className="flex items-center truncate gap-2 w-fit">
                     <Link href={url} className="max-w-full hover:text-primary transition-colors">

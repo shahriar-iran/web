@@ -4,6 +4,7 @@ import Providers from "./providers";
 import { YekanBakh } from "@/lib/font";
 import { rootConfig } from "@/config/root";
 import { Layout } from "@/components/Layout/Layout";
+import { headers } from "next/headers";
 
 
 
@@ -60,7 +61,8 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
+export default async function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
+
   return (
     <html
       lang="fa-IR"
