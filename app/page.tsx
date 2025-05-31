@@ -11,7 +11,7 @@ export default function Home() {
             title="دربــــــــارۀ مـــــــــا"
             description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
             starColor=""
-            bgColor=""
+            bgColor="text-primary"
           />
         </div>
       </section>
