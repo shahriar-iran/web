@@ -1,6 +1,6 @@
 import * as React from "react"
 import clsx from "clsx";
-import {TextBackground} from "@/components/Vectors";
+import {TextBackground, VerticalLine} from "@/components/Vectors";
 import {CometStar} from "@/components/Vectors";
 
 
@@ -12,8 +12,10 @@ type TitlePropsType = {
     title: string;
     description: string;
     className?: string;
-    starColor?: string;
-    bgColor?: string;
+    starClassName?: string;
+    bgClassName?: string;
+    descriptionClassName?: string;
+    variant?: "centered" | "side";
 }
 
 
@@ -25,33 +27,47 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
         className,
         title,
         description,
-        starColor = "#151B32",
-        bgColor = "#2969FF"
+        starClassName,
+        bgClassName,
+        descriptionClassName,
+        variant = "side"
     } = props;
 
+
+
     return (
-        <main className="flex flex-col justify-center items-center gap-2">
-            <div className="flex flex-row justify-center items-center gap-5">
-                <i className={clsx(starColor)}>
-                    <CometStar size={24}/>
-                </i>
-                    <h1 className="font-bold">
-                        {title}
-                    </h1>
-                <i className={clsx("rotate-180" , starColor)}>
-                    <CometStar size={24}/>
-                </i>
+        <div className={clsx("flex flex-col w-full justify-center gap-2", variant === "side" ? "items-start" : "items-center", className)}>
+            <div className={clsx("flex flex-row justify-center items-center", variant === "side" ? "gap-2" : "gap-5")}>
+                {variant === "centered" && (
+                    <i className={clsx("text-primary", starClassName)}>
+                        <CometStar size={20}/>
+                    </i>
+                )}
+                {variant === "side" && (
+                    <i className={clsx("text-primary", starClassName)}>
+                        <VerticalLine size={32}/>
+                    </i>
+                )}
+                <h1 className="font-black text-xl">
+                    {title}
+                </h1>
+                {variant === "centered" && (
+                    <i className={clsx("text-primary rotate-180", starClassName)}>
+                        <CometStar size={20}/>
+                    </i>
+                )}
             </div>
             <div className="relative">
-                <i className={clsx(bgColor)}>
-                    <TextBackground/>
-                </i>
-                
-                <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white truncate">
+                <h2 className={clsx("relative z-10 text-center truncate font-bold", variant === "centered" ? "text-white" : "text-gray-500", descriptionClassName)}>
                     {description}
                 </h2>
+                {variant === "centered" && (
+                    <i className={clsx("text-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ", bgClassName)}>
+                        <TextBackground/>
+                    </i>
+                )}
             </div>
-        </main>
+        </div>
     
     )
 }

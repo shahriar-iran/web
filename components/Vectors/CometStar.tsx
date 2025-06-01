@@ -5,7 +5,6 @@ import React from "react";
 export const Vector = ({size = 48}: { size?: number }) => {
 return (
     <svg
-    width={size}
     height={size}
     viewBox="0 0 24 18"
     fill="currentColor"
@@ -28,9 +27,3 @@ return (
 }
 
 
-
-
-export default {
-    title: "Vectors/CometStar",
-    component: Vector
-}

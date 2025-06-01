@@ -17,11 +17,3 @@ return (
   </svg>
     )
 }
-
-
-
-
-export default {
-    title: "Vectors/TextBackground",
-    component: Vector
-}

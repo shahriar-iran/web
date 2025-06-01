@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterPropsType> = () => {
 
     return (
         <footer className="flex flex-col gap-0 overflow-hidden">
-            <div className="bg-primary-100 py-6 px-4 rounded-t-3xl">
+            <div className="bg-primary-50 py-6 px-4 rounded-t-3xl">
                 <div className="grid gap-y-6 sm:gap-x-6 grid-cols-12 mx-auto w-full max-w-7xl">
                     <FooterBox
                         title="مدرســه شهریــار ایـــــران"
