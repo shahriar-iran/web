@@ -45,7 +45,7 @@ export const Menu = (props : MenuProps) => {
                     ))}
                 </ul>
             </ScrollShadow>   
-            <div className="flex gap-2 items-center justify-center flex md:hidden">
+            <div className="flex gap-2 items-center justify-center md:hidden">
                     <Button
                         variant="flat"
                         color="primary"
