@@ -8,6 +8,7 @@ type ApproachesCardPropsType = {
     englishTitle: string;
     icon: React.ReactNode;
     className?: string;
+    variant?: "wide" | "square";
 }
 
 
@@ -20,13 +21,16 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
         englishTitle,
         icon,
         className,
+        variant = "square",
     } = props;
 
     return (
-        <div className={clsx("relative aspect-square h-72 text-secondary", className)}>
-            <svg className="w-full top-0 absolute z-10" viewBox="0 0 270 68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M245.5 0.282227C258.755 0.282227 269.5 11.0274 269.5 24.2822V39.79C264.124 40.0572 258.591 37.5838 255.472 31.7256C250.986 23.3031 239.943 21.0427 232.509 27.0254L222.242 35.2881C214.55 41.4784 203.902 42.4678 195.201 37.7998C182.755 31.1222 167.255 36.2784 161.289 49.0811L159.968 51.917C150.082 73.1318 119.918 73.1318 110.032 51.917L108.711 49.0811C102.745 36.2784 87.245 31.1222 74.7988 37.7998C66.0985 42.4678 55.4497 41.4784 47.7578 35.2881L37.4912 27.0254C30.0573 21.0427 19.0136 23.3031 14.5283 31.7256C11.4087 37.5838 5.87616 40.0572 0.5 39.79V24.2822C0.500001 11.0274 11.2452 0.282227 24.5 0.282227H245.5Z"/>
-            </svg>  
+        <div className={clsx("relative shrink-0 h-72 text-secondary", variant === "wide" ? "w-120" : "aspect-square", className)}>
+            {variant === "square" && (
+                <svg className="w-full top-0 absolute z-10" viewBox="0 0 270 68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M245.5 0.282227C258.755 0.282227 269.5 11.0274 269.5 24.2822V39.79C264.124 40.0572 258.591 37.5838 255.472 31.7256C250.986 23.3031 239.943 21.0427 232.509 27.0254L222.242 35.2881C214.55 41.4784 203.902 42.4678 195.201 37.7998C182.755 31.1222 167.255 36.2784 161.289 49.0811L159.968 51.917C150.082 73.1318 119.918 73.1318 110.032 51.917L108.711 49.0811C102.745 36.2784 87.245 31.1222 74.7988 37.7998C66.0985 42.4678 55.4497 41.4784 47.7578 35.2881L37.4912 27.0254C30.0573 21.0427 19.0136 23.3031 14.5283 31.7256C11.4087 37.5838 5.87616 40.0572 0.5 39.79V24.2822C0.500001 11.0274 11.2452 0.282227 24.5 0.282227H245.5Z"/>
+                </svg>
+            )}
             <Card className="relative rounded-3xl justify-center h-full text-[]" radius="none" shadow="none">
                 <CardHeader className="px-0 pt-8 items-center justify-center">
                     <div className="bg-white rounded-2xl h-13 w-13 flex justify-center items-center">
@@ -50,7 +54,9 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                         </svg>
                     </div>
                 </CardBody>
-                <CardFooter className="px-0 pt-0 pb-8 items-center justify-center relative">
+                <CardFooter
+                    className={clsx("px-0 pt-0 pb-8 items-center justify-center relative", variant === "wide" ? "after:bg-primary after:absolute after:bottom-0 after:h-3 after:w-full" : "")}
+                >
                     <div className="min-w-48 max-w-56 relative before:absolute before:top-3.5 before:w-full before:h-[calc(100%-16px)] before:bg-primary-50">
                         <h6 dir="ltr" className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
                     </div>

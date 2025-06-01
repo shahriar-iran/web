@@ -108,7 +108,24 @@ export default function Home() {
               )}
               className="!text-orange-500"
             />
+            <ApproachesCard
+              title="مسئولــــیت پذیـــری"
+              englishTitle="Responsibility"
+              icon={(
+                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+              )}
+              className="!text-purple-500"
+            />
+            <ApproachesCard
+              title="مسئولــــیت پذیـــری"
+              englishTitle="Responsibility"
+              icon={(
+                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+              )}
+              variant="wide"
+            />
           </div>
+          
         </div>
         <div className="flex flex-row gap-3 items-center w-full max-w-7xl mx-auto px-3">
           <PageTitle
