@@ -12,8 +12,8 @@ type TitlePropsType = {
     title: string;
     description: string;
     className?: string;
-    starColor: string;
-    bgColor: string;
+    starColor?: string;
+    bgColor?: string;
 }
 
 
@@ -25,20 +25,20 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
         className,
         title,
         description,
-        starColor = "#000000",
-        bgColor = "#000000"
+        starColor = "#151B32",
+        bgColor = "#2969FF"
     } = props;
 
     return (
         <main className="flex flex-col justify-center items-center gap-2">
             <div className="flex flex-row justify-center items-center gap-5">
-                <i className={clsx(className , starColor)}>
+                <i className={clsx(starColor)}>
                     <CometStar size={24}/>
                 </i>
                     <h1 className="font-bold">
                         {title}
                     </h1>
-                <i className={clsx(className , "rotate-180" , starColor)}>
+                <i className={clsx("rotate-180" , starColor)}>
                     <CometStar size={24}/>
                 </i>
             </div>

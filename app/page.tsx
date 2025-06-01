@@ -10,9 +10,7 @@ export default function Home() {
           <PageTitle
             title="دربــــــــارۀ مـــــــــا"
             description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
-            starColor=""
-            bgColor="text-primary"
-          />
+            />
         </div>
       </section>
     );
