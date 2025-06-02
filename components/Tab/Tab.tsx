@@ -2,7 +2,7 @@
 import * as React from "react";
 import clsx from "clsx";
 
-type ThemeType = "primary" | "secondary" | "forground" | "blur";
+type ThemeType = "primary" | "secondary" | "forground";
 
 type TabPropsType = {
     items: {
@@ -31,20 +31,16 @@ export const Tab: React.FC<TabPropsType> = ({
         switch (theme) {
             case "primary":
                 return isActive
-                    ? "bg-[#2969FF] text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
+                    ? "bg-primary text-white"
+                    : "bg-transparent text-foreground border border-foreground/15";
             case "secondary":
                 return isActive
-                    ? "bg-[#22C197] text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
+                    ? "bg-secondary text-white"
+                    : "bg-transparent text-foreground border border-foreground/15";
             case "forground":
                 return isActive
-                    ? "bg-[#151B32] text-white"
-                    : "bg-[#151B32]/10 text-[#151B32]";
-            case "blur":
-                return isActive
-                    ? "bg-white/20 text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
+                    ? "bg-foreground text-white"
+                    : "bg-foreground/10 text-foreground";
             default:
                 return "";
         }
