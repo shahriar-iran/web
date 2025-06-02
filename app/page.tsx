@@ -1,5 +1,6 @@
 import { AboutCard } from "@/components/AboutCard/AboutCard";
 import { ApproachesCard } from "@/components/ApproachesCard/ApproachesCard";
+import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
@@ -93,7 +94,7 @@ export default function Home() {
         </div>
         <div className="w-full bg-primary-50 py-10">
           <div className="flex flex-row gap-3 w-full max-w-7xl mx-auto px-3">
-          <ApproachesCard
+            <ApproachesCard
               title="کــار تیمی و نخبه‌مــداری"
               englishTitle="Teamwork"
               icon={(
@@ -126,14 +127,35 @@ export default function Home() {
                className="!text-purple-500"
             />
           </div>
-          
         </div>
-        <div className="flex flex-row gap-3 items-center w-full max-w-7xl mx-auto px-3">
+        <div className="flex flex-col gap-3 items-center w-full max-w-7xl mx-auto px-3">
           <PageTitle
             variant="centered"
             title="(هشت‌ وجهی تاکتیکی مدرسه هیبریدی شهریار ایران)"
             description="(شــهریار ایـــران، اولــین مــدرسه هیــبریدی ایـــران)"
           />
+          <div className="flex flex-row flex-wrap gap-3 w-full">
+            <FeatureCard
+              title="هـــــویت‌یــــــابی و مــــــــعناشناســـــــی"
+              englishTitle="Semantics"
+              image="/static/assets/images/s1.png"
+            />
+            <FeatureCard
+              title="هـــــویت‌یــــــابی و مــــــــعناشناســـــــی"
+              englishTitle="Semantics"
+              image="/static/assets/images/s1.png"
+            />
+            <FeatureCard
+              title="هـــــویت‌یــــــابی و مــــــــعناشناســـــــی"
+              englishTitle="Semantics"
+              image="/static/assets/images/s1.png"
+            />
+            <FeatureCard
+              title="هـــــویت‌یــــــابی و مــــــــعناشناســـــــی"
+              englishTitle="Semantics"
+              image="/static/assets/images/s1.png"
+            />
+          </div>
         </div>
       </section>
     );

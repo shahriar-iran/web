@@ -1,17 +1,15 @@
 import * as React from "react"
-import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
+import clsx from "clsx";
 import { Image } from "@heroui/image";
 import NextImage from "next/image";
-import { ScrollShadow } from "@heroui/scroll-shadow";
+
 
 type FeatureCardPropsType = {
-    variant?: "";
     title: string;
-    footerItems?: {
-        icon: React.ReactNode;
-        title: string;
-        value: string;
-    }[];
+    englishTitle: string;
+    image: string;
+    className?: string;
 }
 
 
@@ -20,56 +18,56 @@ export const FeatureCard: React.FC<FeatureCardPropsType> = (props) => {
 
 
     const {
-        variant,
         title,
-        footerItems,
+        englishTitle,
+        image,
+        className,
     } = props;
 
     return (
-        <div className="relative m-2.5 w-fit h-fit before:rounded-3xl before:absolute before:bg-primary-100 before:w-full before:h-full before:z-0 before:-rotate-3">   
-            <Card className="w-96 relative rounded-3xl" radius="none" shadow="none">
-                <CardBody className="p-2 pb-0">
-                    <Image
-                        as={NextImage}
-                        src="/static/assets/images/school-card.png" 
-                        alt={title}
-                        title={title}
-                        width={256}
-                        height={256}
-                        className="!w-full !h-auto object-contain"
-                        classNames={{wrapper: "!max-w-none"}}
-                    />
-                </CardBody>
-                <CardFooter className="flex-col px-0 py-3 pb-10 gap-5 items-start w-full">
-                    <div className="flex flex-row gap-1 px-5 items-start w-full max-w-full">
-                        <svg width="18" height="18" viewBox="0 0 18 18" className="text-primary" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.616699 9.45653C4.51122 8.77033 7.67476 5.92572 8.76941 2.12573L9.10198 0.971252L9.43455 2.12573C10.5292 5.92572 13.6927 8.77032 17.5873 9.45653C13.6927 10.1427 10.5292 12.9874 9.43455 16.7873L9.10198 17.9418L8.76941 16.7873C7.67476 12.9873 4.51122 10.1427 0.616699 9.45653Z" fill="currentColor"/>
-                            <path d="M4.85889 9.45653C6.80615 9.11343 8.38792 7.69113 8.93524 5.79113L9.10153 5.21389L9.26781 5.79113C9.81514 7.69113 11.3969 9.11343 13.3442 9.45653C11.3969 9.79964 9.81514 11.2219 9.26781 13.1219L9.10153 13.6992L8.93524 13.1219C8.38792 11.2219 6.80615 9.79964 4.85889 9.45653Z" fill="white"/>
-                        </svg>
-                        <h6 className="text-sm font-bold text-foreground truncate max-w-full">{title}</h6>
+        <div className={clsx("relative rounded-3xl overflow-hidden group/feature shrink-0 w-84", className)}>
+            <svg
+                width="305" 
+                height="150"
+                viewBox="0 0 305 150"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-[calc(100%+12px)] top-0 absolute z-10 transition duration-500 fill-primary/10 stroke-none group-hover/feature:stroke-primary"
+              >
+                <path
+                    d="M42.7129 -155.175L-15.8885 21.3882C-21.7282 38.9838 -0.35334 52.7044 13.1974 40.3312L13.5154 40.0334C22.2101 31.7527 36.2102 33.2746 42.9505 43.1024L43.2661 43.5776L52.0423 57.1894C58.3544 66.9792 69.8286 72.1175 81.3063 70.3439L81.8525 70.2546C99.1057 67.2578 115.347 79.1425 117.807 96.3699L117.914 97.1946L118.358 101.013C121.576 128.734 155.47 140.191 174.856 120.39L175.312 119.916L177.951 117.121C189.97 104.386 210.095 104.172 222.385 116.493L222.964 117.09C230.971 125.549 243.194 128.486 254.149 124.63L254.67 124.442L269.844 118.779C281.093 114.581 293.369 121.48 295.705 133.167L295.809 133.727C298.949 152.146 324.64 154.098 330.527 136.364L389.128 -40.1997L42.7129 -155.175Z" 
+                    strokeWidth="1.5"
+                    className="transition duration-500"
+                />
+            </svg>
+            <Card className="relative transition duration-500 bg-white group-hover/feature:bg-foreground justify-center h-full text-[]" radius="none" shadow="none">
+                <CardHeader>
+                    <div className="bg-white font-bold select-none text-lg rounded-xl h-11 w-11 flex items-center justify-center">
+                        1
                     </div>
-                    {!!footerItems?.length && (
-                        <div className="flex flex-row gap-1 items-center bg-primary-50 py-3 w-full max-w-full">
-                            <ScrollShadow
-                                orientation="horizontal"
-                                className="flex flex-row px-5 gap-5"
-                                size={20}
-                                hideScrollBar
-                            >
-                                {footerItems.map((item, index) => {
-                                    return (
-                                        <div key={index} className="shrink-0 flex flex-row gap-1 items-center">
-                                            {item.icon}
-                                            <span className="text-xs font-light text-primary">{item.title}</span>
-                                            <span className="text-xs font-bold text-foreground">{item.value}</span>
-                                        </div>
-                                    )}
-                                )}
-                            </ScrollShadow>
-                        </div>
-                    )}
-                </CardFooter>
+                </CardHeader>
+                <CardBody className="pr-8 pb-12">
+                    <div className={clsx("relative flex flex-col gap-16 min-w-24 max-w-48 items-start")}>
+                        <h5 dir="ltr" className="relative text-md text-right font-bold text-foreground transition duration-500 group-hover/feature:text-white truncate max-w-full w-fit">
+                            {englishTitle}
+                        </h5>
+                        <h5 className="relative text-md text-wrap line-clamp-2 leading-7 text-right font-semibold text-foreground transition duration-500 group-hover/feature:text-white truncate max-w-full w-fit">
+                            {title}
+                        </h5>
+                    </div>
+                </CardBody>
             </Card>
+            <div className="absolute h-full flex justify-center items-center bottom-0 left-4 z-10 w-50">
+                <Image
+                    as={NextImage}
+                    src={image}
+                    alt={title}
+                    title={title}
+                    width={256}
+                    height={256}
+                    className="!w-full !h-auto object-contain"
+                    classNames={{wrapper: "!max-w-none"}}
+                />
+            </div>
         </div>
     )
 }
