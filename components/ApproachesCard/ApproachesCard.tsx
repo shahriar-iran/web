@@ -6,6 +6,7 @@ import clsx from "clsx";
 type ApproachesCardPropsType = {
     title: string;
     englishTitle: string;
+    description?: string;
     icon: React.ReactNode;
     className?: string;
     variant?: "wide" | "square";
@@ -19,6 +20,7 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
     const {
         title,
         englishTitle,
+        description,
         icon,
         className,
         variant = "square",
@@ -37,14 +39,18 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                         {icon}
                     </div>
                     {(variant === "wide") && (
-                        <div dir="ltr" className="max-w-72 relative flex items-center gap-1">
+                        <div dir="ltr" className="max-w-72 relative flex items-center gap-2">
+                            <svg width="32" height="32" viewBox="0 0 18 18" className="text-foreground" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.616699 9.45653C4.51122 8.77033 7.67476 5.92572 8.76941 2.12573L9.10198 0.971252L9.43455 2.12573C10.5292 5.92572 13.6927 8.77032 17.5873 9.45653C13.6927 10.1427 10.5292 12.9874 9.43455 16.7873L9.10198 17.9418L8.76941 16.7873C7.67476 12.9873 4.51122 10.1427 0.616699 9.45653Z" fill="currentColor"/>
+                                <path d="M4.85889 9.45653C6.80615 9.11343 8.38792 7.69113 8.93524 5.79113L9.10153 5.21389L9.26781 5.79113C9.81514 7.69113 11.3969 9.11343 13.3442 9.45653C11.3969 9.79964 9.81514 11.2219 9.26781 13.1219L9.10153 13.6992L8.93524 13.1219C8.38792 11.2219 6.80615 9.79964 4.85889 9.45653Z" fill="white"/>
+                            </svg>
                             <h6  className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
                         </div>
                     )}
                 </CardHeader>
                 <CardBody className={clsx("py-4 overflow-hidden justify-center", variant === "wide" ? "items-start px-10" : "items-center px-0")}>
                     <div className={clsx("relative flex flex-col gap-3 ", variant === "wide" ? "w-full" : "min-w-48 max-w-56 items-center")}>
-                        <h5 className="relative text-xl text-center font-bold text-foreground truncate max-w-full py-1">{title}</h5>
+                        <h5 className="relative text-xl text-center font-bold text-foreground truncate max-w-full w-fit py-1">{title}</h5>
                         {variant === "square" && (
                             <svg 
                                 className="w-full" 
@@ -61,7 +67,7 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                         )}
                         {variant === "wide" && (
                             <p className="text-justify text-foreground/50 min-h-[58px] max-h-[58px] line-clamp-2 leading-7">
-                                لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                {description || "توضیحی ثبت نشده است..."}
                             </p>
                         )}
                     </div>

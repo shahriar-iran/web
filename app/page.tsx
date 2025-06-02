@@ -117,7 +117,7 @@ export default function Home() {
               className="!text-purple-500"
             />
             <ApproachesCard
-              title="مسئولــــیت پذیـــری مسئولــــیت پذیـــری مسئولــــیت پذیـــری"
+              title="مسئولــــ ــری"
               englishTitle="Responsibility Responsibility Responsibility"
               icon={(
                 <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
