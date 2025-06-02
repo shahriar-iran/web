@@ -6,13 +6,15 @@ type ThemeType = "primary" | "secondary" | "forground";
 
 type TabPropsType = {
     items: {
-        id: number;
+        key: React.Key;
         title: string;
     }[];
     theme: ThemeType;
     withIcon?: boolean;
     icon?: React.ReactNode;
     className?: string;
+    selectedKey?: React.Key;
+    onSelectionChange?: (key: React.Key) => void;
 };
 
 export const Tab: React.FC<TabPropsType> = ({
@@ -20,9 +22,17 @@ export const Tab: React.FC<TabPropsType> = ({
     theme = "primary",
     withIcon = false,
     icon,
-    className
+    className,
+    selectedKey,
+    onSelectionChange
 }) => {
-    const [active, setActive] = React.useState(0);
+
+
+    const [active, setActive] = React.useState(selectedKey || items[0].key);
+
+    React.useEffect(() => {
+        if (selectedKey) setActive(selectedKey)
+    }, [selectedKey])
 
     const baseBtnClass =
         "px-4.5 py-2.5 rounded-2xl transition-all duration-500 text-sm font-medium";
@@ -49,22 +59,25 @@ export const Tab: React.FC<TabPropsType> = ({
     return (
         <div className={clsx("flex gap-2", className)}>
             {items.map((item, index) => (
-                        <button
-                    key={item.id}
-                    onClick={() => setActive(index)}
+                <button
+                    key={item.key}
+                    onClick={() => {
+                        setActive(item.key)
+                        onSelectionChange?.(item.key)
+                    }}
                     className={clsx(baseBtnClass, getBtnClass(index === active))}
                 >
                    {withIcon && ( 
-                    <div className="flex items-center gap-2">
-                        <i className="bg-foreground p-1 rounded-full">{icon}</i>
-                        <span>{item.title}</span>
-                    </div>
-                )}
-                {!withIcon && (
-                    <div className="flex items-center gap-2">
-                        <span>{item.title}</span>
-                    </div>
-                )}
+                        <div className="flex items-center gap-2">
+                            <i className="bg-foreground p-1 rounded-full">{icon}</i>
+                            <span>{item.title}</span>
+                        </div>
+                    )}
+                    {!withIcon && (
+                        <div className="flex items-center gap-2">
+                            <span>{item.title}</span>
+                        </div>
+                    )}
                 </button>
             ))}
         </div>
