@@ -22,7 +22,7 @@ export const Related: React.FC = () => {
             label: (
                 <>
                     گزارش تصویری |{" "}
-                    <span className="text-primary/80">دوچرخ‌سواری شاعرانه</span> به مناسبت بزرگداشت سعدی
+                    دوچرخ‌سواری شاعرانه به مناسبت بزرگداشت سعدی
                 </>
             ),
             date: "۲۴ فروردین ۱۴۰۳",
@@ -43,13 +43,13 @@ export const Related: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white rounded-lg shadow p-4 max-w-md mx-auto">
-            <div className="flex items-center justify-between mb-4">
+        <div className="bg-white rounded-2xl shadow max-w-md mx-auto">
+            <div className="flex items-center justify-between mb-4 bg-primary/10 p-4 rounded-t-2xl">
                 <span className="text-sm font-bold text-right">سایر عناوین مرتبط</span>
-                <span className="text-xs text-gray-400">{articles.length} مقاله</span>
+                <span className="text-xs text-foreground">{articles.length} مقاله</span>
             </div>
 
-            <div className="divide-y">
+            <div className="divide-y p-5">
                 {articles.map((article) => (
                     <RelatedArticle
                         key={article.id}

@@ -1,6 +1,8 @@
 "use client";
 import * as React from "react";
 import { useState } from "react";
+import { Icon } from '@iconify/react';
+
 
 type RelatedArticlePropsType = {
     label: string | React.ReactNode;
@@ -22,29 +24,25 @@ export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
     return (
         <div
             onClick={handleClick}
-            className={`flex flex-col gap-2 py-3 border-b last:border-none cursor-pointer transition-colors duration-200 ${
-                isSelected ? "bg-blue-50" : "bg-white"
-            }`}
+            className={`flex flex-col gap-2 py-3 border-b last:border-none cursor-pointer transition-colors duration-200`}
         >
             <div
-                className={`text-sm font-semibold hover:underline ${
-                    isSelected ? "text-primary" : "text-primary/70"
-                }`}
+                className={`text-sm font-semibold`}
             >
                 {label}
             </div>
             <div className="flex items-center gap-4 text-xs text-gray-500">
                 <div className="flex items-center gap-1">
-                    {/* <CalendarIcon className="w-4 h-4" /> */}
-                    <span>
+                <Icon icon="material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+                    <span className="text-foreground">
                         {typeof date === "string"
                             ? date
                             : date.toLocaleDateString("fa-IR")}
                     </span>
                 </div>
                 <div className="flex items-center gap-1">
-                    {/* <ClockIcon className="w-4 h-4" /> */}
-                    <span>{duration} دقیقه مطالعه</span>
+                <Icon icon="fluent:material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+                    <span className="text-foreground">{duration} دقیقه مطالعه</span>
                 </div>
             </div>
         </div>
