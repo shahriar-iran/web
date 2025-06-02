@@ -28,8 +28,8 @@ export default function Home() {
             },
           ]}
           theme="secondary"
-          icon={<Icon icon="fluent:person-circle-28-filled" width="24" height="24" />}
-            />
+          withIcon={false}
+          />
         </div>
       </section>
     );

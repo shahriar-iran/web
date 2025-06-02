@@ -32,11 +32,11 @@ export const Tab: React.FC<TabPropsType> = ({
             case "primary":
                 return isActive
                     ? "bg-[#2969FF] text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/10";
+                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
             case "secondary":
                 return isActive
                     ? "bg-[#22C197] text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/10";
+                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
             case "forground":
                 return isActive
                     ? "bg-[#151B32] text-white"
@@ -44,7 +44,7 @@ export const Tab: React.FC<TabPropsType> = ({
             case "blur":
                 return isActive
                     ? "bg-white/20 text-white"
-                    : "bg-transparent text-[#151B32] border border-[#151B32]/10";
+                    : "bg-transparent text-[#151B32] border border-[#151B32]/15";
             default:
                 return "";
         }
@@ -53,15 +53,22 @@ export const Tab: React.FC<TabPropsType> = ({
     return (
         <div className={clsx("flex gap-2", className)}>
             {items.map((item, index) => (
-                <button
+                        <button
                     key={item.id}
                     onClick={() => setActive(index)}
                     className={clsx(baseBtnClass, getBtnClass(index === active))}
                 >
-                    <div className="flex items-center gap-1">
-                        {withIcon && icon}
+                   {withIcon && ( 
+                    <div className="flex items-center gap-2">
+                        <i className="bg-foreground p-1 rounded-full">{icon}</i>
                         <span>{item.title}</span>
                     </div>
+                )}
+                {!withIcon && (
+                    <div className="flex items-center gap-2">
+                        <span>{item.title}</span>
+                    </div>
+                )}
                 </button>
             ))}
         </div>
