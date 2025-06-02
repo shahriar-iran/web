@@ -6,7 +6,7 @@ export default function Home() {
     return (
       <section className="pt-[72px] md:pt-[104px]">
         <div className="text-justiify pt-20">
-        <Hint onlyStart withStar starClassName="text-secondary">ارزش های شهرایرانیان: قانون‌مداری و انضباط اجتماعی</Hint>
+        <Hint withStar borderClassName="bg-red-500">ارزش های شهرایرانیان: قانون‌مداری و انضباط اجتماعی</Hint>
 
         </div>
       </section>

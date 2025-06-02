@@ -22,28 +22,29 @@ export const Hint: React.FC<HintProps> = ({
     return (
         <div
             className={clsx(
-                "w-fit flex items-center rounded-xl px-6 py-2 gap-4 text-sm",
-                "bg-primary/25",
-                onlyStart ? "border-s-[10px] border-primary" 
-                : "border-s-[10px] border-e-[10px] border-foreground",
-                className
+                "relative w-fit flex items-center overflow-hidden rounded-xl px-6 h-11 gap-4 text-sm bg-primary/25",
+                className,
             )}
         >
-
+           <div className={clsx("absolute right-0 h-full rounded-l-full w-2.5 bg-primary" , borderClassName)}/>
             {(withStar) && (
                 <span className={clsx("text-primary text-sm", starClassName)}>
                     <CometStar size={28}/>
                 </span>
             )}
                 
-                
-                <span className="text-inherit">{children}</span>
+            <div className="text-inherit">{children}</div>
 
             {(withStar && !onlyStart) && (
                 <span className={clsx("text-primary text-sm rotate-180", starClassName)}>
                     <CometStar size={28}/>
                 </span>
             )}
+
+            {!onlyStart && (
+                <div className={clsx("absolute left-0 h-full rounded-r-full w-2.5 bg-primary" , borderClassName)}/>
+            )}
+            
         </div>
     );
 };
