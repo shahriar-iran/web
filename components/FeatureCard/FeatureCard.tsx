@@ -25,7 +25,7 @@ export const FeatureCard: React.FC<FeatureCardPropsType> = (props) => {
     } = props;
 
     return (
-        <div className={clsx("relative rounded-3xl overflow-hidden group/feature shrink-0 w-84", className)}>
+        <div className={clsx("relative border-2 border-primary-100 hover:border-foreground transition duration-500 rounded-3xl overflow-hidden group/feature shrink-0 w-84", className)}>
             <svg
                 width="305" 
                 height="150"
