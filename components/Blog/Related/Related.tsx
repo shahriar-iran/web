@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { RelatedArticle } from "./RelatedArticles/RelatedArticles"; 
+import {CometStar} from "@/components/Vectors";
 
 type ArticleType = {
     id: number;
@@ -45,7 +46,12 @@ export const Related: React.FC = () => {
     return (
         <div className="bg-white rounded-2xl shadow max-w-md mx-auto">
             <div className="flex items-center justify-between mb-4 bg-primary/10 p-4 rounded-t-2xl">
-                <span className="text-sm font-bold text-right">سایر عناوین مرتبط</span>
+                <div className="text-sm font-bold text-right flex items-center gap-1">
+                    <i className="text-primary rotate-90">
+                        <CometStar size={20}/>
+                    </i>
+                سایر عناوین مرتبط   
+                </div>
                 <span className="text-xs text-foreground">{articles.length} مقاله</span>
             </div>
 
