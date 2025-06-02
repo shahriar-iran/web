@@ -97,32 +97,33 @@ export default function Home() {
               title="کــار تیمی و نخبه‌مــداری"
               englishTitle="Teamwork"
               icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
               )}
             />
             <ApproachesCard
               title="مسئولــــیت پذیـــری"
               englishTitle="Responsibility"
               icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
               )}
               className="!text-orange-500"
             />
             <ApproachesCard
-              title="مسئولــــیت پذیـــری"
-              englishTitle="Responsibility"
+              title="مسئولــــیت مسئولــــیت پذیـــری"
+              englishTitle="Responsibility Responsibility"
               icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
               )}
               className="!text-purple-500"
             />
             <ApproachesCard
-              title="مسئولــــیت پذیـــری"
-              englishTitle="Responsibility"
+              title="مسئولــــیت پذیـــری مسئولــــیت پذیـــری مسئولــــیت پذیـــری"
+              englishTitle="Responsibility Responsibility Responsibility"
               icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="28" height="28" />
+                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
               )}
               variant="wide"
+               className="!text-purple-500"
             />
           </div>
           

@@ -32,34 +32,48 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                 </svg>
             )}
             <Card className="relative rounded-3xl justify-center h-full text-[]" radius="none" shadow="none">
-                <CardHeader className="px-0 pt-8 items-center justify-center">
-                    <div className="bg-white rounded-2xl h-13 w-13 flex justify-center items-center">
+                <CardHeader className={clsx("pt-8 items-center", variant === "wide" ? "justify-between px-10" : "justify-center px-0")}>
+                    <div className={clsx("rounded-3xl h-15 w-15 flex justify-center items-center", variant === "wide" ? "bg-primary shadow-md shadow-primary/40 text-white" : "bg-white")}>
                         {icon}
                     </div>
+                    {(variant === "wide") && (
+                        <div dir="ltr" className="max-w-72 relative flex items-center gap-1">
+                            <h6  className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
+                        </div>
+                    )}
                 </CardHeader>
-                <CardBody className="px-0 py-4 items-center justify-center">
-                    <div className="min-w-48 max-w-56 relative flex flex-col gap-3 items-center">
+                <CardBody className={clsx("py-4 overflow-hidden justify-center", variant === "wide" ? "items-start px-10" : "items-center px-0")}>
+                    <div className={clsx("relative flex flex-col gap-3 ", variant === "wide" ? "w-full" : "min-w-48 max-w-56 items-center")}>
                         <h5 className="relative text-xl text-center font-bold text-foreground truncate max-w-full py-1">{title}</h5>
-                        <svg 
-                            className="w-full" 
-                            viewBox="0 0 221 18" 
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path opacity="0.15" d="M9.14258 9.17773L212.859 9.17775" stroke="#151B32" strokeWidth="1.5" strokeLinejoin="round" strokeDasharray="8 8"/>
-                            <path d="M203.873 9.17773C207.768 8.49153 210.931 5.64692 212.026 1.84693L212.358 0.692453L212.691 1.84693C213.786 5.64692 216.949 8.49153 220.844 9.17773C216.949 9.86394 213.786 12.7086 212.691 16.5085L212.358 17.663L212.026 16.5085C210.931 12.7086 207.768 9.86394 203.873 9.17773Z" fill="#2969FF"/>
-                            <path d="M0.15625 9.17773C4.05077 8.49153 7.21431 5.64692 8.30896 1.84693L8.64153 0.692453L8.9741 1.84693C10.0688 5.64692 13.2323 8.49153 17.1268 9.17773C13.2323 9.86394 10.0688 12.7086 8.9741 16.5085L8.64153 17.663L8.30896 16.5085C7.21431 12.7086 4.05077 9.86394 0.15625 9.17773Z" fill="#2969FF"/>
-                            <path d="M208.115 9.17773C210.062 8.83463 211.644 7.41233 212.192 5.51233L212.358 4.93509L212.524 5.51233C213.071 7.41233 214.653 8.83463 216.601 9.17773C214.653 9.52084 213.071 10.9431 212.524 12.8431L212.358 13.4204L212.192 12.8431C211.644 10.9431 210.062 9.52084 208.115 9.17773Z" fill="white"/>
-                            <path d="M4.39844 9.17773C6.3457 8.83463 7.92747 7.41233 8.47479 5.51233L8.64108 4.93509L8.80736 5.51233C9.35469 7.41233 10.9365 8.83463 12.8837 9.17773C10.9365 9.52084 9.35469 10.9431 8.80736 12.8431L8.64108 13.4204L8.47479 12.8431C7.92747 10.9431 6.3457 9.52084 4.39844 9.17773Z" fill="white"/>
-                        </svg>
+                        {variant === "square" && (
+                            <svg 
+                                className="w-full" 
+                                viewBox="0 0 221 18" 
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path opacity="0.15" d="M9.14258 9.17773L212.859 9.17775" stroke="#151B32" strokeWidth="1.5" strokeLinejoin="round" strokeDasharray="8 8"/>
+                                <path d="M203.873 9.17773C207.768 8.49153 210.931 5.64692 212.026 1.84693L212.358 0.692453L212.691 1.84693C213.786 5.64692 216.949 8.49153 220.844 9.17773C216.949 9.86394 213.786 12.7086 212.691 16.5085L212.358 17.663L212.026 16.5085C210.931 12.7086 207.768 9.86394 203.873 9.17773Z" fill="#2969FF"/>
+                                <path d="M0.15625 9.17773C4.05077 8.49153 7.21431 5.64692 8.30896 1.84693L8.64153 0.692453L8.9741 1.84693C10.0688 5.64692 13.2323 8.49153 17.1268 9.17773C13.2323 9.86394 10.0688 12.7086 8.9741 16.5085L8.64153 17.663L8.30896 16.5085C7.21431 12.7086 4.05077 9.86394 0.15625 9.17773Z" fill="#2969FF"/>
+                                <path d="M208.115 9.17773C210.062 8.83463 211.644 7.41233 212.192 5.51233L212.358 4.93509L212.524 5.51233C213.071 7.41233 214.653 8.83463 216.601 9.17773C214.653 9.52084 213.071 10.9431 212.524 12.8431L212.358 13.4204L212.192 12.8431C211.644 10.9431 210.062 9.52084 208.115 9.17773Z" fill="white"/>
+                                <path d="M4.39844 9.17773C6.3457 8.83463 7.92747 7.41233 8.47479 5.51233L8.64108 4.93509L8.80736 5.51233C9.35469 7.41233 10.9365 8.83463 12.8837 9.17773C10.9365 9.52084 9.35469 10.9431 8.80736 12.8431L8.64108 13.4204L8.47479 12.8431C7.92747 10.9431 6.3457 9.52084 4.39844 9.17773Z" fill="white"/>
+                            </svg>
+                        )}
+                        {variant === "wide" && (
+                            <p className="text-justify text-foreground/50 min-h-[58px] max-h-[58px] line-clamp-2 leading-7">
+                                لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                        )}
                     </div>
                 </CardBody>
                 <CardFooter
                     className={clsx("px-0 pt-0 pb-8 items-center justify-center relative", variant === "wide" ? "after:bg-primary after:absolute after:bottom-0 after:h-3 after:w-full" : "")}
                 >
-                    <div className="min-w-48 max-w-56 relative before:absolute before:top-3.5 before:w-full before:h-[calc(100%-16px)] before:bg-primary-50">
-                        <h6 dir="ltr" className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
-                    </div>
+                    {variant === "square" && (
+                        <div className="min-w-48 max-w-56 relative before:absolute before:top-3.5 before:w-full before:h-[calc(100%-16px)] before:bg-primary-50">
+                            <h6 dir="ltr" className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
+                        </div>
+                    )}
                 </CardFooter>
             </Card>
         </div>
