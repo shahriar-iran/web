@@ -1,18 +1,19 @@
-import { SummaryCard } from "@/components/Comment/SummaryCard/SummaryCard";
-
+import { CommentCard } from "@/components/Comment/CommentCard/CommentCard";
 
 export default function Home() {
     return (
       <section className="pt-[72px] pb-96 md:pt-[104px]">
         <div className="text-justiify pt-20">
-        <SummaryCard
-                name="صالح محمدی"
-                avatarUrl="https://i.pravatar.cc/150?img=12"
-                degree="کارشناس ارشد طراحی رابط کاربری"
-                date="فروردین ۱۴۰۳"
-                bgClassName="bg-blue-100 text-blue-700 rounded-xl text-center"
-                starClassName=""
-            />
+        <CommentCard
+          userName="مـــحمدرضا سلطانـــــــی"
+          degree="دانش‌آموز هفتم مدرسۀ شهریار"
+          rating={4.5}
+          date="1403/03/10"
+          comment="این مدرسه جزو بهترین مدارس ایران هست، از وقتی ایـنجا ثبت‌نام کـردم عــملکردم خیلی بـهتر شده
+و خیلی رسیدگی خوبی دارن، کلی دوست جدید پیــــدا کردم و مدرسه کلی بــــرنامه‌های خفن و جـــذاب
+داره واسمون، راستی اردو هم اینجا زیاد داریم."
+          avatarUrl="https://i.pravatar.cc/150?img=32"
+        />
         </div>
       </section>
     );
