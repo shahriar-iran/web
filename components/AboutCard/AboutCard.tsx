@@ -24,7 +24,7 @@ export const AboutCard: React.FC<AboutCardPropsType> = (props) => {
     } = props;
 
     return (
-        <div className="relative m-2.5 w-fit h-fit before:rounded-3xl before:absolute before:bg-primary-100 before:w-full before:h-full before:z-0 before:-rotate-3">   
+        <div className="relative group/about m-2.5 w-fit h-fit before:rounded-3xl before:absolute before:bg-primary-100 before:w-full before:h-full before:z-0 before:-rotate-3">   
             <Card className="w-96 relative rounded-3xl" radius="none" shadow="none">
                 <CardBody className="p-2 pb-0">
                     <Image

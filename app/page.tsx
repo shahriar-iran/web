@@ -1,5 +1,6 @@
 import { AboutCard } from "@/components/AboutCard/AboutCard";
 import { ApproachesCard } from "@/components/ApproachesCard/ApproachesCard";
+import { ArticleCard } from "@/components/ArticleCard/ArticleCard";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
@@ -158,6 +159,19 @@ export default function Home() {
             />
           </div>
           <CusAccordion/>
+        </div>
+        <div className="flex flex-col">
+          <ArticleCard
+              title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
+              footerItems={[
+                {
+                  icon: (
+                    <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
+                  ),
+                  value: "02 اردیبهشت 1395"
+                },
+              ]}
+          />
         </div>
       </section>
     );
