@@ -1,30 +1,28 @@
-"use client";
 import * as React from "react";
-import { useState } from "react";
 import { Icon } from '@iconify/react';
 import {Star} from "@/components/Vectors";
+import Link from "next/link";
 
 
 type RelatedArticlePropsType = {
     label: string | React.ReactNode;
     date: string | Date;
     duration: string;
+    href?: string;
 };
 
-export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
-    label,
-    date,
-    duration,
-}) => {
-    const [isSelected, setIsSelected] = useState(false);
+export const RelatedArticle: React.FC<RelatedArticlePropsType> = (props) => {
 
-    const handleClick = () => {
-        setIsSelected(!isSelected);-9
-    };
+    const {
+        label,
+        date,
+        duration,
+        href
+    } = props;
 
     return (
-        <div
-            onClick={handleClick}
+        <Link
+            href={href || "#"}
             className={`flex flex-col gap-4 p-6 hover:bg-foreground/20 hover:transition-all duration-400`}
         >
             <div
@@ -49,6 +47,6 @@ export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
                     <span className="text-foreground">{duration} دقیقه مطالعه</span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };

@@ -1,17 +1,20 @@
-"use client";
 import * as React from "react";
 import { CometStar, Star } from "@/components/Vectors";
 
 type ChapterPropsType = {
   listItems: string[];
-  initialSelectedKey?: React.Key;
+  selected: string;
+  onSelectionChange: (p: string) => void; 
 };
 
-export const Chapter: React.FC<ChapterPropsType> = ({
-  listItems = [],
-  initialSelectedKey = "0",
-}) => {
-  const [selectedKey, setSelectedKey] = React.useState<React.Key>(initialSelectedKey);
+export const Chapter: React.FC<ChapterPropsType> = (props) => {
+
+
+  const {
+    listItems = [],
+    onSelectionChange,
+    selected
+  } = props;
 
   return (
     <div className="flex flex-col justify-center gap-8">
@@ -28,12 +31,12 @@ export const Chapter: React.FC<ChapterPropsType> = ({
       <div className="w-full max-w-[347px] flex flex-col gap-2 bg-white shadow-sm rounded-2xl">
         {listItems.map((item, index) => {
           const key = index.toString();
-          const isSelected = selectedKey === key;
+          const isSelected = selected === key;
 
           return (
             <button
               key={key}
-              onClick={() => setSelectedKey(key)}
+              onClick={() => onSelectionChange(key)}
               className={`flex items-start gap-2 px-3 py-2 rounded-lg text-right transition-all ${
                 isSelected
                   ? "bg-primary/5 text-foreground font-semibold"

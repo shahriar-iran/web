@@ -1,4 +1,3 @@
-"use client";
 import * as React from "react";
 import { RelatedArticle } from "./RelatedArticles/RelatedArticles"; 
 import {CometStar} from "@/components/Vectors";
