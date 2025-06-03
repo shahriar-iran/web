@@ -1,5 +1,6 @@
 import { AboutCard } from "@/components/AboutCard/AboutCard";
 import { ApproachesCard } from "@/components/ApproachesCard/ApproachesCard";
+import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { Button } from "@heroui/button";
@@ -156,6 +157,7 @@ export default function Home() {
               image="/static/assets/images/s1.png"
             />
           </div>
+          <CusAccordion/>
         </div>
       </section>
     );

@@ -6,6 +6,7 @@ import NextImage from "next/image";
 
 
 type FeatureCardPropsType = {
+    code?: string;
     title: string;
     englishTitle: string;
     image: string;
@@ -18,6 +19,7 @@ export const FeatureCard: React.FC<FeatureCardPropsType> = (props) => {
 
 
     const {
+        code=1,
         title,
         englishTitle,
         image,
@@ -49,7 +51,7 @@ export const FeatureCard: React.FC<FeatureCardPropsType> = (props) => {
             <Card className="relative transition duration-500 bg-white group-hover/feature:bg-foreground justify-center h-full text-[]" radius="none" shadow="none">
                 <CardHeader>
                     <div className="bg-white font-bold select-none text-lg rounded-xl h-11 w-11 flex items-center justify-center">
-                        1
+                        {code}
                     </div>
                 </CardHeader>
                 <CardBody className="pr-8 pb-12">
