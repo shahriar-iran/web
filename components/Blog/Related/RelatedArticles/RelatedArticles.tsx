@@ -19,7 +19,7 @@ export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
     const [isSelected, setIsSelected] = useState(false);
 
     const handleClick = () => {
-        setIsSelected(!isSelected);
+        setIsSelected(!isSelected);-9
     };
 
     return (
