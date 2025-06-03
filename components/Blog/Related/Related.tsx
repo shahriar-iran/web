@@ -41,21 +41,39 @@ export const Related: React.FC = () => {
             date: "۲۴ فروردین ۱۴۰۳",
             duration: "۶",
         },
+        {
+            id: 5,
+            label: "آزمون‌های جمع‌بندی؛ شکوفایی موفقیت شهریاری‌ها",
+            date: "۲۴ فروردین ۱۴۰۳",
+            duration: "۶",
+        },
+        {
+            id: 6,
+            label: "آزمون‌های جمع‌بندی؛ شکوفایی موفقیت شهریاری‌ها",
+            date: "۲۴ فروردین ۱۴۰۳",
+            duration: "۶",
+        },
+        {
+            id: 7,
+            label: "آزمون‌های جمع‌بندی؛ شکوفایی موفقیت شهریاری‌ها",
+            date: "۲۴ فروردین ۱۴۰۳",
+            duration: "۶",
+        },
     ];
 
     return (
-        <div className="bg-white rounded-2xl shadow max-w-md mx-auto">
-            <div className="flex items-center justify-between mb-4 bg-primary/10 p-4 rounded-t-2xl">
+        <div className="bg-white rounded-2xl w-full max-w-lg mx-auto">
+            <div className="flex items-center justify-between mb-4 bg-primary/10 px-4 py-6 rounded-t-2xl">
                 <div className="text-sm font-bold text-right flex items-center gap-1">
                     <i className="text-primary rotate-90">
                         <CometStar size={20}/>
                     </i>
                 سایر عناوین مرتبط   
                 </div>
-                <span className="text-xs text-foreground">{articles.length} مقاله</span>
+                <span className="text-sm font-semibold text-foreground">{articles.length} مقاله</span>
             </div>
-
-            <div className="divide-y p-5">
+            
+            <div className="divide-y divide-foreground/10">
                 {articles.map((article) => (
                     <RelatedArticle
                         key={article.id}
@@ -65,6 +83,7 @@ export const Related: React.FC = () => {
                     />
                 ))}
             </div>
+            
         </div>
     );
 };

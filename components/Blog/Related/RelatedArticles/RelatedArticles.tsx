@@ -2,6 +2,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Icon } from '@iconify/react';
+import {Star} from "@/components/Vectors";
 
 
 type RelatedArticlePropsType = {
@@ -24,24 +25,27 @@ export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
     return (
         <div
             onClick={handleClick}
-            className={`flex flex-col gap-2 py-3 border-b last:border-none cursor-pointer transition-colors duration-200`}
+            className={`flex flex-col gap-4 p-6 hover:bg-foreground/20 hover:transition-all duration-400`}
         >
             <div
-                className={`text-sm font-semibold`}
+                className={`text-sm font-semibold flex items-center truncate gap-2`}
             >
-                {label}
+                <i className="text-primary flex">
+                    <Star size={20}/>
+                </i>
+            {label}
             </div>
-            <div className="flex items-center gap-4 text-xs text-gray-500">
-                <div className="flex items-center gap-1">
-                <Icon icon="material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+            <div className="flex items-center gap-6 text-xs text-foreground">
+                <div className="flex items-center gap-2">
+                <Icon icon="fluent:calendar-date-20-regular" width="24" height="24" />
                     <span className="text-foreground">
                         {typeof date === "string"
                             ? date
                             : date.toLocaleDateString("fa-IR")}
                     </span>
                 </div>
-                <div className="flex items-center gap-1">
-                <Icon icon="fluent:material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+                <div className="flex items-center gap-2">
+                <Icon icon="fluent:clock-alarm-32-regular" width="24" height="24" />
                     <span className="text-foreground">{duration} دقیقه مطالعه</span>
                 </div>
             </div>
