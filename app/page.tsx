@@ -4,6 +4,7 @@ import { ArticleCard } from "@/components/ArticleCard/ArticleCard";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { PlanCard } from "@/components/PlanCard/PlanCard";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -171,6 +172,13 @@ export default function Home() {
                   value: "02 اردیبهشت 1395"
                 },
               ]}
+          />
+
+        </div>
+        <div className="flex flex-col">
+          <PlanCard
+            title="ویــــژگـی‌هـای طـــرح نـقــــره‌ای"
+            subtitle="بیشتر از یک آموزشگاه آنلاین، مشابه بهترین مدارس."
           />
         </div>
       </section>
