@@ -58,19 +58,16 @@ export const Detail: React.FC<DetailTypeProps> = ({
       </div>
 
       <div className="flex flex-row items-center">
-        <Breadcrumbs
-            underline="hover"
-            color="secondary"
-            className="ps-12  w-full "
-            classNames={{base: "inline-grid", list: "flex-nowrap w-full overflow-y-hidden pb-2"}}
-            separator="/"
-            >
-                {breadCrumbs.map(({title, url}, idx) => (
-                    <BreadcrumbItem key={idx} href={url}>
-                        {title}
-                     </BreadcrumbItem>
-                        ))}
-        </Breadcrumbs>
+      <Breadcrumbs separator="/" className="w-full">
+        {breadCrumbs.map(({ title, url }, idx) => (
+          <BreadcrumbItem key={idx}>
+            <Link href={url}>
+              <span className="text-sm text-gray-600 hover:text-black">{title}</span>
+            </Link>
+          </BreadcrumbItem>
+        ))}
+      </Breadcrumbs>
+
       
 
       <Button
