@@ -20,7 +20,6 @@ export const CusInput = <T extends FieldValues>(props: CusInputProps<T>) => {
         name,
         className,
         label,
-        type
     } = props;
 
 
