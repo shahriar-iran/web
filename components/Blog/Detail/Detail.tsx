@@ -77,7 +77,6 @@ export const Detail: React.FC<DetailTypeProps> = ({
   return (
     <div className="w-full flex flex-col gap-4 md:flex-row md:justify-between md:items-center p-2">
 
-  {/* قسمت آواتار و اطلاعات */}
   <div className="w-full overflow-x-auto scroll-smooth no-scrollbar border-b border-foreground/10 pb-3">
     <div className="flex items-center gap-4 min-w-max whitespace-nowrap">
       <Avatar
@@ -126,7 +125,6 @@ export const Detail: React.FC<DetailTypeProps> = ({
     </div>
   </div>
 
-  {/* بردکرامب و دکمه برگشت */}
   <div className="flex flex-row items-center gap-2 md:self-end mt-3 md:mt-0">
     <Breadcrumbs items={breadCrumbs} className="px-2 py-1" separator="/" />
 
