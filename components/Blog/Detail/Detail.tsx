@@ -124,12 +124,15 @@ export const Detail: React.FC<DetailTypeProps> = ({
       <div className="flex flex-row items-center gap-2 md:self-end">
         <Breadcrumbs items={breadCrumbs} className="px-2 py-1" separator="/" />
   
-        <Button
-          size="lg"
-          isIconOnly
-          startContent={<Icon icon="solar:arrow-left-line-duotone" width="24" height="24" />}
-          className="px-3 py-5 bg-foreground/10"
-        />
+        <div className="hidden md:block">
+          <Button
+            size="lg"
+            isIconOnly
+            startContent={<Icon icon="solar:arrow-left-line-duotone" width="24" height="24" />}
+            className="px-3 py-5 bg-foreground/10"
+          />
+        </div>
+        
       </div>
     </div>
   );
