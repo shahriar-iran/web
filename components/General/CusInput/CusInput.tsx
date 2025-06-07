@@ -25,17 +25,16 @@ export const CusInput = <T extends FieldValues>(props: CusInputProps<T>) => {
 
 
     const classNames = {
-        input: "!text-white",
-        label: "!text-white/20",
+        input: "!text-primary",
+        label: "!text-foreground/50",
         inputWrapper: [
-            "bg-primary-400",
-            "rounded-[1px]",
+            "bg-white",
+            "border border-primary/40",
+            "rounded-[24px]",
             "h-12",
-            "outline-[2px] outline-offset-0 outline-white/60",
-            "group-data-[hover=true]:bg-primary-400",
-            "group-data-[hover=true]:outline-white",
-            "group-data-[focus=true]:outline-white",
-            "group-data-[focus=true]:bg-primary-400",
+            "outline-[2px]  outline-primary",
+            "data-[hover=true]:bg-primary/20",
+            "group-data-[focus=true]:bg-primary/20",
         ],
     }
 
