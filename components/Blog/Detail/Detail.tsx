@@ -15,32 +15,33 @@ const Breadcrumbs: React.FC<{
   className?: string;
 }> = ({ items, separator = "/", className = "" }) => {
   return (
-    <nav aria-label="breadcrumb" className={`w-full overflow-x-auto no-scrollbar ${className}`}>
-  <ol className="flex items-center gap-2 text-sm whitespace-nowrap min-w-max">
-    {items.map((item, index) => {
-      const isLast = index === items.length - 1;
-      return (
-        <li key={index} className="flex items-center gap-2 shrink-0">
-          {!isLast ? (
-            <>
-              <Link
-                href={item.url}
-                className="text-foreground/35 font-semibold truncate max-w-[120px]"
-              >
-                {item.title}
-              </Link>
-              <span className="text-gray-400">{separator}</span>
-            </>
-          ) : (
-            <span className="text-foreground font-bold truncate max-w-[140px]">
-              {item.title}
-            </span>
-          )}
-        </li>
-      );
-    })}
-  </ol>
-</nav>
+      <nav aria-label="breadcrumb" className={`w-full overflow-x-auto  ${className}`}>
+      <ol className="flex items-center gap-2 text-sm whitespace-nowrap min-w-max">
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          return (
+            <li key={index} className="flex items-center gap-2 shrink-0">
+              {!isLast ? (
+                <>
+                  <Link
+                    href={item.url}
+                    className="text-foreground/35 font-semibold truncate max-w-[120px]"
+                  >
+                    {item.title}
+                  </Link>
+                  <span className="text-gray-400">{separator}</span>
+                </>
+              ) : (
+                <span className="text-foreground font-bold truncate max-w-[140px]">
+                  {item.title}
+                </span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+    
 
   );
 };
@@ -76,8 +77,11 @@ export const Detail: React.FC<DetailTypeProps> = ({
 
   return (
     <div className="w-full flex flex-col gap-4 md:flex-row md:justify-between md:items-center p-2">
-
-  <div className="w-full overflow-x-auto scroll-smooth no-scrollbar border-b border-foreground/10 pb-3">
+  
+  
+  
+  
+  <div className="w-full overflow-x-auto scroll-smooth no-scrollbar p-2">
     <div className="flex items-center gap-4 min-w-max whitespace-nowrap">
       <Avatar
         src={avatarUrl}
@@ -87,7 +91,7 @@ export const Detail: React.FC<DetailTypeProps> = ({
         radius="lg"
       />
       <InfoItem
-        icon="fluent:person-circle-28-filled"
+        icon="qlementine-icons:user-24"
         label={
           <>
             <span className="hidden md:inline">از زبان: </span>
@@ -124,6 +128,7 @@ export const Detail: React.FC<DetailTypeProps> = ({
       />
     </div>
   </div>
+  
 
   <div className="flex flex-row items-center gap-2 md:self-end mt-3 md:mt-0">
     <Breadcrumbs items={breadCrumbs} className="px-2 py-1" separator="/" />
