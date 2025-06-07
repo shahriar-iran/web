@@ -25,8 +25,8 @@ export const ArticleCard: React.FC<ArticleCardPropsType> = (props) => {
     } = props;
 
     return (
-        <div className="relative group/article w-fit h-fit">   
-            <Card className="w-96 relative p-0 bg-transparent" radius="none" shadow="none">
+        <div className="relative group/article w-full h-fit">   
+            <Card className="relative p-0 bg-transparent" radius="none" fullWidth shadow="none">
                 <CardBody className="relative p-2 pb-0 border-2 border-primary/20 bg-white rounded-3xl rounded-b-none">
                     <Image
                         as={NextImage}

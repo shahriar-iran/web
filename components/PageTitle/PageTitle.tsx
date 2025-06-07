@@ -48,7 +48,7 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                         <VerticalLine size={32}/>
                     </i>
                 )}
-                <h1 className="font-black text-xl">
+                <h1 className="font-bold text-base md:font-black md:text-xl text-center">
                     {title}
                 </h1>
                 {variant === "centered" && (
@@ -58,7 +58,7 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                 )}
             </div>
             <div className="relative">
-                <h2 className={clsx("relative z-10 text-center truncate font-bold", variant === "centered" ? "text-white" : "text-gray-500", descriptionClassName)}>
+                <h2 className={clsx("relative z-10 text-center truncate font-semibold text-sm md:font-bold md:text-base", variant === "centered" ? "text-white" : "text-gray-500", descriptionClassName)}>
                     {description}
                 </h2>
                 {variant === "centered" && (

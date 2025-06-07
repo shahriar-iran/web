@@ -17,9 +17,6 @@ export const CusAccordion: React.FC<CusAccordionPropsType> = (props) => {
 
     } = props;
 
-    const defaultContent =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
     const items = [
         {
             title: "من در مدرسه‌ی محل سکونت خودم مشغول تحصیل هستم، چطور از خدمات مدرسه مجازی استفاده کنم؟",
@@ -45,9 +42,11 @@ export const CusAccordion: React.FC<CusAccordionPropsType> = (props) => {
 
     return (
         <Accordion
+            className="px-0"
             dividerProps={{
                 className: "bg-transparent border-t-2 border-divider border-dashed"            
             }}
+            
         >
             {items.map((v, idx) => {
                 return (
@@ -56,8 +55,9 @@ export const CusAccordion: React.FC<CusAccordionPropsType> = (props) => {
                         title={v.title}
                         classNames={{
                             indicator: "data-[open=true]:text-primary data-[open=true]:bg-white bg-foreground/5 select-none rounded-2xl h-10 w-10 flex items-center justify-center transition-colors !rotate-0",
-                            content: "text-foreground/50 text-sm font-light text-justify",
+                            content: "text-foreground/50 text-sm font-light text-justify max-w-7xl w-full mx-auto",
                             title: "text-sm font-semibold",
+                            heading: "max-w-7xl w-full mx-auto",
                             base: "data-[open=true]:bg-primary-50 group/accitem px-6 pt-6 pb-4",
                         }}
                         startContent={(
