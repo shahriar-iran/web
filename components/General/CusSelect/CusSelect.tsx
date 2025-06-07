@@ -36,25 +36,28 @@ export const CusSelect = <T extends FieldValues>(props: CusSelectProps<T>) => {
             render={({field, fieldState, formState}) => {
                 return (
                     <Select
-                        className={"rounded-[1px] text-white text-opacity-40 " + className}
-                        placeholder="انتخاب واحد مورد نظر"
+                        className={"rounded-3xl text-foreground " + className}
+                        placeholder="حوزه‌ی مشاوره‌ای که نیاز دارید را از این لیست انتخاب کنید"
                         size="lg"
                         classNames={{
                             trigger: [
-                                "bg-primary-400",
-                                "rounded-[1px]",
+                                "bg-white",
+                                "rounded-3xl",
+                                "border border-primary/40",
                                 "outline-[2px] outline-offset-0 outline-white/60",
-                                "data-[hover=true]:bg-primary-400",
-                                "data-[hover=true]:outline-white",
-                                "data-[focus=true]:outline-white",
-                                "data-[focus=true]:bg-primary-400",
+                                "data-[hover=true]:bg-primary/20",
+                                "data-[focus=true]:bg-primary/20",
                             ],
                             value: [
-                                "text-white/20 text-sm",
-                                "group-data-[has-value=true]:text-white",
+                                "text-foreground",
+                                // "group-data-[has-value=true]:text-white",
                             ],
                             popoverContent: [
-                                "rounded-none bg-white text-primary outline-[2px] outline-offset-0 outline-white"
+                                "rounded-lg bg-white text-foreground"
+                            ],
+                            selectorIcon: [
+                                "w-6",
+                                "h-6",
                             ],
                         }}
                         {...field}
@@ -65,7 +68,7 @@ export const CusSelect = <T extends FieldValues>(props: CusSelectProps<T>) => {
                         {items.map((animal) => (
                             <SelectItem
                                 key={animal.key}
-                                className="rounded-[1px] text-right flex-row-reverse"
+                                className="rounded-2xl text-right flex-row-reverse"
                             >
                                 {animal.label}
                             </SelectItem>

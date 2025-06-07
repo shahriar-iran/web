@@ -1,10 +1,8 @@
-"use client";
-import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import {Detail} from "@/components/Blog/Detail/Detail"
 import { CommentCard } from "@/components/Comment/CommentCard/CommentCard";
 import { CusInput } from "@/components/General/CusInput/CusInput";
-import { useForm } from "react-hook-form";
-
+import { CusSelect } from "@/components/General/CusSelect/CusSelect";
 
 
 
@@ -20,6 +18,20 @@ export default function Home() {
   //   },
   // });
 
+  // type FormValues = {
+  //   consultationType: string;
+  // };
+
+
+  // const {
+  //   control,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm<FormValues>({
+  //   defaultValues: {
+  //     consultationType: "", // مقدار اولیه
+  //   },
+  // });
 
     return (
       <section className="pt-[72px] pb-96 md:pt-[104px]">
@@ -44,6 +56,11 @@ export default function Home() {
             />
             <CusInput control={control} name="name" label="نام و نام خانوادگی خود را وارد کنید" /> */}
             
+            {/* <CusSelect
+              name="consultationType"
+              control={control}
+              className="w-full p-20"
+            /> */}
             
         </div>
       </section>
