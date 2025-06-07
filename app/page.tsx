@@ -3,7 +3,7 @@ import {Detail} from "@/components/Blog/Detail/Detail"
 import { CommentCard } from "@/components/Comment/CommentCard/CommentCard";
 import { CusInput } from "@/components/General/CusInput/CusInput";
 import { CusSelect } from "@/components/General/CusSelect/CusSelect";
-
+import { TeacherCard } from "@/components/TeacherCard/TeacherCard";
 
 
 
@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
       <section className="pt-[72px] pb-96 md:pt-[104px]">
-        <div className="text-justiify pt-20 flex flex-col gap-40">
+        <div className="text-justiify pt-20 flex flex-col gap-40 items-center">
             {/* <Detail
               avatarUrl="https://i.pravatar.cc/150?img=32"
               teller="دکتر احمدی"
@@ -54,14 +54,23 @@ export default function Home() {
                 date="1404/03/15"
                 avatarUrl="https://i.pravatar.cc/100?img=32"
             />
-            <CusInput control={control} name="name" label="نام و نام خانوادگی خود را وارد کنید" /> */}
+            <CusInput control={control} name="name" label="نام و نام خانوادگی خود را وارد کنید" />
             
-            {/* <CusSelect
+            <CusSelect
               name="consultationType"
               control={control}
               className="w-full p-20"
             /> */}
             
+
+            <TeacherCard
+              variant="square"
+              masterName="استاد احمدی"
+              topicName="ریاضی دهم"
+              experience="10 سال سابقه تدریس"
+              description="تدریس مفهومی و حل تمرین‌های امتحانی"
+              image="/images/teacher-example.png"
+            />
         </div>
       </section>
     );
