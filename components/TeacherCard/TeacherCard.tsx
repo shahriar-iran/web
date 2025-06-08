@@ -34,7 +34,7 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
     } = props;
 
     return(
-        <div
+    <div
         style={{
             clipPath: 
             variant === "square" 
@@ -43,7 +43,7 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
         }}
         className={clsx("relative group/approaches rounded-3xl overflow-hidden shrink-0 h-72 text-secondary", variant === "wide" ? "w-120" : "aspect-square", className)}
     >
-        <Card className="relative justify-center h-full text-[] bg-gradient-to-t from-foreground via-foreground/30 to-white" radius="none" shadow="none">
+        <Card className="relative justify-center h-full bg-gradient-to-t from-foreground via-foreground/30 to-white" radius="none" shadow="none">
             <CardHeader>
                 <div className={clsx( "",
                     variant === "square" ? "absolute top-3 right-3" : ""
@@ -56,12 +56,12 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                     >
                         {variant === "square" ? (
                             <i className="text-primary">
-                                <Icon icon="ei:play" width="28" height="28" className="rotate-180"/>
+                                <Icon icon="ei:play" width="32" height="32" className="rotate-180"/>
                             </i>
                         ) : (
                             <div className="flex items-center">
                                 <i className="text-white">
-                                    <Icon icon="ei:play" width="24" height="24" className="rotate-180"/>
+                                    <Icon icon="ei:play" width="32" height="32" className="rotate-180"/>
                                 </i>
                                 <span>
                                 مشاهدۀ نمونۀ تدریس
@@ -72,13 +72,14 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                     </Button>
                 </div>
             </CardHeader>
-            <CardBody>
+            <CardBody className="relative overflow-hidden">
                 {/* <Image
                     as={NextImage}
                     src={image}
+                    alt="masters"
                     width={256}
                     height={256}
-                    className="!w-full !h-auto object-contain"
+                    className="!w-full !h-full object-contain"
                     classNames={{wrapper: "!max-w-none"}}
                 /> */}
             </CardBody>
@@ -89,10 +90,10 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                             <Star size={24}/>
                         </i>
                         <div className="flex flex-col items-center text-white">
-                            <h2>
+                            <h2 className="text-sm">
                                 {masterName}
                             </h2>
-                            <p>
+                            <p className="text-sm">
                                 {topicName}
                             </p>
                         </div>
@@ -102,9 +103,7 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                 </div>
             </CardFooter>
         </Card>
-        
-            
-        </div>
+    </div>
     )
 }
                 

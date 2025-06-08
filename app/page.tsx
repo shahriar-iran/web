@@ -69,7 +69,7 @@ export default function Home() {
               topicName="ریاضی دهم"
               experience="10 سال سابقه تدریس"
               description="تدریس مفهومی و حل تمرین‌های امتحانی"
-              image="/images/teacher-example.png"
+              image="/gifani.png"
             />
         </div>
       </section>
