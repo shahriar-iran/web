@@ -64,7 +64,7 @@ export default function Home() {
             
 
             <TeacherCard
-              variant="square"
+              variant="wide"
               masterName="استاد احمدی"
               topicName="ریاضی دهم"
               experience="10 سال سابقه تدریس"

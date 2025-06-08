@@ -14,7 +14,6 @@ type TeacherCardPropsType = {
     description: string;
     variant?: "wide" | "square";
     className?: string;
-    icon?: React.ReactNode;
     image: string;
 }
 
@@ -27,7 +26,6 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
         className,
         description,
         experience,
-        icon,
         masterName,
         topicName,
         image
@@ -51,7 +49,7 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                     <Button
                     isIconOnly
                     className={clsx( "rounded-2xl",
-                        variant === "wide" ? "border-white bg-foreground/10 backdrop-blur text-white" : "bg-white",
+                        variant === "wide" ? "border-white bg-foreground/10 backdrop-blur text-white !min-w-fit p-2" : "bg-white",
                     )}
                     >
                         {variant === "square" ? (
@@ -83,25 +81,47 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
                     classNames={{wrapper: "!max-w-none"}}
                 /> */}
             </CardBody>
-            <CardFooter>
-                <div className="flex items-center justify-between w-full">
-                    <div className="flex gap-2">
-                        <i className="text-foreground">
-                            <Star size={24}/>
-                        </i>
-                        <div className="flex flex-col items-center text-white">
-                            <h2 className="text-sm">
-                                {masterName}
-                            </h2>
-                            <p className="text-sm">
-                                {topicName}
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <Icon icon="solar:arrow-up-line-duotone" width="24" height="24" className="rotate-135 text-white"/>
+            <CardFooter className="flex flex-col gap-2">
+    <div className="flex items-center justify-between w-full">
+        <div className="flex gap-2">
+            <i className={clsx(variant === "square" ? "text-foreground" : "text-secondary")}>
+                <Star size={24} />
+            </i>
+            <div className="flex flex-col text-white">
+                <h2 className="text-sm font-semibold">{masterName}</h2>
+
+                <div className="flex items-center gap-4 text-xs mt-1">
+                    <p className="flex items-center gap-1 text-white">
+                        <Icon icon="solar:calendar-line-duotone" width="18" height="18" />
+                        {topicName}
+                    </p>
+
+                    {variant === "wide" && (
+                        <p className="flex items-center gap-1 text-white">
+                            <Icon icon="solar:bell-line-duotone" width="18" height="18" />
+                            {experience}
+                        </p>
+                    )}
                 </div>
-            </CardFooter>
+            </div>
+        </div>
+
+        <div className={clsx(
+            "text-white",
+            variant === "wide" ? "bg-foreground p-1 rounded-xl" : ""
+        )}>
+            <Icon icon="solar:arrow-up-line-duotone" width="24" height="24" className="rotate-135" />
+        </div>
+        
+    </div>
+
+    {variant === "wide" && (
+        <div className="bg-primary/10 w-full px-4 py-2 text-[13px] leading-relaxed text-primary">
+            {description}
+        </div>
+    )}
+</CardFooter>
+
         </Card>
     </div>
     )
