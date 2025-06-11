@@ -4,6 +4,12 @@ import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import {Star} from "@/components/Vectors";
 import clsx from "clsx";
+import { Image } from "@heroui/image";
+import NextImage from "next/image";
+
+
+
+
 
 
 type TeacherBoxPropsType = {
@@ -11,6 +17,7 @@ type TeacherBoxPropsType = {
     educational: string;
     jobPosition: string;
     x: string;
+    imageUrl?: string;
 }
 
 
@@ -20,15 +27,30 @@ const {
     educational,
     jobPosition,
     masterName,
-    x
+    x,
+    imageUrl
 } = props;
 return(
     <div
-            className={clsx("relative group/box rounded-3xl overflow-hidden shrink-0 h-100 border-2 border-primary/25 hover:border-primary")}
+            className={clsx("relative group/box rounded-3xl overflow-hidden shrink-0 h-120 border-2 border-primary/25 hover:border-primary")}
         >
+            <Image
+            as={NextImage}
+            alt="HeroUI hero Image"
+            src={imageUrl}
+            width={256}
+            height={256}
+            radius="none"
+            className="!w-full !h-auto object-cover inset-0 absolute grayscale group-hover/box:grayscale-0 transition-all duration-500 z-0"
+            classNames={{wrapper: "!max-w-none"}}
+            />
+
+
             <Card
-        className="relative justify-center h-full text-[] bg-gradient-to-t from-foreground to-white p-2" radius="lg" shadow="none"
+        className="relative z-10 justify-center h-full bg-gradient-to-t from-foreground to-white/10 p-2" radius="lg" shadow="none"
     >
+
+    <div className="relative z-10 h-full flex flex-col justify-between">
       <CardHeader>
         <div className="flex w-full justify-end">
             <Button
@@ -81,6 +103,7 @@ return(
             </Button>
         </div>
       </CardFooter>  
+      </div>
     </Card>
 </div>
     

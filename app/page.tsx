@@ -73,12 +73,13 @@ export default function Home() {
               image="/gifani.png"
             /> */}
 
-            
+
             <TeacherBox
             masterName="امـــــیررضا گـــــیفانی"
             educational="مهندس"
             jobPosition="مدیر واحد هیبریدی - کارگردان / معاونت بازاریابی"
             x="کارشناسی مدیریت آموزشی"
+            imageUrl="/gifani-rangi.png"
             />
 
         </div>
