@@ -27,7 +27,7 @@ return(
             className={clsx("relative group/box rounded-3xl overflow-hidden shrink-0 h-100 border-2 border-primary/25 hover:border-primary")}
         >
             <Card
-        className="relative justify-center h-full text-[] bg-gradient-to-t from-foreground to-white" radius="lg" shadow="none"
+        className="relative justify-center h-full text-[] bg-gradient-to-t from-foreground to-white p-2" radius="lg" shadow="none"
     >
       <CardHeader>
         <div className="flex w-full justify-end">
@@ -41,7 +41,7 @@ return(
             />
         </div>
       </CardHeader>
-      <CardBody className="">
+      <CardBody>
         <div className="flex flex-col gap-2 justify-end h-full">
             <div className="flex items-center gap-1">
                 <i className="text-primary">
