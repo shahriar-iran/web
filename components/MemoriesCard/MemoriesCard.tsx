@@ -1,6 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
+import { Card, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import {Star} from "@/components/Vectors";
