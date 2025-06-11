@@ -82,7 +82,9 @@ export default function Home() {
             imageUrl="/gifani-rangi.png"
             /> */}
             
-              <ResumeModal/>
+              <ResumeModal
+              masterName="مهندس حــسین چـــمنی"
+              />
         </div>
       </section>
     );
