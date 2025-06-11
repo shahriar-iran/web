@@ -92,7 +92,7 @@ export const TeacherCard: React.FC<TeacherCardPropsType> = (props) => {
 
                 <div className="flex items-center gap-4 text-xs mt-1">
                     <p className="flex items-center gap-1 text-white">
-                        <Icon icon="solar:calendar-line-duotone" width="18" height="18" />
+                        {variant === "wide" &&(<Icon icon="solar:calendar-line-duotone" width="18" height="18" />)}
                         {topicName}
                     </p>
 
