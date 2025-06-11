@@ -164,7 +164,7 @@ export const ResumeModal: React.FC<ResumeModalPropsType> = (props) => {
     return(
         <>
                 <Modal
-                className="w-full max-w-500 mx-auto"
+                className="w-full max-w-300 mx-auto"
                     hideCloseButton={true}
                     defaultOpen
                     backdrop="opaque"
