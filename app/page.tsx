@@ -8,6 +8,8 @@ import { TeacherBox } from "@/components/TeacherBox/TeacherBox";
 import { ResumeModal } from "@/components/ResumeModal/ResumeModal";
 import { MemoriesCard } from "@/components/MemoriesCard/MemoriesCard";
 import { X } from "@/components/X/X";
+import { Values } from "@/components/Values/Values";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 
 
@@ -91,13 +93,22 @@ export default function Home() {
               yearOfMemory="1400 - 1399"
               imageUrl="/img.png"
               />  */}
-              <X
+              {/* <X
               imageUrl="/img4.png"
               year="1401 - 1400"
               />
               <X
               imageUrl="/img4.png"
               year="1401 - 1400"
+              /> */}
+              <Values
+              variant="wide"
+              titleEn="Thinking and Speaking"
+              titleFa="انــــدیشــــــه‌ورزی و گـــــــفــتمــــان‌ســــــــازی"
+              icon={
+                <Icon icon="ant-design:message-outlined" width={28} height={28} className="text-primary"/>
+              }
+              iamgeUrl="/gifani-rangi.png"
               />
         </div>
       </section>
