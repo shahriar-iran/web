@@ -6,6 +6,7 @@ import { CusSelect } from "@/components/General/CusSelect/CusSelect";
 import { TeacherCard } from "@/components/TeacherCard/TeacherCard";
 import { TeacherBox } from "@/components/TeacherBox/TeacherBox";
 import { ResumeModal } from "@/components/ResumeModal/ResumeModal";
+import { MemoriesCard } from "@/components/MemoriesCard/MemoriesCard";
 
 
 
@@ -85,6 +86,15 @@ export default function Home() {
               {/* <ResumeModal
               masterName="مهندس حــسین چـــمنی"
               /> */}
+              <MemoriesCard
+              yearOfMemory="1400 - 1399"
+              imageUrl="/img.png"
+              /> 
+
+<MemoriesCard
+              yearOfMemory="1400 - 1399"
+              imageUrl="/img.png"
+              />
         </div>
       </section>
     );
