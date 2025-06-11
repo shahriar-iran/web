@@ -92,7 +92,11 @@ export default function Home() {
               imageUrl="/img.png"
               />  */}
               <X
-              imageUrl="/img2.png"
+              imageUrl="/img4.png"
+              year="1401 - 1400"
+              />
+              <X
+              imageUrl="/img4.png"
               year="1401 - 1400"
               />
         </div>
