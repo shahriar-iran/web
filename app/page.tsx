@@ -5,6 +5,7 @@ import { CusInput } from "@/components/General/CusInput/CusInput";
 import { CusSelect } from "@/components/General/CusSelect/CusSelect";
 import { TeacherCard } from "@/components/TeacherCard/TeacherCard";
 import { TeacherBox } from "@/components/TeacherBox/TeacherBox";
+import { ResumeModal } from "@/components/ResumeModal/ResumeModal";
 
 
 
@@ -73,15 +74,15 @@ export default function Home() {
               image="/gifani.png"
             /> */}
 
-            <TeacherBox
+            {/* <TeacherBox
             masterName="امـــــیررضا گـــــیفانی"
             educational="مهندس"
             jobPosition="مدیر واحد هیبریدی - کارگردان / معاونت بازاریابی"
             x="کارشناسی مدیریت آموزشی"
             imageUrl="/gifani-rangi.png"
-            />
+            /> */}
             
-
+              <ResumeModal/>
         </div>
       </section>
     );

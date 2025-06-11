@@ -32,7 +32,7 @@ const {
 } = props;
 return(
     <div
-            className={clsx("relative group/box rounded-3xl overflow-hidden shrink-0 h-120 border-2 border-primary/25 hover:border-primary")}
+            className={clsx("relative group/box rounded-3xl overflow-hidden shrink-0 h-120 border-2 border-primary/25 hover:border-primary transition-all duration-500")}
         >
             <Image
             as={NextImage}
