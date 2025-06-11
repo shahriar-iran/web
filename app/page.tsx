@@ -10,6 +10,7 @@ import { MemoriesCard } from "@/components/MemoriesCard/MemoriesCard";
 import { X } from "@/components/X/X";
 import { Values } from "@/components/Values/Values";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Benefits } from "@/components/Benefits/Benefits";
 
 
 
@@ -119,6 +120,14 @@ export default function Home() {
               }
               iamgeUrl="/gifani-rangi.png"
               /> */}
+              <Benefits
+              icon={
+            <Icon icon="solar:arrow-right-line-duotone" width="20" height="20"/>
+
+              }
+              titleEn="Intimate environment"
+              titleFa="محیط کاری پویا و صمیمی"
+              />
         </div>
       </section>
     );
