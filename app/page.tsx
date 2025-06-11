@@ -101,7 +101,7 @@ export default function Home() {
               imageUrl="/img4.png"
               year="1401 - 1400"
               /> */}
-              <Values
+              {/* <Values
               variant="wide"
               titleEn="Thinking and Speaking"
               titleFa="انــــدیشــــــه‌ورزی و گـــــــفــتمــــان‌ســــــــازی"
@@ -110,6 +110,15 @@ export default function Home() {
               }
               iamgeUrl="/gifani-rangi.png"
               />
+              <Values
+              variant="square"
+              titleEn="Thinking and Speaking"
+              titleFa="انــــدیشــــــه‌ورزی و گـــــــفــتمــــان‌ســــــــازی"
+              icon={
+                <Icon icon="ant-design:message-outlined" width={28} height={28} className="text-primary"/>
+              }
+              iamgeUrl="/gifani-rangi.png"
+              /> */}
         </div>
       </section>
     );
