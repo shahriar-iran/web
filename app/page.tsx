@@ -14,7 +14,7 @@ import NextImage from "next/image"
 
 
 
-export default function Home() {
+export default function Page() {
     return (
       <section className=" flex flex-col gap-6 md:gap-12">
         <div className="relative flex flex-col select-none">
@@ -56,29 +56,29 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-5 gap-8 items-end w-full max-w-7xl px-2 2xl:px-0 mx-auto xl:py-12">
-          <div className="col-span-full lg:col-span-2">
+        <div className="flex flex-row flex-wrap gap-8 items-end justify-center w-full max-w-7xl px-2 2xl:px-0 mx-auto xl:py-12">
+          <div className="max-w-[400px] min-w-[200px]">
             <AboutCard
               title="دبــــــیرستان هــــیبریدی و غــــیردولتی شــــهریار ایــــــران"
               footerItems={[
-                {
-                  icon: (
-                    <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                  ),
-                  title: "سـال‌ تـاسیس:",
-                  value: "02 اردیبهشت 1395"
-                },
-                {
-                  icon: (
-                      <Icon icon="solar:code-scan-bold-duotone" width="20" height="20" />
-                  ),
-                  title: "تــعداد شـعب:",
-                  value: "3 شـــعبــــه"
-                },
+                  {
+                    icon: (
+                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
+                    ),
+                    title: "سـال‌ تـاسیس:",
+                    value: "02 اردیبهشت 1395"
+                  },
+                  {
+                    icon: (
+                        <Icon icon="solar:code-scan-bold-duotone" width="20" height="20" />
+                    ),
+                    title: "تــعداد شـعب:",
+                    value: "3 شـــعبــــه"
+                  },
               ]}
             />
           </div>
-          <div className="flex flex-col mb-12 gap-4 md:gap-12 col-span-full lg:col-span-3">
+          <div className="flex flex-col mb-12 gap-4 md:gap-12 flex-1">
             <PageTitle
               variant="side"
               title="دربــــــــارۀ مـــــــــا"
