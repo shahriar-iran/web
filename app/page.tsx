@@ -4,13 +4,11 @@ import { ArticleCard } from "@/components/ArticleCard/ArticleCard";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
-import { PlanCard } from "@/components/PlanCard/PlanCard";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Image } from "@heroui/image";
 import NextImage from "next/image"
-
 
 
 
