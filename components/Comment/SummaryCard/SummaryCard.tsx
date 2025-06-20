@@ -4,7 +4,7 @@ import clsx from "clsx";
 import {Star} from "@/components/Vectors";
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 
-type SummaryCardType = {
+type CommentSummaryCardPropsType = {
     name: string | React.ReactNode;
     avatarUrl?: string;
     degree: string;
@@ -18,7 +18,7 @@ type SummaryCardType = {
 
 
 
-export const SummaryCard: React.FC<SummaryCardType> = ({
+export const CommentSummaryCard: React.FC<CommentSummaryCardPropsType> = ({
     name,
     avatarUrl,
     date,

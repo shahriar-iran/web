@@ -15,7 +15,6 @@ import {Star} from "@/components/Vectors";
 import { Card , CardBody , CardFooter, CardHeader } from "@heroui/card";
 import { Image } from "@heroui/image";
 import NextImage from "next/image";
-import { div } from "framer-motion/client";
 
 
 

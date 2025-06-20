@@ -7,12 +7,10 @@ import { TeacherCard } from "@/components/TeacherCard/TeacherCard";
 import { TeacherBox } from "@/components/TeacherBox/TeacherBox";
 import { ResumeModal } from "@/components/ResumeModal/ResumeModal";
 import { MemoriesCard } from "@/components/MemoriesCard/MemoriesCard";
-import { X } from "@/components/X/X";
+import { SummaryCard } from "@/components/SummaryCard/SummaryCard";
 import { Values } from "@/components/Values/Values";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Benefits } from "@/components/Benefits/Benefits";
-
-
+import { Benefits } from "@/components/Benefits/Benefits"
 
 
 export default function Home() {
@@ -42,16 +40,19 @@ export default function Home() {
 
     return (
       <section className="pt-[72px] pb-96 md:pt-[104px]">
-        <div className="text-justiify pt-20 flex flex-col gap-40 items-center">
             {/* <Detail
               avatarUrl="https://i.pravatar.cc/150?img=32"
               teller="دکتر احمدی"
               releaseDate="۱۴۰۴/۰۳/۱۲"
               duration="۷ دقیقه"
               category="یادگیری معکوس"
-            />
-            
-            <CommentCard
+            /> */}
+                
+
+
+
+
+            {/* <CommentCard
                 userName="مـــحمدرضا سلطانـــــــی"
                 degree="دانش‌آموز هفتم مدرسۀ شهریار "
                 comment="این مدرسه جزو بهترین مدارس ایران هست، از وقتی ایـنجا ثبت‌نام کـردم عــملکردم خیلی بـهتر شده
@@ -59,17 +60,24 @@ export default function Home() {
 داره واسمون، راستی اردو هم اینجا زیاد داریم."
                 rating={4.8}
                 date="1404/03/15"
-                avatarUrl="https://i.pravatar.cc/100?img=32"
-            />
-            <CusInput control={control} name="name" label="نام و نام خانوادگی خود را وارد کنید" />
+                avatarUrl="https://i.pravatar.cc/100?img=30"
+            /> */}
+
+
+
+            {/* <CusInput control={control} name="name" label="نام و نام خانوادگی خود را وارد کنید" /> */}
             
-            <CusSelect
+            
+            
+            {/* <CusSelect
               name="consultationType"
               control={control}
               className="w-full p-20"
             /> */}
             
 
+            
+            
             {/* <TeacherCard
               variant="square"
               masterName="استاد احمدی"
@@ -79,6 +87,10 @@ export default function Home() {
               image="/gifani.png"
             /> */}
 
+  
+  
+  
+  
             {/* <TeacherBox
             masterName="امـــــیررضا گـــــیفانی"
             educational="مهندس"
@@ -87,13 +99,23 @@ export default function Home() {
             imageUrl="/gifani-rangi.png"
             /> */}
             
-              {/* <ResumeModal
+  
+  
+  
+  
+          {/* <ResumeModal
               masterName="مهندس حــسین چـــمنی"
-              /> */}
-              {/* <MemoriesCard
+              />
+              <MemoriesCard
               yearOfMemory="1400 - 1399"
               imageUrl="/img.png"
-              />  */}
+            />  */}
+              
+              
+              
+              
+              
+              
               {/* <X
               imageUrl="/img4.png"
               year="1401 - 1400"
@@ -102,6 +124,12 @@ export default function Home() {
               imageUrl="/img4.png"
               year="1401 - 1400"
               /> */}
+
+
+
+
+
+
               {/* <Values
               variant="wide"
               titleEn="Thinking and Speaking"
@@ -120,15 +148,28 @@ export default function Home() {
               }
               iamgeUrl="/gifani-rangi.png"
               /> */}
-              <Benefits
+
+
+
+
+
+
+
+
+
+
+
+            {/* <Benefits
               icon={
             <Icon icon="solar:arrow-right-line-duotone" width="20" height="20"/>
 
               }
               titleEn="Intimate environment"
               titleFa="محیط کاری پویا و صمیمی"
-              />
-        </div>
+              /> */}
+
+
+
       </section>
     );
 }

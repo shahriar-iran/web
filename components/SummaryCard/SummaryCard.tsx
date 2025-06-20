@@ -11,14 +11,14 @@ import NextImage from "next/image";
 
 
 
-type XPropsType = {
+type SummaryCardPropsType = {
     year: string;
     imageUrl: string;
 }
 
 
 
-export const X: React.FC<XPropsType> = (props) => {
+export const SummaryCard: React.FC<SummaryCardPropsType> = (props) => {
     const {
         imageUrl,
         year,

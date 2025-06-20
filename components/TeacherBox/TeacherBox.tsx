@@ -13,10 +13,10 @@ import NextImage from "next/image";
 
 
 type TeacherBoxPropsType = {
-    masterName: string;
-    educational: string;
-    jobPosition: string;
-    x: string;
+    fullName: string;
+    prefix: string;
+    role: string;
+    education: string;
     imageUrl?: string;
 }
 
@@ -24,10 +24,10 @@ type TeacherBoxPropsType = {
 
 export const TeacherBox: React.FC<TeacherBoxPropsType> = (props) => {
 const {
-    educational,
-    jobPosition,
-    masterName,
-    x,
+    education,
+    fullName,
+    prefix,
+    role,
     imageUrl
 } = props;
 return(
@@ -70,15 +70,15 @@ return(
                     <Star size={24}/>
                 </i>
                 <span className="text-xl text-white">
-                {educational}
+                {prefix}
                 </span>
             </div>
             <div className="flex flex-col gap-5">
                 <span className="text-large text-white flex justify-start">
-                    {masterName}
+                    {fullName}
                 </span>
                 <span className="text-white/60">
-                    {jobPosition}
+                    {role}
                 </span>
             </div>
         </div>
@@ -98,7 +98,7 @@ return(
             }
             >
                 <span className="text-sm text-white">
-                    {x}
+                    {education}
                 </span>
             </Button>
         </div>
