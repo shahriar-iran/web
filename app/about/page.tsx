@@ -1,6 +1,15 @@
 import { AboutUs } from "@/components/AboutUs/AboutUs";
 import { MapCard } from "@/components/MapCard/MapCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { Icon } from "@iconify/react";
+import { AboutCard } from "@/components/AboutCard/AboutCard";
+import { Button } from "@heroui/button";
+import { Chip } from "@heroui/chip";
+import { Input } from "@heroui/input";
+import { Select } from "@heroui/select";
+import { InternalPhoneItem } from "@/components/InternalPhoneItem/InternalPhoneItem";
+
+
 
 export default function Page() {
     return (
@@ -48,6 +57,8 @@ export default function Page() {
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
           posts
         </div>
+
+        {/* PhoneNumbers */}
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
           <div className="flex justify-between items-center">
             <PageTitle
@@ -58,22 +69,114 @@ export default function Page() {
           </div>
         </div>
         <div className="w-full bg-primary-50 py-4">
-          <div className="flex justify-between items-center w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-            slides
-          </div>
-        </div>
-        <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-          <div className="flex justify-between items-center">
-            <PageTitle
-              variant="side"
-              title="مشاوره رایگان"
-              description="برای دریافت مشاوره رایگان لطفا ایمیل یا شماره تلفن خود را برای ما بنویسید."
+          <div className="flex justify-start flex-wrap gap-3 items-center w-full max-w-7xl px-2 2xl:px-0 mx-auto">
+          <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
+            />
+            <InternalPhoneItem
+              title="کارگردان ساماندهی"
+              code="عدد 1"
             />
           </div>
         </div>
+
+        {/* Moshavereh */}
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-          posts
+          <div className="grid grid-cols-6 gap-6 justify-center items-end">
+            <div className="col-span-2">
+              <AboutCard
+                title="تلفن‌های تماس برای مشاورۀ دبــــــیرستان شــــهریار ایــــــران"
+                footerItems={[
+                  {
+                    icon: (
+                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
+                    ),
+                    title: "تلفن اول:",
+                    value: "051-38662080"
+                  },
+                  {
+                    icon: (
+                      <Icon icon="solar:code-scan-bold-duotone" width="20" height="20" />
+                    ),
+                    title: "تلفن دوم:",
+                    value: "051-35026311"
+                  },
+                ]}
+              />
+            </div>
+            <div className="col-span-4">
+              <div className="flex flex-col gap-3 items-start justify-start">
+                <PageTitle
+                  variant="side"
+                  title="مشاوره رایگان"
+                  description="برای دریافت مشاوره رایگان لطفا ایمیل یا شماره تلفن خود را برای ما بنویسید."
+                />
+                <div className="grid grid-cols-2 gap-3 w-full">
+                  <Input className="col-span-full" size="lg"/>
+                  <Input size="lg"/>
+                  <Input size="lg"/>
+                </div>
+                <div className="flex w-full flex-row items-center justify-between">
+                  <Button
+                    variant="shadow"
+                    color="primary"
+                    size="lg"
+                    endContent={(
+                      <Icon icon="solar:arrow-left-down-line-duotone" width="20" height="20" />
+                    )}
+                    className="h-14 rounded-3xl"
+                  >
+                    درخواست مشاوره
+                  </Button>
+                  <Chip
+                    startContent={(
+                      <i className="bg-secondary flex items-center justify-center rounded-xl aspect-square h-10 w-10">
+                        <Icon icon="" width="24" height="24" />
+                      </i>
+                    )}
+                    className="h-14 rounded-3xl ps-2 pe-4 bg-default-100"
+                  >
+                    <div className="flex items-center gap-5 font-medium text-xs">
+                      <span>
+                        زمان پاسخگویی شنبه تا چهارشنبه
+                      </span>
+                      <span>
+                        از ساعت 09:00 تا 14:00
+                      </span>
+                    </div>
+                  </Chip>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
 
         {/* Location */}
         <div className="relative w-full max-w-7xl px-2 2xl:px-0 mx-auto">
@@ -112,9 +215,11 @@ export default function Page() {
             <MapCard
               title="شــــعبۀ وکــــیل‌آبــــاد"
               address="وکـیل‌آبــــاد 63 ( آزادگان )، پلاک 24 "
-              phone="+98 513 50 26 311"/>
+              phone="+98 513 50 26 311"
+            />
           </div>
         </div>
+
         <div/>
       </section>
     )
