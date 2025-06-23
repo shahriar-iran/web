@@ -3,11 +3,9 @@ import { MapCard } from "@/components/MapCard/MapCard";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { Icon } from "@iconify/react";
 import { AboutCard } from "@/components/AboutCard/AboutCard";
-import { Button } from "@heroui/button";
-import { Chip } from "@heroui/chip";
-import { Input } from "@heroui/input";
-import { Select } from "@heroui/select";
 import { InternalPhoneItem } from "@/components/InternalPhoneItem/InternalPhoneItem";
+import { CusTab } from "@/components/CusTab/CusTab";
+import { CounselingForm } from "@/components/Forms/CounselingForm";
 
 
 
@@ -31,6 +29,9 @@ export default function Page() {
             slides
           </div>
         </div>
+
+
+
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
           <div className="flex justify-between items-center">
             <PageTitle
@@ -45,6 +46,9 @@ export default function Page() {
             slides
           </div>
         </div>
+
+
+        {/* Expriences */}
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
           <div className="flex justify-between items-center">
             <PageTitle
@@ -65,6 +69,19 @@ export default function Page() {
               variant="side"
               title="شـماره تــلفن‌های داخــلی دبـــیرستان"
               description="لــورم اپیسوم متن ســاختگی بــا..."
+            />
+            <CusTab
+              items={[
+                {
+                  key: " middle",
+                  title: "دورۀ اولـــــــــــ"
+                },
+                {
+                  key: "high",
+                  title: "دورۀ دومــــــــ"
+                },
+              ]} 
+              theme="primary"
             />
           </div>
         </div>
@@ -136,41 +153,7 @@ export default function Page() {
                   title="مشاوره رایگان"
                   description="برای دریافت مشاوره رایگان لطفا ایمیل یا شماره تلفن خود را برای ما بنویسید."
                 />
-                <div className="grid grid-cols-2 gap-3 w-full">
-                  <Input className="col-span-full" size="lg"/>
-                  <Input size="lg"/>
-                  <Input size="lg"/>
-                </div>
-                <div className="flex w-full flex-row items-center justify-between">
-                  <Button
-                    variant="shadow"
-                    color="primary"
-                    size="lg"
-                    endContent={(
-                      <Icon icon="solar:arrow-left-down-line-duotone" width="20" height="20" />
-                    )}
-                    className="h-14 rounded-3xl"
-                  >
-                    درخواست مشاوره
-                  </Button>
-                  <Chip
-                    startContent={(
-                      <i className="bg-secondary flex items-center justify-center rounded-xl aspect-square h-10 w-10">
-                        <Icon icon="" width="24" height="24" />
-                      </i>
-                    )}
-                    className="h-14 rounded-3xl ps-2 pe-4 bg-default-100"
-                  >
-                    <div className="flex items-center gap-5 font-medium text-xs">
-                      <span>
-                        زمان پاسخگویی شنبه تا چهارشنبه
-                      </span>
-                      <span>
-                        از ساعت 09:00 تا 14:00
-                      </span>
-                    </div>
-                  </Chip>
-                </div>
+                {/* <CounselingForm/> */}
               </div>
             </div>
           </div>
