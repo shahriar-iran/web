@@ -1,50 +1,52 @@
-"use client";
 import * as React from "react";
-import { useState } from "react";
 import { Icon } from '@iconify/react';
+import {Star} from "@/components/Vectors";
+import Link from "next/link";
 
 
 type RelatedArticlePropsType = {
     label: string | React.ReactNode;
     date: string | Date;
     duration: string;
+    href?: string;
 };
 
-export const RelatedArticle: React.FC<RelatedArticlePropsType> = ({
-    label,
-    date,
-    duration,
-}) => {
-    const [isSelected, setIsSelected] = useState(false);
+export const RelatedArticle: React.FC<RelatedArticlePropsType> = (props) => {
 
-    const handleClick = () => {
-        setIsSelected(!isSelected);
-    };
+    const {
+        label,
+        date,
+        duration,
+        href
+    } = props;
 
     return (
-        <div
-            onClick={handleClick}
-            className={`flex flex-col gap-2 py-3 border-b last:border-none cursor-pointer transition-colors duration-200`}
+        <Link
+            href={href || "#"}
+            className={`flex flex-col gap-4 p-6 hover:bg-foreground/20 hover:transition-all duration-400`}
         >
             <div
-                className={`text-sm font-semibold`}
+                className={`text-sm font-semibold flex items-center truncate gap-2`}
             >
-                {label}
+                <i className="text-primary flex">
+                    <Star size={20}/>
+                </i>
+            {label}
             </div>
-            <div className="flex items-center gap-4 text-xs text-gray-500">
-                <div className="flex items-center gap-1">
-                <Icon icon="material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+            <div className="flex items-center gap-6 text-xs text-foreground">
+                <div className="flex items-center gap-2">
+                <Icon icon="fluent:calendar-date-20-regular" width="24" height="24" />
                     <span className="text-foreground">
                         {typeof date === "string"
                             ? date
                             : date.toLocaleDateString("fa-IR")}
                     </span>
                 </div>
-                <div className="flex items-center gap-1">
-                <Icon icon="fluent:material-symbols-light/alarm-outline-rounded" width="24" height="24" />
+                <div className="flex items-center gap-2">
+                <Icon icon="fluent:clock-alarm-32-regular" width="24" height="24" />
                     <span className="text-foreground">{duration} دقیقه مطالعه</span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
