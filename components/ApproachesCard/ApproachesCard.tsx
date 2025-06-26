@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 type ApproachesCardPropsType = {
     title: string;
@@ -8,7 +9,8 @@ type ApproachesCardPropsType = {
     description?: string;
     icon: React.ReactNode;
     className?: string;
-    variant?: "wide" | "square";
+    isHovered?: boolean;
+    setHovered?: () => void;
 }
 
 
@@ -22,24 +24,42 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
         description,
         icon,
         className,
-        variant = "square",
+        isHovered,
+        setHovered,
     } = props;
 
+    const variants = {
+        default: {
+            width: "17rem",
+        },
+        hovered: {
+            width: "26rem",
+        },
+    };
+
+
+    const variant = isHovered ? "wide" : "square"
 
     return (
-        <div 
-            style={{
-                clipPath: 
-                variant === "square" 
-                ? 'path("M288 163.362C288 167.121 285.068 170.227 282.528 172.998C280.616 175.083 279.435 177.95 279.435 181.114C279.435 184.278 280.615 187.145 282.528 189.23C285.068 192 288 195.106 288 198.865V272C288 280.837 280.837 288 272 288H16C7.16345 288 0 280.837 0 272V198.865C0 195.106 2.93188 192 5.47256 189.23C7.38441 187.145 8.56492 184.279 8.56506 181.115C8.56506 177.951 7.38449 175.084 5.47242 172.999C2.93195 170.228 0 167.122 0 163.363V24C0 10.7451 10.7452 0 24 0H264C277.255 0 288 10.7452 288 24V163.362Z")'
-                : 'path("M456 0C469.255 0 480 10.7452 480 24V163.362C480 167.121 477.068 170.227 474.527 172.998C472.615 175.083 471.435 177.95 471.435 181.114C471.435 184.278 472.615 187.145 474.527 189.229C477.068 192 480 195.105 480 198.864V272C480 280.837 472.837 288 464 288H16C7.16345 288 2.16198e-07 280.837 0 272V198.864C0.00018967 195.105 2.93206 192 5.47266 189.229C7.38441 187.145 8.56527 184.279 8.56543 181.115C8.56543 177.951 7.38459 175.084 5.47266 172.999C2.93219 170.228 0 167.122 0 163.363V24C0 10.7452 10.7452 5.15438e-07 24 0H456Z")'
-            }}
-            className={clsx("relative group/approaches rounded-3xl overflow-hidden shrink-0 h-72 text-secondary", variant === "wide" ? "w-120" : "aspect-square", className)}
+        <motion.div
+            initial={isHovered ? "hovered" : "default"}
+            animate={isHovered ? "hovered" : "default"}
+            variants={variants}
+            transition={{ duration: 0.2 }}
+            className={clsx(
+                "relative select-none group/approaches rounded-3xl overflow-hidden shrink-0 h-60 text-secondary",
+                className,
+            )}
+            onMouseEnter={setHovered}
         >
             {variant === "square" && (
-                <svg className="w-full top-0 absolute z-10" viewBox="0 0 270 68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M245.5 0.282227C258.755 0.282227 269.5 11.0274 269.5 24.2822V39.79C264.124 40.0572 258.591 37.5838 255.472 31.7256C250.986 23.3031 239.943 21.0427 232.509 27.0254L222.242 35.2881C214.55 41.4784 203.902 42.4678 195.201 37.7998C182.755 31.1222 167.255 36.2784 161.289 49.0811L159.968 51.917C150.082 73.1318 119.918 73.1318 110.032 51.917L108.711 49.0811C102.745 36.2784 87.245 31.1222 74.7988 37.7998C66.0985 42.4678 55.4497 41.4784 47.7578 35.2881L37.4912 27.0254C30.0573 21.0427 19.0136 23.3031 14.5283 31.7256C11.4087 37.5838 5.87616 40.0572 0.5 39.79V24.2822C0.500001 11.0274 11.2452 0.282227 24.5 0.282227H245.5Z"/>
-                </svg>
+                <div className="w-full h-fit top-0 absolute z-10">
+                    <div className="relative max-h-28 flex items-start justify-center">
+                        <svg className="max-h-28 shrink-0 w-[850px]" viewBox="0 0 703 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M703 0V39.7002H486V39.7139C480.807 39.7641 475.562 37.2406 472.582 31.5684C468.116 23.0658 456.977 20.7918 449.535 26.8633L439.34 35.1816C431.671 41.438 420.981 42.4357 412.287 37.707C399.896 30.9672 384.387 36.1218 378.496 48.9385L377.098 51.9814C367.282 73.3376 336.933 73.3376 327.117 51.9814L325.719 48.9385C319.828 36.1218 304.319 30.9672 291.928 37.707C283.234 42.4357 272.543 41.438 264.875 35.1816L254.68 26.8633C247.238 20.7918 236.099 23.0658 231.633 31.5684C228.42 37.6837 222.575 40.1395 217 39.6553V39.7002H0V0H703Z" fill="#22C197"/>
+                        </svg>
+                    </div>
+                </div>
             )}
             <Card className="relative justify-center h-full text-[]" radius="none" shadow="none">
                 <CardHeader className={clsx("pt-8 items-center", variant === "wide" ? "justify-between px-10" : "justify-center px-0")}>
@@ -48,7 +68,7 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                     </div>
                     {(variant === "wide") && (
                         <div dir="ltr" className="max-w-72 relative flex items-center gap-2">
-                            <svg width="32" height="32" viewBox="0 0 18 18" className="text-foreground" xmlns="http://www.w3.org/2000/svg">
+                            <svg height="16" viewBox="0 0 18 18" className="text-foreground" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.616699 9.45653C4.51122 8.77033 7.67476 5.92572 8.76941 2.12573L9.10198 0.971252L9.43455 2.12573C10.5292 5.92572 13.6927 8.77032 17.5873 9.45653C13.6927 10.1427 10.5292 12.9874 9.43455 16.7873L9.10198 17.9418L8.76941 16.7873C7.67476 12.9873 4.51122 10.1427 0.616699 9.45653Z" fill="currentColor"/>
                                 <path d="M4.85889 9.45653C6.80615 9.11343 8.38792 7.69113 8.93524 5.79113L9.10153 5.21389L9.26781 5.79113C9.81514 7.69113 11.3969 9.11343 13.3442 9.45653C11.3969 9.79964 9.81514 11.2219 9.26781 13.1219L9.10153 13.6992L8.93524 13.1219C8.38792 11.2219 6.80615 9.79964 4.85889 9.45653Z" fill="white"/>
                             </svg>
@@ -58,10 +78,10 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                 </CardHeader>
                 <CardBody className={clsx("py-4 overflow-hidden justify-center", variant === "wide" ? "items-start px-10" : "items-center px-0")}>
                     <div className={clsx("relative flex flex-col gap-3 ", variant === "wide" ? "w-full" : "min-w-48 max-w-56 items-center")}>
-                        <h5 className="relative text-xl text-center font-bold text-foreground truncate max-w-full w-fit py-1">{title}</h5>
+                        <h5 className="relative text-lg text-center font-bold text-foreground truncate max-w-full w-fit py-1">{title}</h5>
                         {variant === "square" && (
                             <svg 
-                                className="w-full"
+                                className="w-full px-4"
                                 viewBox="0 0 221 18" 
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +105,12 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
                 >
                     {variant === "square" && (
                         <div className="min-w-48 max-w-56 relative before:absolute before:top-3.5 before:w-full before:h-[calc(100%-16px)] before:bg-primary-50">
-                            <h6 dir="ltr" className="relative text-2xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
+                            <h6 dir="ltr" className="relative text-xl text-center font-medium text-primary truncate max-w-full py-1">{englishTitle}</h6>
                         </div>
                     )}
                 </CardFooter>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 

@@ -23,9 +23,10 @@
     "next": "15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-player": "^2.16.0",
     "react-hook-form": "^7.57.0",
-    "react-number-format": "^5.4.4"
+    "react-number-format": "^5.4.4",
+    "react-player": "^2.16.0",
+    "swiper": "^11.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

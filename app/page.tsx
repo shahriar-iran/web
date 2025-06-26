@@ -1,5 +1,4 @@
 import { AboutCard } from "@/components/AboutCard/AboutCard";
-import { ApproachesCard } from "@/components/ApproachesCard/ApproachesCard";
 import { ArticleCard } from "@/components/ArticleCard/ArticleCard";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
@@ -9,6 +8,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Image } from "@heroui/image";
 import NextImage from "next/image"
+import { ApproachesSection } from "@/components/Sections/ApproachesSection/ApproachesSection";
 
 
 
@@ -129,50 +129,8 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-3 items-start w-full max-w-7xl mx-auto px-3">
-          <PageTitle
-            variant="side"
-            title="رویکردهای مدرسه هیبریدی شهریار ایران"
-            description="چرا مدرسۀ شهریار را برای آینده تحصیلی فرزندانمان انتخاب کنیم...؟"
-          />
-        </div>
-        <div className="w-full bg-primary-50 py-10">
-          <div className="flex flex-row gap-3 w-full max-w-7xl mx-auto px-3">
-            <ApproachesCard
-              title="کــار تیمی و نخبه‌مــداری"
-              englishTitle="Teamwork"
-              icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
-              )}
-            />
-            <ApproachesCard
-              title="مسئولــــیت پذیـــری"
-              englishTitle="Responsibility"
-              icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
-              )}
-              className="!text-orange-500"
-            />
-            <ApproachesCard
-              title="مسئولــــیت مسئولــــیت پذیـــری"
-              englishTitle="Responsibility Responsibility"
-              icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
-              )}
-              className="!text-purple-500"
-            />
-            <ApproachesCard
-              title="مسئولــــ ــری"
-              englishTitle="Responsibility Responsibility Responsibility"
-              icon={(
-                <Icon icon="solar:calendar-bold-duotone" width="32" height="32" />
-              )}
-              variant="wide"
-               className="!text-purple-500"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-3 items-center w-full max-w-7xl mx-auto px-3">
+        <ApproachesSection/>
+        <div className="flex flex-col gap-3 items-center w-full max-w-7xl mx-auto px-2 2xl:px-0">
           <PageTitle
             variant="centered"
             title="هشت‌ وجهی تاکتیکی مدرسه هیبریدی شهریار ایران"

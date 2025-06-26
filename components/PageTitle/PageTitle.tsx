@@ -58,7 +58,7 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                 )}
             </div>
             <div className="relative w-fit">
-                <h2 className={clsx("relative z-10 text-center truncate font-semibold text-sm md:font-bold md:text-base", variant === "centered" ? "text-white px-5" : "text-gray-500", descriptionClassName)}>
+                <h2 className={clsx("relative z-10 text-center truncate font-semibold text-xs md:font-bold md:text-sm", variant === "centered" ? "text-white px-5" : "text-gray-500", descriptionClassName)}>
                     {description}
                 </h2>
                 {variant === "centered" && (

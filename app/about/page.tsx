@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import { AboutCard } from "@/components/AboutCard/AboutCard";
 import { InternalPhoneItem } from "@/components/InternalPhoneItem/InternalPhoneItem";
 import { CusTab } from "@/components/CusTab/CusTab";
-import { CounselingForm } from "@/components/Forms/CounselingForm";
 
 
 
