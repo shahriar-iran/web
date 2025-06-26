@@ -45,7 +45,7 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
             initial={isHovered ? "hovered" : "default"}
             animate={isHovered ? "hovered" : "default"}
             variants={variants}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.5 }}
             className={clsx(
                 "relative select-none group/approaches rounded-3xl overflow-hidden shrink-0 h-60 text-secondary",
                 className,
@@ -54,9 +54,9 @@ export const ApproachesCard: React.FC<ApproachesCardPropsType> = (props) => {
         >
             {variant === "square" && (
                 <div className="w-full h-fit top-0 absolute z-10">
-                    <div className="relative max-h-28 flex items-start justify-center">
-                        <svg className="max-h-28 shrink-0 w-[850px]" viewBox="0 0 703 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M703 0V39.7002H486V39.7139C480.807 39.7641 475.562 37.2406 472.582 31.5684C468.116 23.0658 456.977 20.7918 449.535 26.8633L439.34 35.1816C431.671 41.438 420.981 42.4357 412.287 37.707C399.896 30.9672 384.387 36.1218 378.496 48.9385L377.098 51.9814C367.282 73.3376 336.933 73.3376 327.117 51.9814L325.719 48.9385C319.828 36.1218 304.319 30.9672 291.928 37.707C283.234 42.4357 272.543 41.438 264.875 35.1816L254.68 26.8633C247.238 20.7918 236.099 23.0658 231.633 31.5684C228.42 37.6837 222.575 40.1395 217 39.6553V39.7002H0V0H703Z" fill="#22C197"/>
+                    <div className="relative max-h-28 flex items-start justify-center text-secondary">
+                        <svg className="max-h-28 shrink-0 w-[850px]" viewBox="0 0 703 68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M703 0V39.7002H486V39.7139C480.807 39.7641 475.562 37.2406 472.582 31.5684C468.116 23.0658 456.977 20.7918 449.535 26.8633L439.34 35.1816C431.671 41.438 420.981 42.4357 412.287 37.707C399.896 30.9672 384.387 36.1218 378.496 48.9385L377.098 51.9814C367.282 73.3376 336.933 73.3376 327.117 51.9814L325.719 48.9385C319.828 36.1218 304.319 30.9672 291.928 37.707C283.234 42.4357 272.543 41.438 264.875 35.1816L254.68 26.8633C247.238 20.7918 236.099 23.0658 231.633 31.5684C228.42 37.6837 222.575 40.1395 217 39.6553V39.7002H0V0H703Z" />
                         </svg>
                     </div>
                 </div>

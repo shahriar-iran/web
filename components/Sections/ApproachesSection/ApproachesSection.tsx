@@ -65,6 +65,37 @@ export const ApproachesSection: React.FC<ApproachesSectionPropsType> = (props) =
 
     const swiperRef = React.useRef<SwiperCore | null>(null);
     const [activeIndex, setActiveIndex] = React.useState(0);
+    // const [visibleSlidesCount, setVisibleSlidesCount] = React.useState(1);
+    // const [totalVisibleSlides, setTotalVisibleSlides] = React.useState(0);
+  
+    // React.useEffect(() => {
+    //   const updateVisibleSlides = () => {
+    //     if (swiperRef.current) {
+    //       const swiper = swiperRef.current;
+    //       // const swiperWidth = swiper.width
+    //       // const slideWidth = swiper.slides[0]?.offsetWidth
+
+
+
+    //       // const rr = swiperWidth / slideWidth
+
+
+    //       // // const visibleCount = Math.ceil(swiper.width / swiper.slides[0]?.offsetWidth);
+    //       // // setVisibleSlidesCount(visibleCount);
+    //       // // const totalGroups = Math.ceil(approachesList.length / visibleCount);
+    //       // // setTotalVisibleSlides(totalGroups);
+    //     }
+    //   };
+  
+    //   updateVisibleSlides();
+    //   window.addEventListener('resize', updateVisibleSlides);
+      
+    //   return () => {
+    //     window.removeEventListener('resize', updateVisibleSlides);
+    //   };
+    // }, []);
+
+
 
     const handleNext = () => {
       if (swiperRef.current) {

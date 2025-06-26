@@ -33,7 +33,7 @@ export const FeatureCard: React.FC<FeatureCardPropsType> = (props) => {
             // style={{
             //     clipPath: 'path("M288 163.362C288 167.121 285.068 170.227 282.528 172.998C280.616 175.083 279.435 177.95 279.435 181.114C279.435 184.278 280.615 187.145 282.528 189.23C285.068 192 288 195.106 288 198.865V272C288 280.837 280.837 288 272 288H16C7.16345 288 0 280.837 0 272V198.865C0 195.106 2.93188 192 5.47256 189.23C7.38441 187.145 8.56492 184.279 8.56506 181.115C8.56506 177.951 7.38449 175.084 5.47242 172.999C2.93195 170.228 0 167.122 0 163.363V24C0 10.7451 10.7452 0 24 0H264C277.255 0 288 10.7452 288 24V163.362Z")'
             // }}
-            className={clsx("relative border-2 border-primary-100 hover:border-foreground transition duration-500 rounded-3xl overflow-hidden group/feature shrink-0 w-full", className)}
+            className={clsx("relative select-none border-2 border-primary-100 hover:border-foreground transition duration-500 rounded-3xl overflow-hidden group/feature shrink-0 w-full", className)}
         >
             
             <Card className="relative transition duration-500 bg-white group-hover/feature:bg-foreground justify-center h-full text-[]" fullWidth radius="none" shadow="none">

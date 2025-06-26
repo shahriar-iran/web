@@ -8,7 +8,9 @@ import clsx from "clsx";
 type SliderThumbsPropsType = {
   count: number,
   active?: number;
-  handleNext: () => void;
+  hideNumbers?: boolean;
+  hideNextBtn?: boolean;
+  handleNext?: () => void;
 }
 
 
@@ -17,6 +19,8 @@ export const SliderThumbs: React.FC<SliderThumbsPropsType> = (props) => {
     const {
         count,
         active = 0,
+        hideNumbers = false,
+        hideNextBtn = false,
         handleNext,
     } = props;
 
@@ -25,12 +29,14 @@ export const SliderThumbs: React.FC<SliderThumbsPropsType> = (props) => {
 
 
     return (
-      <div className="flex items-center gap-4 select-none">
-        <div className="flex items-center gap-0.75 font-bold text-xl text-foreground">
-          <span className="opacity-40 text-sm">{count}</span>
-          <span className="opacity-40 text-sm">/</span>
-          <span className="">{current}</span>
-        </div>
+      <div className="items-center gap-4 select-none hidden md:flex">
+        {!hideNumbers && (
+          <div className="flex items-center gap-0.75 font-bold text-xl text-foreground">
+            <span className="opacity-40 text-sm">{count}</span>
+            <span className="opacity-40 text-sm">/</span>
+            <span className="">{current}</span>
+          </div>
+        )}
         <div
           style={{"--px": `${px * 34}px`} as React.CSSProperties}
           className={clsx(
@@ -45,16 +51,18 @@ export const SliderThumbs: React.FC<SliderThumbsPropsType> = (props) => {
             />
           ))}
         </div>
-        <Button
+        {!hideNextBtn && (
+          <Button
             color="primary"
             variant="bordered"
-            size="lg"
+            size="md"
             isIconOnly
-            className="h-14 w-14 rounded-3xl"
+            className="w-10 h-10 rounded-2xl lg:h-14 lg:w-14 lg:rounded-3xl"
             onPress={handleNext}
-        >
-          <Icon icon="solar:arrow-left-line-duotone" width="20" height="20" />
-        </Button>
+          >
+            <Icon icon="solar:arrow-left-line-duotone" width="20" height="20" />
+          </Button>
+        )}
       </div>
     )
 }
