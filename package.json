@@ -20,6 +20,8 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.14.0",
     "iconify": "^1.4.0",
+    "jalali-moment": "^3.3.11",
+    "moment": "^2.30.1",
     "next": "15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

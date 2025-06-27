@@ -136,16 +136,6 @@ export default function Page() {
         <FeaturesSection/>
         <CommentSection/>
         <IntroVideoSection/>
-        <div className="flex flex-col gap-3 items-center w-full">
-          <div className="w-full max-w-7xl mx-auto px-3">
-            <PageTitle
-              variant="side"
-              title="جواب تمام سوالاتت اینجاست"
-              description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
-            />
-          </div>
-          <CusAccordion/>
-        </div>
         <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto px-3">
           <PageTitle
             variant="side"
@@ -259,6 +249,16 @@ export default function Page() {
               />
             </div>
           </div>
+        </div>
+        <div className="flex flex-col gap-3 items-center w-full">
+          <div className="w-full max-w-7xl mx-auto px-3">
+            <PageTitle
+              variant="side"
+              title="جواب تمام سوالاتت اینجاست"
+              description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
+            />
+          </div>
+          <CusAccordion/>
         </div>
         <div/>
       </section>

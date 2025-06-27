@@ -62,7 +62,7 @@ export const ArticleCard: React.FC<ArticleCardPropsType> = (props) => {
                                 <path d="M6.62598 1.04785C7.41214 3.77677 9.68364 5.8197 12.4805 6.3125C9.68364 6.8053 7.41214 8.84823 6.62598 11.5771L6.38672 12.4062L6.14746 11.5771C5.3613 8.84823 3.0898 6.8053 0.292969 6.3125C3.0898 5.8197 5.3613 3.77677 6.14746 1.04785L6.38672 0.21875L6.62598 1.04785ZM6.29004 4.06641C5.95472 5.23045 4.98597 6.10229 3.79297 6.3125C4.98597 6.52271 5.95472 7.39455 6.29004 8.55859L6.39258 8.91211L6.49414 8.55859C6.82943 7.39465 7.79835 6.5228 8.99121 6.3125C7.79835 6.1022 6.82943 5.23035 6.49414 4.06641L6.39258 3.71289L6.29004 4.06641Z" fill="currentColor"/>
                             </svg>
                         </i>
-                        <h6 className="text-sm text-justify font-bold w-full leading-6 text-clamp-2 max-w-full">{title}</h6>
+                        <h6 className="text-sm text-justify font-semibold w-full leading-6 text-clamp-2 max-w-full">{title}</h6>
                     </div>
                     {footerItems && footerItems?.length > 0 && (
                         <hr className="border-1 border-dashed w-full opacity-20"/>
@@ -75,7 +75,7 @@ export const ArticleCard: React.FC<ArticleCardPropsType> = (props) => {
                                         <div className="flex justify-center items-center">
                                             {item.icon}
                                         </div>
-                                        <span className="text-xs font-bold">{item.value}</span>
+                                        <span className="text-xs font-semibold">{item.value}</span>
                                     </div>
                                 )}
                             )}
