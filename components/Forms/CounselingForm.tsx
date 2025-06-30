@@ -12,17 +12,17 @@ type CounselingFormPropsType = {
 
 export const CounselingForm: React.FC<CounselingFormPropsType> = (props) => {
 
-    const {
-        control,
-        watch,
-    } = useForm()
+    // const {
+    //     control,
+    //     watch,
+    // } = useForm()
 
     return (
         <div className="flex flex-col gap-3 w-full">
             <form
                 className="grid grid-cols-2 gap-3 w-full"
             >
-                <CusSelect 
+{/*                 <CusSelect 
                     name={undefined}
                     control={undefined}
                 />
@@ -33,7 +33,7 @@ export const CounselingForm: React.FC<CounselingFormPropsType> = (props) => {
                 <CusInput
                     name={undefined}
                     control={undefined}
-                />
+                /> */}
             </form>
             <div className="flex w-full flex-row items-center justify-between">
                 <Button
