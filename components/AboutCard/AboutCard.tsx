@@ -6,6 +6,7 @@ import { ScrollShadow } from "@heroui/scroll-shadow";
 
 type AboutCardPropsType = {
     title: string;
+    imageUrl: string;
     footerItems?: {
         icon: React.ReactNode;
         title: string;
@@ -20,6 +21,7 @@ export const AboutCard: React.FC<AboutCardPropsType> = (props) => {
 
     const {
         title,
+        imageUrl,
         footerItems,
     } = props;
 
@@ -29,7 +31,7 @@ export const AboutCard: React.FC<AboutCardPropsType> = (props) => {
                 <CardBody className="p-2 pb-0 select-none">
                     <Image
                         as={NextImage}
-                        src="/static/assets/images/school-card.png" 
+                        src={imageUrl}
                         alt={title}
                         title={title}
                         width={256}
