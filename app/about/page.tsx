@@ -142,8 +142,7 @@ export default function Page() {
                     title: "تلفن دوم:",
                     value: "051-35026311"
                   },
-                ]}
-              />
+                ]} imageUrl={""}              />
             </div>
             <div className="col-span-4">
               <div className="flex flex-col gap-3 items-start justify-start">
