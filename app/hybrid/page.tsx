@@ -1,7 +1,10 @@
 import { CusTab } from "@/components/CusTab/CusTab";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "مدرسه هیبریدی"
+}
 
 export default function Page() {
     return (

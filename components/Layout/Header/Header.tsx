@@ -8,6 +8,7 @@ import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import clsx from "clsx";
 import { MenuItemProps } from "./Menu/MenuItem/MenuItem";
 import { Icon } from '@iconify/react';
+import Link from "next/link";
 
 
 
@@ -45,8 +46,8 @@ export const Header = (props : HeaderProps) => {
                         className={clsx(
                             "border-2 border-primary px-1 pe-3 text-sm gap-2 py-1 h-12 rounded-2xl hidden md:flex"
                         )}
-                        as="a"
-                        href="/"
+                        as={Link}
+                        href="/preregister/school"
                         startContent={(
                             <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
                                 <Icon icon="fluent:lightbulb-person-28-regular" width="24" height="24" />
@@ -63,7 +64,7 @@ export const Header = (props : HeaderProps) => {
                             "border-2 border-foreground bg-foreground text-sm px-1 pe-3 gap-2 py-1 h-12 rounded-2xl hidden md:flex"
                         )}
                         as="a"
-                        href="/"
+                        href="https://panel.shahriareiran.com/"
                         startContent={(
                             <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
                                 <Icon icon="fluent:person-circle-28-filled" width="24" height="24" />
