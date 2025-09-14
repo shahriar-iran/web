@@ -1,8 +1,8 @@
-import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
 import { Metadata } from "next";
+import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
 
 export const metadata: Metadata = {
-  title: "پیش ثبت نام",
+  title: "پیش ثبت نام | باشگاه المپیاد",
 };
 
 export default function Page() {
