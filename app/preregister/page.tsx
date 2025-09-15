@@ -1,4 +1,5 @@
 import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
+import { PreregisterForm } from "@/components/PreregisterForm/PreregisterForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,10 +8,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="relative flex flex-col gap-6 md:gap-12 before:absolute before:bg-primary before:rounded-b-3xl before:w-full before:h-[50dvh]">
+    <section className="relative flex flex-col gap-6 md:gap-12 before:absolute before:bg-primary before:rounded-b-3xl before:w-full before:h-[44dvh]">
       <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto mt-20 md:mt-28 lg:mt-32">
         <PreregisterCard />
       </div>
+      <div className="h-10"/>
     </section>
   );
 }

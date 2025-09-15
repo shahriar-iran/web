@@ -32,7 +32,7 @@ export const PreregisterCard: React.FC<PreregisterCardType> = (props) => {
             >
                 <PreregisterBox/>
             </CardBody>
-            <CardFooter className="pt-0 grid grid-cols-1 lg:grid-cols-2 gap-3 h-24">
+            <CardFooter className="pt-0 grid grid-cols-1 lg:grid-cols-2 gap-3 h-48 lg:h-24">
                 <PreregisterCardItem
                     link="olympiad"
                     title="ثبت‌نام در باشگاه المپیاد دبیرستان شهریار ایران"
@@ -121,9 +121,9 @@ const PreregisterCardItem = (props: PreregisterCardItemType) => {
 const PreregisterBox = () => {
 
     return (
-        <div className="relative bg-foreground rounded-t-2xl rounded-b-xl h-full grid grid-cols-1 gap-3 lg:grid-cols-2">
-            <div className="flex flex-row -space-x-3 items-center">
-                <div className="w-40 h-full flex justify-end pt-14">
+        <div className="relative bg-foreground h-64 lg:h-96 rounded-t-2xl rounded-b-xl grid grid-cols-1 gap-3 lg:grid-cols-2">
+            <div className="flex flex-row py-4 -space-x-3 items-center">
+                <div className="w-20 md:w-32 lg:w-40 h-full flex justify-end pt-0 lg:pt-14">
                     <div className="bg-primary h-16 w-16 bg-primary relative rounded-2xl">
                         <Image
                             src="/static/assets/images/graduation_cap.png"
@@ -134,7 +134,7 @@ const PreregisterBox = () => {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col gap-5 flex-1 justify-between h-52 z-10">
+                <div className="flex flex-col gap-5 flex-1 justify-between z-10">
                     <div className="flex flex-col text-2xl items-start gap-3 text-white">
                         <h1 className="font-black">
                             همراهت هستیم
@@ -157,13 +157,13 @@ const PreregisterBox = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-center h-96">
+            <div className="items-center justify-center hidden lg:flex h-full max-h-full overflow-hidden end-0">
                 <Image
                     src="/static/assets/images/preregister.png"
                     alt="پیش ثبت نام"
-                    height={512}
-                    width={512}
-                    className="!max-h-full !h-full !w-auto"
+                    height={1024}
+                    width={1024}
+                    className="!max-h-full !h-[calc(100%+80px)] !w-auto object-cover"
                 />
             </div>
         </div>

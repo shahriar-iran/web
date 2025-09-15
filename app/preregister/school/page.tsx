@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
+import { PreregisterForm } from "@/components/PreregisterForm/PreregisterForm";
 
 export const metadata: Metadata = {
   title: "پیش ثبت نام | دبیرستان هیبریدی",
@@ -10,6 +11,12 @@ export default function Page() {
     <section className="relative flex flex-col gap-6 md:gap-12 before:absolute before:bg-primary before:rounded-b-3xl before:w-full before:h-[50dvh]">
       <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto mt-20 md:mt-28 lg:mt-32">
         <PreregisterCard />
+      </div>
+      <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
+        <PreregisterForm
+          title="ثبـــــت‌نــــــام حضــــــــوری در مدرسه شـــــــــــــهریــــــار ایــــــــــــــــــران"
+          img="register-box-school.svg"
+        />
       </div>
     </section>
   );
