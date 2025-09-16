@@ -48,7 +48,7 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                         <VerticalLine size={32}/>
                     </i>
                 )}
-                <h1 className="font-bold text-base md:font-black md:text-xl text-center">
+                <h1 className={clsx("font-bold text-base md:font-black md:text-xl", variant === "centered" ? "text-center" : "text-start", )}>
                     {title}
                 </h1>
                 {variant === "centered" && (

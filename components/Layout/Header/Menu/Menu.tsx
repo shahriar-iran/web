@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import clsx from "clsx";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 
 export interface MenuProps {
@@ -53,8 +54,8 @@ export const Menu = (props : MenuProps) => {
                         className={clsx(
                             "border-1 border-primary px-1 pe-3 text-xs gap-2 py-1 h-10 rounded-xl"
                         )}
-                        as="a"
-                        href="/"
+                        as={Link}
+                        href="/preregister/school"
                         startContent={(
                             <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
                                 <Icon icon="fluent:lightbulb-person-28-regular" width="24" height="24" />
@@ -71,7 +72,7 @@ export const Menu = (props : MenuProps) => {
                             "border-1 border-foreground bg-foreground text-xs px-1 pe-3 gap-2 py-1 h-10 rounded-xl"
                         )}
                         as="a"
-                        href="/"
+                        href="https://panel.shahriareiran.com/"
                         startContent={(
                             <div className="h-full aspect-square bg-white text-primary rounded-xl flex justify-center items-center">
                                 <Icon icon="fluent:person-circle-28-filled" width="24" height="24" />

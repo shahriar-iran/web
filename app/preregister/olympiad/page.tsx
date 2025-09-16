@@ -14,6 +14,7 @@ export default function Page() {
       </div>
       <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
         <PreregisterForm
+          id="olympiad"
           title="بــــــــــــــــاشگاه الـــــــــــمپیاد شـــــــــــــهریــــــار ایــــــــــــــــــران"
           img="register-box-olympiad.svg"
         />

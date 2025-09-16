@@ -31,7 +31,7 @@ export const MenuItem = (props: MenuItemProps) => {
             className={clsx(className)}
             data-active={isActive}
         >
-            <Link href={`${id}`} className="h-12 w-fit flex items-center">
+            <Link href={`/${id}`} className="h-12 w-fit flex items-center">
                 {title}            
             </Link>
         </li>
