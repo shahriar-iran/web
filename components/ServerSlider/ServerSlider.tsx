@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SliderClient } from "./SliderClient";
+import { SwiperSlider } from "@/components/SwiperSlider/SwiperSliderDynamic";
 
 type OlympiadLeader = {
   id: number;
@@ -20,7 +20,7 @@ type OlympiadLeadersSliderProps = {
 const OlympiadLeaderCard: React.FC<{ leader: OlympiadLeader }> = ({ leader }) => {
   return (
     <div 
-      className={`relative overflow-hidden rounded-3xl p-6 h-80 flex flex-col justify-between text-white shadow-lg transition-all duration-300 ${leader.bgGradient}`}
+      className={`relative overflow-hidden rounded-3xl p-6 h-80 flex flex-col justify-between text-white transition-all duration-300 ${leader.bgGradient}`}
     >
       {/* Header with subject badge */}
       <div className="flex justify-between items-start">
@@ -71,18 +71,18 @@ export const OlympiadLeadersSlider: React.FC<OlympiadLeadersSliderProps> = (prop
   const { leaders, className = "", loop = false } = props;
 
   return (
-    <SliderClient
+    <SwiperSlider
       className={className}
       itemsPerView={3}
       itemsPerViewTablet={2}
       itemsPerViewMobile={1}
-      gap="1.5rem"
-      totalItems={leaders.length}
+      gap={24}
       loop={loop}
+      enableMousewheel={true}
     >
       {leaders.map((leader) => (
         <OlympiadLeaderCard key={leader.id} leader={leader} />
       ))}
-    </SliderClient>
+    </SwiperSlider>
   );
 };

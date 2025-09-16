@@ -192,11 +192,9 @@ export const SliderClient: React.FC<SliderClientPropsType> = (props) => {
     // جلوگیری از تکرار سریع
     if (wheelTimeoutRef.current) return;
     
-    // اگه حرکت افقی داشته باشیم (حتی کم)
-    if (Math.abs(e.deltaX) > 5) {
-      e.preventDefault();
-      
-      const threshold = 10; // حساسیت بیشتر برای تشخیص بهتر
+    // اگه حرکت افقی داشته باشیم و از عمودی بیشتر باشه
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 15) {
+      const threshold = 20; // حساسیت متوسط
       const delta = e.deltaX;
       
       if (Math.abs(delta) > threshold) {
@@ -211,10 +209,10 @@ export const SliderClient: React.FC<SliderClientPropsType> = (props) => {
         // تاخیر برای جلوگیری از scroll سریع
         wheelTimeoutRef.current = setTimeout(() => {
           wheelTimeoutRef.current = null;
-        }, 300);
+        }, 400);
       }
     }
-    // اگه فقط حرکت عمودی باشه، اسکرول عادی صفحه کار کنه
+    // اسکرول عادی صفحه کار می‌کنه (preventDefault نمی‌کنیم)
   }, [handleNext, handlePrev]);
 
   // Event listeners

@@ -3,13 +3,14 @@ import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
 import { PreregisterForm } from "@/components/PreregisterForm/PreregisterForm";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
-import { OlympiadLeadersSlider } from "@/components/ServerSlider/ServerSlider";
+import { OlympiadLeadersSection } from "@/components/OlympiadLeadersSection/OlympiadLeadersSection";
+import type { OlympiadLeader } from "@/components/Cards/OlympiadLeaderCard/OlympiadLeaderCard";
 
 export const metadata: Metadata = {
   title: "پیش ثبت نام | باشگاه المپیاد",
 };
 
-const olympiadLeaders = [
+const olympiadLeaders: OlympiadLeader[] = [
   {
     id: 1,
     name: "دکتر احمد محمدی",
@@ -121,22 +122,9 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 items-center w-full">
-        <div className="w-full max-w-7xl mx-auto px-3">
-          <PageTitle
-            variant="side"
-            title="ســــرگـــروه‌هـای بــــاشگـاه الـــــمپیـاد"
-            description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
-          />
-        </div>
-        <div className="w-full bg-primary-50 py-10">
-          <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-            <OlympiadLeadersSlider 
-              leaders={olympiadLeaders}
-            />
-          </div>
-        </div>
-      </div>
+      <OlympiadLeadersSection
+        leaders={olympiadLeaders}
+      />
       <div className="flex flex-col gap-3 items-center w-full">
         <div className="w-full max-w-7xl mx-auto px-3">
           <PageTitle

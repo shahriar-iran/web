@@ -29,7 +29,7 @@ export const SliderThumbs: React.FC<SliderThumbsPropsType> = (props) => {
 
 
     return (
-      <div className="items-center gap-4 select-none">
+      <div className="flex items-center gap-4 select-none">
         {!hideNumbers && (
           <div className="flex items-center gap-0.75 font-bold text-xl text-foreground">
             <span className="opacity-40 text-sm">{count}</span>
@@ -40,7 +40,7 @@ export const SliderThumbs: React.FC<SliderThumbsPropsType> = (props) => {
         <div
           style={{"--px": `${px * 34}px`} as React.CSSProperties}
           className={clsx(
-            "flex flex-row items-center gap-1.5 relative overflow-hidden",
+            "hidden sm:flex flex-row items-center gap-1.5 relative overflow-hidden",
             "after:w-7 after:h-0.75 after:rounded-full after:bg-foreground after:absolute after:transition-all after:duration-500 after:right-[var(--px,0)]"
           )}
         >

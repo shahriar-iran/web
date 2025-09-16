@@ -3,11 +3,6 @@ import clsx from "clsx";
 import {TextBackground, VerticalLine} from "@/components/Vectors";
 import {CometStar} from "@/components/Vectors";
 
-
-
- 
-
-
 type TitlePropsType = {
     title: string;
     description: string;
@@ -22,7 +17,6 @@ type TitlePropsType = {
 
 export const PageTitle: React.FC<TitlePropsType> = (props) => {
 
-
     const {
         className,
         title,
@@ -36,7 +30,7 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
 
 
     return (
-        <div className={clsx("flex flex-col w-full justify-center gap-2", variant === "side" ? "items-start" : "items-center", className)}>
+        <div className={clsx("flex flex-col justify-center gap-2", variant === "side" ? "items-start" : "items-center", className)}>
             <div className={clsx("flex flex-row justify-center items-center", variant === "side" ? "gap-2" : "gap-5")}>
                 {variant === "centered" && (
                     <i className={clsx("text-primary", starClassName)}>
@@ -71,7 +65,6 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                 )}
             </div>
         </div>
-    
     )
 }
 

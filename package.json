@@ -28,7 +28,7 @@
     "react-hook-form": "^7.62.0",
     "react-number-format": "^5.4.4",
     "react-player": "^2.16.0",
-    "swiper": "^11.2.8"
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
