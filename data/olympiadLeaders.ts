@@ -3,38 +3,38 @@ import { OlympiadLeader } from '@/components/Cards/OlympiadLeaderCard';
 export const olympiadLeadersData: OlympiadLeader[] = [
   {
     id: 1,
-    name: "دکتر محمد احمدی",
-    subject: "ریاضی",
-    avatar: "/avatars/math-teacher.jpg" // مسیر عکس - در صورت وجود
+    name: "محمد احمدی",
+    subject: "سرگروه ریاضی",
+    avatar: "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
   },
   {
     id: 2,
-    name: "دکتر فاطمه کریمی",
-    subject: "فیزیک",
+    name: "فاطمه کریمی",
+    subject: "سرگروه فیزیک",
     avatar: "/avatars/physics-teacher.jpg"
   },
   {
     id: 3,
-    name: "دکتر علی رضایی",
-    subject: "شیمی",
+    name: "علی رضایی",
+    subject: "سرگروه نجوم و اخترشناسی",
     avatar: "/avatars/chemistry-teacher.jpg"
   },
   {
     id: 4,
-    name: "دکتر سارا موسوی",
-    subject: "زیست‌شناسی",
+    name: "سارا موسوی",
+    subject: "سرگروه زیست‌شناسی",
     avatar: "/avatars/biology-teacher.jpg"
   },
   {
     id: 5,
-    name: "دکتر حسن زارعی",
-    subject: "علوم کامپیوتر",
+    name: "حسن زارعی",
+    subject: "سرگروه علوم کامپیوتر",
     avatar: "/avatars/computer-teacher.jpg"
   },
   {
     id: 6,
-    name: "دکتر مریم صادقی",
-    subject: "ادبیات فارسی",
+    name: "مریم صادقی",
+    subject: "سرگروه ادبیات فارسی",
     avatar: "/avatars/literature-teacher.jpg"
-  }
+  },
 ];
