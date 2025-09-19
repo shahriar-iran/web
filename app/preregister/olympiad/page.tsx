@@ -4,7 +4,9 @@ import { PreregisterForm } from "@/components/PreregisterForm/PreregisterForm";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { OlympiadLeadersSection } from "@/components/OlympiadLeadersSection/OlympiadLeadersSection";
+import { OlympiadAchievementCard } from "@/components/Cards/OlympiadAchievementCard/OlympiadAchievementCard";
 import { olympiadLeadersData } from "@/data/olympiadLeaders";
+import { olympiadAchievementsData } from "@/data/olympiadAchievements";
 
 export const metadata: Metadata = {
   title: "پیش ثبت نام | باشگاه المپیاد",
@@ -60,8 +62,12 @@ export default function Page() {
           />
         </div>
         <div className="w-full py-10">
-          <div className="flex justify-between items-center w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-            ---
+          <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {olympiadAchievementsData.map((achievement) => (
+                <OlympiadAchievementCard key={achievement.id} data={achievement} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

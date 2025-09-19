@@ -3,10 +3,7 @@
 import * as React from "react"
 import { ApproachesCard } from "../../ApproachesCard/ApproachesCard";
 import { Icon } from "@iconify/react";
-import { Slider } from "../../Slider/Slider";
-import { SliderThumbs } from "@/components/SliderThumbs/SliderThumbs";
-import { PageTitle } from "@/components/PageTitle/PageTitle";
-import type SwiperCore from 'swiper';
+import { UniversalSliderSection } from "@/components/UniversalSliderSection/UniversalSliderSection";
 
 
 type ApproachesSectionPropsType = {
@@ -76,74 +73,42 @@ const approachesList = [
 
 
 export const ApproachesSection: React.FC<ApproachesSectionPropsType> = (props) => {
-
-    const {
-      
-    } = props;
-
-    const [hoveredIdx, setHoveredIdx] = React.useState(3)
-
-    const swiperRef = React.useRef<SwiperCore | null>(null);
-    const [activeIndex, setActiveIndex] = React.useState(0);
-
-
-
-    const handleNext = () => {
-      if (swiperRef.current) {
-        if (swiperRef.current.isEnd) {
-          swiperRef.current.slideTo(0);
-          setActiveIndex(0);
-        } else {
-          swiperRef.current.slideNext();
-        }
-      }
-    };
-  
-    const handleSlideChange = (swiper: SwiperCore) => {
-      setActiveIndex(swiper.realIndex);
-    };
+    const [hoveredIdx, setHoveredIdx] = React.useState(3);
 
     return (
-      <>
-        <div className="flex flex-row gap-3 items-start w-full max-w-7xl mx-auto px-2 2xl:px-0">
-          <PageTitle
-            variant="side"
-            title="رویکردهای مدرسه هیبریدی شهریار ایران"
-            description="چرا مدرسۀ شهریار را برای آینده تحصیلی فرزندانمان انتخاب کنیم...؟"
+      <UniversalSliderSection
+        title="رویکردهای مدرسه هیبریدی شهریار ایران"
+        description="چرا مدرسۀ شهریار را برای آینده تحصیلی فرزندانمان انتخاب کنیم...؟"
+        titleVariant="side"
+        itemsPerView={3}
+        itemsPerViewTablet={2}
+        itemsPerViewMobile={1}
+        gap={24}
+        loop={false}
+        enableMousewheel={true}
+        hasBackground={true}
+        backgroundClass="bg-primary-50"
+        showSliderThumbs={true}
+        slideCount={approachesList.length}
+      >
+        {approachesList.map((approach, idx) => (
+          <ApproachesCard
+            key={approach.id}
+            title={approach.title}
+            englishTitle={approach.englishTitle}
+            description={approach.description}
+            icon={(
+              <Icon 
+                icon={approach.icon}
+                width="32" 
+                height="32"
+              />
+            )}
+            isHovered={hoveredIdx === idx}
+            setHovered={() => setHoveredIdx(idx)}
           />
-          <SliderThumbs
-           count={3}
-           active={activeIndex}
-           handleNext={handleNext}
-          />
-        </div>
-        <div className="w-full bg-primary-50 py-4 px-2 2xl:px-0">
-          <Slider
-            swiperRef={swiperRef}
-            handleSlideChange={handleSlideChange}
-            items={approachesList}
-            render={(v, idx) => {
-              return (
-                <ApproachesCard
-                  key={v.id}
-                  title={v.title}
-                  englishTitle={v.englishTitle}
-                  description={v.description}
-                  icon={(
-                    <Icon 
-                      icon={v.icon}
-                      width="32" 
-                      height="32"
-                    />
-                  )}
-                  isHovered={hoveredIdx === idx}
-                  setHovered={() => setHoveredIdx(idx)}
-                />
-              )
-            }}
-          />
-        </div>
-      </>
+        ))}
+      </UniversalSliderSection>
     )
 }
 
