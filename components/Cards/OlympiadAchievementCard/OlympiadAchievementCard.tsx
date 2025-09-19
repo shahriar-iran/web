@@ -19,48 +19,13 @@ type OlympiadAchievementCardProps = {
 }
 
 export const OlympiadAchievementCard: React.FC<OlympiadAchievementCardProps> = ({ data: achievement }) => {
-  // انتخاب آیکون بر اساس id یا عنوان
-  const getIcon = () => {
-    switch (achievement.id) {
-      case 1: // اقتصاد و مدیریت
-        return (
-          <svg fill="currentColor" viewBox="0 0 20 20" className="w-full h-full">
-            <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 0a1 1 0 100 2h.01a1 1 0 100-2H9zm2 0a1 1 0 100 2h.01a1 1 0 100-2H11z" clipRule="evenodd" />
-          </svg>
-        );
-      case 2: // ریاضیات و فیزیک
-        return (
-          <svg fill="currentColor" viewBox="0 0 20 20" className="w-full h-full">
-            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-          </svg>
-        );
-      case 3: // شیمی و زیست‌شناسی
-        return (
-          <svg fill="currentColor" viewBox="0 0 20 20" className="w-full h-full">
-            <path fillRule="evenodd" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" clipRule="evenodd" />
-          </svg>
-        );
-      case 4: // علوم کامپیوتر
-        return (
-          <svg fill="currentColor" viewBox="0 0 20 20" className="w-full h-full">
-            <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-3.22l.123.489.804.804A1 1 0 0111.78 18H8.22a1 1 0 01-.925-1.38l.804-.804L8.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
-          </svg>
-        );
-      default:
-        return (
-          <svg fill="currentColor" viewBox="0 0 20 20" className="w-full h-full">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-        );
-    }
-  };
 
   return (
-    <div className="relative overflow-hidden rounded-3xl p-6 hover:bg-primary border-2 border-primary transition-all duration-300 group select-none">
+    <div className="flex flex-col gap-6 relative overflow-hidden rounded-3xl p-0 bg-primary/3 hover:bg-primary border-2 border-primary transition-all duration-300 group select-none">
 
 
       {/* Header */}
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-start justify-between px-6 pt-6">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-sm text-foreground opacity-70 group-hover:text-white font-medium">المپیاد</span>
@@ -72,7 +37,7 @@ export const OlympiadAchievementCard: React.FC<OlympiadAchievementCardProps> = (
       </div>
 
       {/* Statistics */}
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 px-6">
         {!!achievement.bronzeMedals && (
             <div className="flex items-center gap-4 bg-white p-2 truncate rounded-tr-xl rounded-br-xl rounded-tl-md rounded-bl-md">
                 <div className="flex items-center justify-center gap-1 fill-[#C2C2C2]">
@@ -127,7 +92,7 @@ export const OlympiadAchievementCard: React.FC<OlympiadAchievementCardProps> = (
       </div>
 
       {/* Top Students Avatars */}
-      <div className="flex items-center justify-between bg-white/20">
+      <div className="flex items-center justify-between bg-white/20 px-6 pt-3 pb-6 border-t-2 border-primary/10">
         <AvatarGroup isBordered>
             {achievement.topStudents.map((student, index) => (
                 <Avatar
