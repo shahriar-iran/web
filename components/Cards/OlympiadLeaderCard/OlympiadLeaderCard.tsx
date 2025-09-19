@@ -5,6 +5,7 @@ export type OlympiadLeader = {
   id: number;
   name: string;
   subject: string;
+  avatar?: string; // اختیاری - مسیر عکس آواتار
 }
 
 type OlympiadLeaderCardProps = {
@@ -18,8 +19,11 @@ export const OlympiadLeaderCard: React.FC<OlympiadLeaderCardProps> = ({ data: le
     >
         <Avatar
             size="lg"
-            title="ز"
-            className="border border-primary group-hover/olead:border-white transition-all duration-300 "
+            src={leader.avatar}
+            name={leader.name}
+            fallback={leader.name.split(" ").slice(0, 2).map(word => word.charAt(0)).join(" ")}
+            showFallback
+            className="truncate bg-primary text-white border border-primary group-hover/olead:bg-white group-hover/olead:text-primary group-hover/olead:border-white transition-all duration-300"
         />
         <div className="flex flex-col gap-2">
             <h5 className="font-bold text-sm">
