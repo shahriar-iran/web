@@ -88,7 +88,7 @@ const PreregisterCardItem = (props: PreregisterCardItemType) => {
             </div>
             <div className="h-full text-primary group-hover:text-white group-data-[active=true]:text-white transition duration-500">
                 <svg className="h-full" viewBox="0 0 253 115" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_2336_8275)">
+                    <g clipPath="url(#clip0_2336_8275)">
                         <path d="M161.053 -136L249.009 -22.6892C257.887 -11.2517 245.431 4.35405 232.177 -1.60056C223.615 -5.44677 213.64 -0.611738 211.436 8.45334L208.492 20.5507C206.335 29.4189 199.041 36.1476 189.971 37.636C176.423 39.859 167.542 52.9247 170.543 66.2217L171.193 69.1036C175.966 90.2566 153.659 107.305 134.266 97.3248L131.624 95.9649C119.433 89.6915 104.435 94.8754 98.8096 107.306C95.0434 115.628 86.6247 120.908 77.4327 120.713L64.8936 120.448C55.4976 120.249 48.2397 128.584 49.8015 137.78C52.2199 152.016 33.8334 159.981 24.9552 148.543L-63 35.2327L161.053 -136Z" fill="currentColor" fillOpacity="0.05" stroke="url(#paint0_linear_2336_8275)"/>
                     </g>
                     <defs>

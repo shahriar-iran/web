@@ -1,0 +1,1 @@
+export { SchoolRegistrationStepCard } from './RegistrationStepCard';

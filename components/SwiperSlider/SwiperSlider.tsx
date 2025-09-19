@@ -17,6 +17,7 @@ type SwiperSliderProps = {
   gap?: number;
   loop?: boolean;
   enableMousewheel?: boolean;
+  centeredSlides?: boolean;
   onSwiperInit?: (swiper: any) => void;
   onSlideChange?: (index: number) => void;
 
@@ -32,6 +33,7 @@ export const SwiperSlider: React.FC<SwiperSliderProps> = (props) => {
     gap = 24,
     loop = false,
     enableMousewheel = true,
+    centeredSlides = false,
     onSwiperInit,
     onSlideChange,
   } = props;
@@ -103,6 +105,7 @@ export const SwiperSlider: React.FC<SwiperSliderProps> = (props) => {
         spaceBetween={gap}
         slidesPerView={itemsPerView}
         loop={loop}
+        centeredSlides={centeredSlides}
         mousewheel={{
           enabled: enableMousewheel,
           forceToAxis: true, // فقط در جهت اسلایدر کار کنه

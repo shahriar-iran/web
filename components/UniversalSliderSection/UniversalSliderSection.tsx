@@ -22,6 +22,7 @@ type UniversalSliderSectionProps = {
   gap?: number;
   loop?: boolean;
   enableMousewheel?: boolean;
+  centeredSlides?: boolean;
   
   // استایل
   className?: string;
@@ -31,6 +32,9 @@ type UniversalSliderSectionProps = {
   // تنظیمات SliderThumbs  
   showSliderThumbs?: boolean;
   slideCount?: number; // تعداد اسلایدها برای محاسبه thumbs
+  
+  // External control
+  onSwiperInit?: (swiper: any) => void;
 }
 
 export const UniversalSliderSection: React.FC<UniversalSliderSectionProps> = (props) => {
@@ -45,16 +49,24 @@ export const UniversalSliderSection: React.FC<UniversalSliderSectionProps> = (pr
     gap = 12,
     loop = false,
     enableMousewheel = true,
+    centeredSlides = false,
     className = "",
     hasBackground = true,
     backgroundClass = "bg-primary-50",
     showSliderThumbs = true,
-    slideCount = 0
+    slideCount = 0,
+    onSwiperInit
   } = props;
 
   const [swiperInstance, setSwiperInstance] = React.useState<any>(null);
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [currentItemsPerView, setCurrentItemsPerView] = React.useState(itemsPerView);
+  
+  // Handle external swiper initialization
+  const handleSwiperInit = React.useCallback((swiper: any) => {
+    setSwiperInstance(swiper);
+    onSwiperInit?.(swiper);
+  }, [onSwiperInit]);
   
   // محاسبه تعداد اسلایدهای قابل کنترل
   const totalControlSlides = React.useMemo(() => {
@@ -124,7 +136,8 @@ export const UniversalSliderSection: React.FC<UniversalSliderSectionProps> = (pr
             gap={gap}
             loop={loop}
             enableMousewheel={enableMousewheel}
-            onSwiperInit={setSwiperInstance}
+            centeredSlides={centeredSlides}
+            onSwiperInit={handleSwiperInit}
             onSlideChange={setCurrentSlide}
           >
             {React.Children.toArray(children)}

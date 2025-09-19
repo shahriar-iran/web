@@ -5,8 +5,10 @@ import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { OlympiadLeadersSection } from "@/components/OlympiadLeadersSection/OlympiadLeadersSection";
 import { OlympiadAchievementCard } from "@/components/Cards/OlympiadAchievementCard/OlympiadAchievementCard";
+import { OlympiadRegistrationStepsSection } from "@/components/Sections/OlympiadRegistrationStepsSection/OlympiadRegistrationStepsSection";
 import { olympiadLeadersData } from "@/data/olympiadLeaders";
 import { olympiadAchievementsData } from "@/data/olympiadAchievements";
+import { olympiadRegistrationStepsData } from "@/data/olympiadRegistrationSteps";
 
 export const metadata: Metadata = {
   title: "پیش ثبت نام | باشگاه المپیاد",
@@ -39,20 +41,10 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 items-center w-full">
-        <div className="w-full max-w-7xl mx-auto px-3">
-          <PageTitle
-            variant="side"
-            title="مراحل ثبت‌نام در باشگاه المپیاد شهریار ایران"
-            description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
-          />
-        </div>
-        <div className="w-full bg-primary-50 py-10">
-          <div className="flex justify-between items-center w-full max-w-7xl px-2 2xl:px-0 mx-auto">
-            ---
-          </div>
-        </div>
-      </div>
+      <OlympiadRegistrationStepsSection
+        steps={olympiadRegistrationStepsData}
+        showNavigation={true}
+      />
       <div className="flex flex-col gap-3 items-center w-full">
         <div className="w-full max-w-7xl mx-auto px-3">
           <PageTitle
