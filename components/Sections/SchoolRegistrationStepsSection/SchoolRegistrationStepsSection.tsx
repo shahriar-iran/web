@@ -8,6 +8,7 @@ import type { Swiper as SwiperType } from 'swiper';
 
 interface SchoolRegistrationStep {
   id: number;
+  stepTitle: string;
   title: string;
   description: string;
   icon?: string;
@@ -63,6 +64,7 @@ export const SchoolRegistrationStepsSection: React.FC<SchoolRegistrationStepsSec
         <SchoolRegistrationStepCard
           key={step.id}
           stepNumber={index + 1}
+          stepTitle={step.stepTitle}
           title={step.title}
           description={step.description}
           icon={step.icon ? <Icon icon={step.icon} width={64} height={64} /> : undefined}
@@ -72,7 +74,6 @@ export const SchoolRegistrationStepsSection: React.FC<SchoolRegistrationStepsSec
           onPrevious={handlePrevious}
           isFirst={index === 0}
           isLast={index === steps.length - 1}
-          className="mx-4"
         />
       ))}
     </UniversalSliderSection>

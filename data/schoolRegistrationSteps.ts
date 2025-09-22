@@ -1,40 +1,38 @@
 export const schoolRegistrationStepsData = [
   {
     id: 1,
-    title: "تکمیل فرم پیش ثبت‌نام",
-    description: "اولین قدم برای ثبت‌نام در باشگاه المپیاد، تکمیل فرم پیش ثبت‌نام است. در این مرحله اطلاعات اولیه خود را وارد کنید.",
-    icon: "solar:document-add-bold-duotone"
+    stepTitle: "مرحلۀ اولــــــــ",
+    title: "تکمیل فرم پیش ثبت‌نام المپیاد",
+    description: "اولین قدم برای ورود به باشگاه المپیاد شهریار، تکمیل فرم پیش ثبت‌نام آنلاین است. اطلاعات شخصی و تحصیلی خود را به دقت وارد کنید.",
+    image: "olympiad-step-1.jpg"
   },
   {
     id: 2,
-    title: "بررسی مدارک و تأیید اولیه",
-    description: "پس از ارسال فرم، کارشناسان ما مدارک شما را بررسی کرده و در صورت تأیید، با شما تماس خواهند گرفت.",
-    icon: "solar:file-check-bold-duotone"
+    stepTitle: "مرحلۀ دومــــــــ",
+    title: "بررسی سوابق تحصیلی و علمی",
+    description: "کارشناسان ما سوابق تحصیلی، نمرات و رتبه‌های علمی شما در مسابقات المپیاد را بررسی خواهند کرد تا سطح آمادگی شما ارزیابی شود.",
+    image: "olympiad-step-2.jpg"
   },
   {
     id: 3,
-    title: "آزمون ورودی و مصاحبه",
-    description: "شرکت در آزمون ورودی و مصاحبه حضوری برای بررسی سطح علمی و انگیزه شما در ادامه تحصیل.",
-    icon: "solar:user-speak-rounded-bold-duotone"
+    stepTitle: "مرحلۀ سومــــــــ",
+    title: "آزمون تخصصی المپیاد",
+    description: "شرکت در آزمون تخصصی در رشته‌های ریاضی، فیزیک، شیمی یا علوم کامپیوتر برای سنجش دقیق توانایی‌های علمی شما.",
+    image: "olympiad-step-3.jpg"
   },
   {
     id: 4,
-    title: "نتایج و ثبت‌نام نهایی",
-    description: "اعلام نتایج آزمون و در صورت قبولی، انجام مراحل ثبت‌نام نهایی و پرداخت شهریه.",
-    icon: "solar:medal-star-bold-duotone"
+    stepTitle: "مرحلۀ چهارمــــــــ",
+    title: "مصاحبه انگیزشی",
+    description: "مصاحبه حضوری با اساتید باتجربه باشگاه المپیاد برای بررسی انگیزه، اهداف و برنامه‌های آینده شما در مسیر المپیاد.",
+    image: "olympiad-step-4.jpg"
   },
-  {
-    id: 5,
-    title: "شروع دوره آموزشی",
-    description: "ورود به باشگاه المپیاد و شروع دوره‌های آموزشی تخصصی با بهترین اساتید کشور.",
-    icon: "solar:graduation-bold-duotone"
-  }
 ];
 
 export type SchoolRegistrationStep = {
   id: number;
+  stepTitle: string;
   title: string;
   description: string;
-  icon?: string;
   image?: string;
 };

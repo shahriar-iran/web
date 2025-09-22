@@ -3,6 +3,9 @@ import { PreregisterCard } from "@/components/PreregisterCard/PreregisterCard";
 import { PreregisterForm } from "@/components/PreregisterForm/PreregisterForm";
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { SchoolRegistrationStepsSection } from "@/components/Sections/SchoolRegistrationStepsSection";
+import { schoolRegistrationStepsData } from "@/data/schoolRegistrationSteps";
+import { CommentSection } from "@/components/Sections/CommentSection/CommentSection";
 
 export const metadata: Metadata = {
   title: "پیش ثبت نام | دبیرستان هیبریدی",
@@ -21,6 +24,25 @@ export default function Page() {
           img="register-box-school.svg"
         />
       </div>
+      <div className="flex flex-col gap-3 items-center w-full">
+        <div className="w-full max-w-7xl mx-auto px-3">
+          <PageTitle
+            variant="side"
+            title="مـــــدرسۀ هـــــیبریدی چـــــــیست؟"
+            description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
+          />
+        </div>
+        <div className="w-full py-10">
+          <div className="flex justify-between items-center w-full max-w-7xl px-2 2xl:px-0 mx-auto">
+            ---
+          </div>
+        </div>
+      </div>
+      <SchoolRegistrationStepsSection
+        steps={schoolRegistrationStepsData}
+        showNavigation={true}      
+      />
+      <CommentSection/>
       <div className="flex flex-col gap-3 items-center w-full">
         <div className="w-full max-w-7xl mx-auto px-3">
           <PageTitle

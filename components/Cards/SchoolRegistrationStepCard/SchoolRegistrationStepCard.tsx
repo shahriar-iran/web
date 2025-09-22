@@ -1,10 +1,14 @@
 "use client"
 
 import { Button } from "@heroui/button";
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import Image from "next/image";
+
+
 
 interface SchoolRegistrationStepCardProps {
   stepNumber: number;
+  stepTitle: string;
   title: string;
   description: string;
   icon?: React.ReactNode;
@@ -19,11 +23,10 @@ interface SchoolRegistrationStepCardProps {
 
 export const SchoolRegistrationStepCard: React.FC<SchoolRegistrationStepCardProps> = ({
   stepNumber,
+  stepTitle,
   title,
   description,
-  icon,
   image,
-  showNavigation = false,
   onNext,
   onPrevious,
   isFirst = false,
@@ -31,75 +34,66 @@ export const SchoolRegistrationStepCard: React.FC<SchoolRegistrationStepCardProp
   className = ""
 }) => {
   return (
-    <div className={`w-full bg-white rounded-2xl shadow-lg p-8 md:p-12 flex flex-col items-center text-center ${className}`}>
-      {/* Step Number */}
-      <div className="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
-        <span className="text-2xl font-bold text-primary">{stepNumber}</span>
-      </div>
-
-      {/* Icon or Image */}
-      {image ? (
-        <div className="mb-6">
-          <img src={image} alt={title} className="w-24 h-24 object-contain" />
+    <div className={`w-full h-fit flex flex-row gap-4 flex-wrap ${className}`}>
+        <div className="relative bg-primary w-full sm:w-80 h-full p-2 pb-8 shrink-0 rounded-t-3xl rounded-b-2xl overflow-hidden">
+            <div className="relative bg-foreground w-full h-full flex items-center justify-center border border-white rounded-2xl overflow-hidden">
+                <Image
+                    src={`/static/assets/images/${image}`}
+                    alt={title}
+                    height={256}
+                    width={320}
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 text-white text-sm text-center left-0 bg-white/20 backdrop-blur-md p-2 rounded-b-[16px] rounded-t-3xl h-10 w-full">
+                    {stepTitle}
+                </div>
+            </div>
         </div>
-      ) : icon ? (
-        <div className="mb-6 text-primary">
-          {icon}
+        <div className="flex flex-col justify-center min-w-40 items-start gap-10 p-4 max-w-full flex-1">
+            <h3 className="text-base font-bold text-foreground truncate w-full">
+                {stepTitle} ثبت‌نام
+            </h3>
+            <div className="flex flex-col gap-2 items-start max-w-full w-full">
+                <div className="flex flex-row gap-2 items-center truncate">
+                    <div className="bg-foreground w-8 h-8 shrink-0 rounded-full flex items-center justify-center text-white">
+                        {stepNumber}
+                    </div>
+                    <h3 className="text-sm font-bold text-primary">
+                        {title}
+                    </h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed text-justify text-sm">
+                    {description}
+                </p>
+            </div>
+            {/* Navigation Buttons */}
+            <div className="w-full flex items-center justify-end gap-4 pb-2">
+                {!isFirst && (
+                    <Button
+                        variant="shadow"
+                        color="primary"
+                        startContent={<Icon icon="solar:arrow-right-linear" width={20} />}
+                        onPress={onPrevious}
+                        className="min-w-[120px]"
+                        size="lg"
+                    >
+                        مرحله قبل
+                    </Button>
+                )}
+                {!isLast && (
+                    <Button
+                        variant="shadow"
+                        color="primary"
+                        endContent={<Icon icon="solar:arrow-left-linear" width={20} />}
+                        onPress={onNext}
+                        className="min-w-[120px]"
+                        size="lg"
+                    >
+                        مرحله بعد
+                    </Button>
+                )}
+            </div>
         </div>
-      ) : null}
-
-      {/* Title */}
-      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-        {title}
-      </h3>
-
-      {/* Description */}
-      <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
-        {description}
-      </p>
-
-      {/* Navigation Buttons */}
-      {showNavigation && (
-        <div className="flex items-center justify-center gap-4 mt-auto">
-          {!isFirst && (
-            <Button
-              variant="bordered"
-              color="primary"
-              startContent={<Icon icon="solar:arrow-right-linear" className="rotate-180" width={20} />}
-              onClick={onPrevious}
-              className="min-w-[120px]"
-              size="lg"
-            >
-              مرحله قبل
-            </Button>
-          )}
-          
-          {!isLast && (
-            <Button
-              variant="solid"
-              color="primary"
-              endContent={<Icon icon="solar:arrow-left-linear" width={20} />}
-              onClick={onNext}
-              className="min-w-[120px]"
-              size="lg"
-            >
-              مرحله بعد
-            </Button>
-          )}
-          
-          {isLast && (
-            <Button
-              variant="solid"
-              color="success"
-              endContent={<Icon icon="solar:check-circle-bold" width={20} />}
-              className="min-w-[120px]"
-              size="lg"
-            >
-              تمام!
-            </Button>
-          )}
-        </div>
-      )}
     </div>
   );
 };

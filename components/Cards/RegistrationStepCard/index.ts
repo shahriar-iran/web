@@ -1,1 +1,0 @@
-export { SchoolRegistrationStepCard } from './RegistrationStepCard';

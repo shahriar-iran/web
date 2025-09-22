@@ -1,1 +1,0 @@
-export { SchoolRegistrationStepsSection } from './RegistrationStepsSection';

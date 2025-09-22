@@ -52,7 +52,6 @@ export const CusInput = <T extends FieldValues>(props: CusInputProps<T>) => {
                 if (isPhoneNumber) {
                     return (
                         <PatternFormat
-                            dir="ltr"
                             format="###########"
                             customInput={Input as React.ComponentType<any>}
                             label={label}
