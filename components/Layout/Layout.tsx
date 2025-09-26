@@ -25,9 +25,9 @@ export const Layout: React.FC<LayoutPropsType> = (props) => {
             path: "/honors",
         },
         {
-            id: "memorise",
+            id: "memories",
             title: "خاطره‌بازی",
-            path: "/memorise",
+            path: "/memories",
         },
         {
             id: "team",

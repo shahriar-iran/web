@@ -1,0 +1,1 @@
+export { MemoriesDropdown } from './MemoriesDropdown';

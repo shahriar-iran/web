@@ -80,10 +80,11 @@ export const ApproachesSection: React.FC<ApproachesSectionPropsType> = (props) =
         title="رویکردهای مدرسه هیبریدی شهریار ایران"
         description="چرا مدرسۀ شهریار را برای آینده تحصیلی فرزندانمان انتخاب کنیم...؟"
         titleVariant="side"
-        itemsPerView={3}
+        itemsPerView={4}
         itemsPerViewTablet={2}
         itemsPerViewMobile={1}
-        gap={24}
+        gap={0}
+        // freeMode={true}
         loop={false}
         enableMousewheel={true}
         hasBackground={true}

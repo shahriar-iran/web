@@ -30,8 +30,8 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
 
 
     return (
-        <div className={clsx("flex flex-col justify-center gap-2", variant === "side" ? "items-start" : "items-center", className)}>
-            <div className={clsx("flex flex-row justify-center items-center", variant === "side" ? "gap-2" : "gap-5")}>
+        <div className={clsx("flex flex-col justify-center gap-2 max-w-full", variant === "side" ? "items-start" : "items-center", className)}>
+            <div className={clsx("flex flex-row justify-center items-center z-10", variant === "side" ? "gap-2" : "gap-5")}>
                 {variant === "centered" && (
                     <i className={clsx("text-primary", starClassName)}>
                         <CometStar size={20}/>
@@ -51,8 +51,8 @@ export const PageTitle: React.FC<TitlePropsType> = (props) => {
                     </i>
                 )}
             </div>
-            <div className="relative w-fit">
-                <h2 className={clsx("relative z-10 text-center truncate font-semibold text-xs md:font-bold md:text-sm", variant === "centered" ? "text-white px-5" : "text-gray-500", descriptionClassName)}>
+            <div className="relative w-fit max-w-full">
+                <h2 className={clsx("relative max-w-full z-10 text-center truncate font-semibold text-xs md:font-bold md:text-sm", variant === "centered" ? "text-white px-5" : "text-gray-500", descriptionClassName)}>
                     {description}
                 </h2>
                 {variant === "centered" && (
