@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import path from "path";
 
 
 export interface MenuProps {
@@ -41,7 +42,8 @@ export const Menu = (props : MenuProps) => {
                             key={idx}
                             id={item.id}
                             title={item.title}
-                            isActive={pathname === item.id}
+                            path={item.path}
+                            isActive={pathname.startsWith(item.path)}
                         />
                     ))}
                 </ul>

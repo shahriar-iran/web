@@ -32,7 +32,9 @@ export const MemoriesDropdown: React.FC<MemoriesDropdownProps> = ({
   const handleSelect = (memory: Memory) => {
     const params = new URLSearchParams(searchParams);
     params.set('year', memory.id.toString());
-    router.push(`/memories?${params.toString()}`);
+    // Stay on current page, just update searchParams
+    const currentPath = window.location.pathname;
+    router.push(`${currentPath}?${params.toString()}`);
     setIsOpen(false);
   };
 

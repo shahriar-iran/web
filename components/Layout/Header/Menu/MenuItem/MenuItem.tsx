@@ -8,6 +8,7 @@ export interface MenuItemProps {
     id: string;
     isActive?: boolean;
     title: string;
+    path: string;
 }
 
 
@@ -18,6 +19,7 @@ export const MenuItem = (props: MenuItemProps) => {
         isActive,
         id,
         title,
+        path,
     } = props;
 
 
@@ -31,7 +33,7 @@ export const MenuItem = (props: MenuItemProps) => {
             className={clsx(className)}
             data-active={isActive}
         >
-            <Link href={`/${id}`} className="h-12 w-fit flex items-center">
+            <Link href={`${path}`} className="h-12 w-fit flex items-center">
                 {title}            
             </Link>
         </li>
