@@ -1,0 +1,1 @@
+export { MemoriesSlider } from './MemoriesSlider';
