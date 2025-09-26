@@ -2,6 +2,8 @@ import { memoriesData } from "@/data/memoriesData";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { IntroVideoSection } from "@/components/Sections/IntroVideoSection/IntroVideoSection";
+import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -42,16 +44,17 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
       <div className="flex flex-col items-center gap-8">
         {/* نمایش خاطره انتخاب شده */}
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 2xl:px-0 mx-auto">
-            <div className="bg-red-500 rounded-lg shadow-md h-20 p-4">
-                
+            <div className="">
+                <VideoPlayer/>
             </div>
-            <div className="bg-red-500 rounded-lg shadow-md h-20 p-4">
-                
+            <div className="">
+                <VideoPlayer/>
             </div>
-            <div className="bg-red-500 rounded-lg shadow-md h-20 p-4">
-                
+            <div className="">
+                <VideoPlayer/>
             </div>
         </div>
+        <IntroVideoSection/>
       </div>
 
         <div className="w-full max-w-7xl px-2 2xl:px-0 mx-auto mt-20 md:mt-28 lg:mt-32">
