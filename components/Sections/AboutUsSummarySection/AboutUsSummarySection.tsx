@@ -53,8 +53,10 @@ export const AboutUsSummarySection: React.FC<AboutUsSummarySectionPropsType> = (
               description="دبیرستــــان غـــــیردولتی شــــهریار ایـــــران"
             />
             <p className="font-light leading-7 text-foreground text-justify">
-            مدرسه شهریارایران به‌عنوان یکی از پیشروترین مراکز آموزشی کشور، با رویکردی نوین در یادگیری، مسیر خود را آغاز کرده است.
+              مدرسه شهریارایران به‌عنوان یکی از پیشروترین مراکز آموزشی کشور، با رویکردی نوین در یادگیری، مسیر خود را آغاز کرده است.
+              <br/>
 ما با تکیه بر روش‌های آموزشی ترکیبی، بهره‌گیری از فناوری‌های نوین و ایجاد محیطی پویا و الهام‌بخش، در تلاش هستیم تا دانش‌آموزانی توانمند، خلاق و آماده ورود به آینده‌ای روشن تربیت کنیم.
+              <br/>
 شهریارایران با سه شعبه فعال در دبیرستان دوره اول، دبیرستان دوره دوم و دفتر مرکزی، فضایی را فراهم کرده است که در آن آموزش تنها به انتقال دانش محدود نمی‌شود؛ بلکه پرورش مهارت‌های تفکر، خلاقیت، مسئولیت‌پذیری و کار تیمی در اولویت قرار دارد.
             </p>
             <div className="flex flex-col md:flex-row justify-between gap-4">
@@ -70,7 +72,7 @@ export const AboutUsSummarySection: React.FC<AboutUsSummarySectionPropsType> = (
                   </div>
                 )}
                 as={Link}
-                href="/about-us"
+                href="/about"
               >
                 ادامه مطلب
               </Button>
@@ -85,18 +87,7 @@ export const AboutUsSummarySection: React.FC<AboutUsSummarySectionPropsType> = (
                         دانش آموزان ما
                       </span>
                       <span className="font-bold text-xl text-foreground">
-                        1128
-                      </span>
-                    </div>
-                    <div className="shrink-0 flex flex-row items-center gap-2">
-                      <div className="text-foreground bg-foreground/10 rounded-xl p-2 h-9 w-9 flex justify-center items-center">
-                        <Icon icon="solar:bag-3-bold-duotone" width="20" height="20" />
-                      </div>
-                      <span className="font-bold text-sm text-foreground/45">
-                        کــــارگـــاه‌های مـا  
-                      </span>
-                      <span className="font-bold text-xl text-foreground">
-                        34
+                        710
                       </span>
                     </div>
                     <div className="shrink-0 flex flex-row items-center gap-2">
@@ -104,21 +95,10 @@ export const AboutUsSummarySection: React.FC<AboutUsSummarySectionPropsType> = (
                         <Icon icon="solar:notes-bold-duotone" width="20" height="20" />
                       </div>
                       <span className="font-bold text-sm text-foreground/45">
-                        اساتید و معلمان  
+                        اساتید ما  
                       </span>
                       <span className="font-bold text-xl text-foreground">
-                        238
-                      </span>
-                    </div>
-                    <div className="shrink-0 flex flex-row items-center gap-2">
-                      <div className="text-foreground bg-foreground/10 rounded-xl p-2 h-9 w-9 flex justify-center items-center">
-                        <Icon icon="solar:star-bold-duotone" width="20" height="20" />
-                      </div>
-                      <span className="font-bold text-sm text-foreground/45">
-                      رضـــــــایت از مــــــا  
-                      </span>
-                      <span className="font-bold text-xl text-foreground">
-                        94%
+                        37
                       </span>
                     </div>
                   </ScrollShadow>

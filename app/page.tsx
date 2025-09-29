@@ -14,13 +14,20 @@ import { CommentSection } from "@/components/Sections/CommentSection/CommentSect
 import { IntroVideoSection } from "@/components/Sections/IntroVideoSection/IntroVideoSection";
 import { AboutUsSummarySection } from "@/components/Sections/AboutUsSummarySection/AboutUsSummarySection";
 import { HomeIntroSection } from "@/components/Sections/HomeIntroSection/HomeIntroSection";
+import { TopRankingsCard } from "@/components/TopRankingsCard/TopRankingsCard";
 
 
 
 export default function Page() {
     return (
       <section className=" flex flex-col gap-6 md:gap-12">
-        <HomeIntroSection/>
+        <section className="relative flex flex-col gap-6 md:gap-12 before:absolute before:bg-primary before:rounded-b-3xl before:w-full before:h-[100dvh]">
+          <div className="w-full h-[100dvh] max-w-7xl px-2 2xl:px-0 mx-auto mt-20 md:mt-28 lg:mt-32">
+              <TopRankingsCard/> 
+          </div>
+        </section>
+        {/* <HomeIntroSection/> */}
+        {/* <TopRankingsCard/> */}
         <AboutUsSummarySection/>
         <ApproachesSection/>
         <FeaturesSection/>
