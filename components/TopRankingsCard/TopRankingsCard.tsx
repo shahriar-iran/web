@@ -4,6 +4,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Avatar, AvatarGroup } from "@heroui/avatar";
 import { Badge } from "@heroui/badge";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Star } from "../Vectors";
 
 
 
@@ -22,48 +23,53 @@ export const TopRankingsCard: React.FC<TopRankingsCardPropsType> = (props) => {
 
 
     return (
-      <Card className="p-3 rounded-4xl gap-3 max-w-144" shadow="none" radius="lg">
+      <Card className="p-3 rounded-4xl gap-3 w-fit max-w-full border-2 border-primary text-sm" shadow="none" radius="lg">
         <CardBody className="overflow-hidden rounded-3xl rounded-tl-none p-0 flex items-start flex-col gap-0">
           <div className="flex gap-2 items-center w-full h-full">
-            <div className="flex-1 h-full flex items-start px-2">
-              <AvatarGroup isBordered>
-                {[1, 2, 3].map((student, index) => (
+            
+            <div className="flex-1 h-full flex flex-col gap-4 items-start justify-between px-4 z-[1]">
+              <div className="truncate w-full text-foreground font-semibold flex items-center gap-1">
+                <span>رتـــبه‌های بـــرتر کـــنکور ریاضی</span>
+              </div>
+              <AvatarGroup size="md" isBordered max={3} className="flex-row -space-x-1">
+                {[1, 2, 3, 4, 5, 6].map((student, index) => (
                     <Avatar
                         key={index}
-                        // src={student.avatar}
-                        // name={student.name}
-                        size="lg"
-                        // className="border-2 border-white shadow-sm hover:scale-110 transition-transform duration-200 hover:z-10 relative"
-                        style={{ zIndex: 10 - index }}
+                        // style={{ zIndex: 10 - index }}
                     />
                 ))}
               </AvatarGroup>
             </div>
-            <div className="relative h-40 w-40 bg-primary/10 rounded-t-3xl flex items-center justify-center">
-              <div className="relative shrink-0 bg-primary p-1 rounded-[18px] w-fit h-fit">
+
+            <div className="relative p-5 bg-primary/10 rounded-t-3xl flex items-center justify-center">
+              <div className="relative shrink-0 bg-primary p-0.5 rounded-[16px] w-fit h-fit">
                 <Avatar
                   radius="lg"
                   showFallback
                   size="lg"
                   fallback="ر"
                   name="Saeed Ahmadi"
-                  className="bg-white text-primary font-bold text-xl w-22 h-22"
+                  className="bg-white text-primary font-bold text-xl w-20 h-20"
                 />
               </div>
-              <div className="absolute bottom-0 -right-10 bg-primary/10 h-10 w-10">
+              <div className="absolute bottom-0 -right-10 bg-primary/10 h-10 w-10 z-[0]">
                 <div className="w-full h-full bg-white rounded-bl-3xl"/>
               </div>
             </div>
+
           </div>
 
-          <div className="w-full bg-primary/10 rounded-tr-3xl px-4 py-4 flex items-center justify-between gap-2">
-            <div className="w-full flex flex-row gap-2 items-center">
+          <div className="w-full bg-primary/10 text-sm rounded-tr-3xl px-6 py-4 flex items-center justify-between gap-2">
+            <div className="w-full flex flex-row gap-2 items-start">
+              <div className="shrink-0 h-6 flex items-end justify-center text-white">
+                <Star fillClassName="text-white" strokeClassName="text-primary" size={20}/>
+              </div>
               <div className="w-full flex flex-col gap-1 items-start">
                 <div className="truncate w-full text-foreground font-bold flex items-center gap-1">
                   <span>رسول احمدی فر</span>
                 </div>
                 <div className="truncate w-full text-white font-medium flex justify-between items-center gap-1">
-                  <span className="text-primary">مقام های برتر المپیاد</span>
+                  <span className="text-primary">دانش آموز دهم</span>
                 </div>
               </div>
             </div>
@@ -73,62 +79,78 @@ export const TopRankingsCard: React.FC<TopRankingsCardPropsType> = (props) => {
             </div>
           </div>
 
-          <div className="w-full bg-primary flex flex-row text-white justify-between gap-4 px-5 py-3 items-center">
-            <div className="flex flex-row items-center text-sm gap-1">
+          <div className="overflow-hidden w-full bg-primary flex flex-row text-white gap-2 px-6 py-3 items-center">
+            <div className="shrink-0 h-6 flex items-end justify-center text-white">
+              <Star fillClassName="text-foreground" size={20}/>
+            </div>
+            <div className="truncate flex flex-row flex-wrap items-center text-sm gap-1">
               <span className="font-normal">
                 رتبه ی دو رقمی
               </span>
-              <span className="font-extrabold text-lg">
+              <span className="font-extrabold text-base">
                 کنکـــور ریاضــی
               </span>
             </div>
-
-            <div className="flex flex-row items-center text-sm gap-3">
+            <div className="flex-1 min-w-8"/>
+            <div 
+              className={clsx(
+                "relative flex flex-row items-center text-sm gap-3",
+                "after:absolute after:h-40 after:w-40 after:rotate-45 after:bg-white/10 after:rounded-[28px]",
+                "before:absolute before:h-60 before:w-60 before:rotate-45 before:bg-white/5 before:border-1 before:border-white before:rounded-[34px]"
+              )}
+            >
               <span className="font-normal">
                 رتبه
               </span>
-              <span className="relative font-black text-5xl">
+              <span className="relative font-black text-3xl">
                 98
-                <span className="absolute opacity-20 -left-2 -top-0.5">
+                <span className="absolute opacity-20 -left-2 -top-0.5 z-0">
                   98
                 </span>
               </span>
             </div>
+            <div className="shrink-0 h-6 flex items-end justify-center text-white">
+              <Star fillClassName="text-foreground" size={20}/>
+            </div>
           </div>
         </CardBody>
-        <CardFooter className="bg-foreground rounded-3xl h-36 flex flex-row gap-4 justify-between items-center">
+
+        <CardFooter className="bg-foreground text-sm rounded-3xl px-5 py-5 flex flex-row gap-4 justify-between items-center">
           <div className="h-full min-h-full flex-1 max-w-96 flex flex-col gap-4 items-start">
-            <div className="text-white truncate font-medium flex items-center gap-1">
+            <div className="text-white truncate font-medium flex flex-wrap items-center gap-1">
               <span>مقام های برتر المپیاد</span>
               <span className="truncate text-primary font-bold">
                 تفکر و کار آفرینی
               </span>
             </div>
-            <div className="flex-1"/>
-            <div className="w-full flex flex-row pr-8 gap-2 items-center">
+            <div className="w-full flex flex-row gap-2 items-start">
+              <div className="shrink-0 h-6 flex items-end justify-center text-white">
+                <Star fillClassName="text-foreground" size={20}/>
+              </div>
               <div className="w-full flex flex-col gap-1 items-start">
                 <div className="truncate w-full text-white font-bold flex items-center gap-1">
                   <span>رسول احمدی فر</span>
                 </div>
-                <div className="truncate w-full text-white font-medium flex justify-between items-center gap-1">
-                  <span className="text-primary">مقام های برتر المپیاد</span>
-                  <span className="truncate text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20">
+                <div className="truncate w-full text-white font-medium flex flex-wrap justify-between items-center gap-1">
+                  <span className="text-primary">دانش‌آموز یازدهم</span>
+                  <span className="truncate text-xs text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20">
                     کسب مقام سوم المپیاد
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="relative shrink-0 bg-gradient-to-br from-primary to-primary/10 p-1 rounded-[18px]">
+          {/* olympiad */}
+          <div className="relative shrink-0 bg-gradient-to-br from-primary to-primary/10 p-0.5 self-start rounded-[16px]">
             <Avatar
               radius="lg"
               showFallback
               size="lg"
               fallback="ر"
               name="Saeed Ahmadi"
-              className="bg-white text-primary font-bold text-xl w-22 h-22"
+              className="bg-white text-primary font-bold text-xl w-20 h-20"
             />
-            <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#FF952A] to-[#FF952A]/10 text-[#FF952A] p-1 rounded-[20px]">
+            <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#FF952A] to-[#FF952A]/10 text-[#FF952A] p-0.5 rounded-[18px]">
               <div className="w-full h-full bg-white rounded-[16px] p-1.5 flex flex-col justify-center items-center">
                 <svg viewBox="0 0 20 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.4" d="M15 17.9479H14.1667V17.7396C14.1667 16.8229 13.4167 16.0729 12.5 16.0729H10.625V14.1646C10.4167 14.1896 10.2083 14.1979 10 14.1979C9.79167 14.1979 9.58333 14.1896 9.375 14.1646V16.0729H7.5C6.58333 16.0729 5.83333 16.8229 5.83333 17.7396V17.9479H5C4.65833 17.9479 4.375 18.2312 4.375 18.5729C4.375 18.9146 4.65833 19.1979 5 19.1979H15C15.3417 19.1979 15.625 18.9146 15.625 18.5729C15.625 18.2312 15.3417 17.9479 15 17.9479Z"/>

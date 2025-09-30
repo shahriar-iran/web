@@ -93,15 +93,15 @@ export const OlympiadAchievementCard: React.FC<OlympiadAchievementCardProps> = (
 
       {/* Top Students Avatars */}
       <div className="flex items-center justify-between bg-white/20 px-6 pt-3 pb-6 border-t-2 border-primary/10">
-        <AvatarGroup isBordered>
+        <AvatarGroup isBordered size="md" className="flex-row -space-x-2">
             {achievement.topStudents.map((student, index) => (
                 <Avatar
                     key={student.id}
                     src={student.avatar}
                     name={student.name}
-                    size="md"
+                    
                     // className="border-2 border-white shadow-sm hover:scale-110 transition-transform duration-200 hover:z-10 relative"
-                    style={{ zIndex: 10 - index }}
+                    // style={{ zIndex: 10 - index }}
                 />
             ))}
         </AvatarGroup>
