@@ -71,7 +71,7 @@ export const Header = (props : HeaderProps) => {
                             </div>
                         )}
                     >
-                        ورود/عضویت
+                        پنل کاربری
                     </Button>
                     <Button
                         variant="solid"

@@ -81,7 +81,7 @@ export const Menu = (props : MenuProps) => {
                             </div>
                         )}
                     >
-                        ورود/عضویت
+                        پنل کاربری
                     </Button>
                 </div>
             </div>

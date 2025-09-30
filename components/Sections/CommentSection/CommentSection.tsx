@@ -1,8 +1,14 @@
+"use client"
+
 import * as React from "react"
 import { SliderThumbs } from "@/components/SliderThumbs/SliderThumbs";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, FreeMode, Mousewheel } from "swiper/modules";
 import { CommentCard } from "@/components/CommentCard/CommentCard";
-
+import { commentsData } from "@/data/commentsData";
+import "swiper/css";
+import "swiper/css/navigation";
 
 type CommentSectionPropsType = {
 
@@ -17,9 +23,22 @@ const commentList = [
 
 export const CommentSection: React.FC<CommentSectionPropsType> = (props) => {
 
-    const {
-      
-    } = props;
+    const [activeSlide, setActiveSlide] = React.useState(0);
+    const [swiper, setSwiper] = React.useState<any>(null);
+
+    const handleSlideChange = (swiper: any) => {
+        setActiveSlide(swiper.activeIndex);
+    };
+
+    const handleNext = () => {
+        if (swiper) {
+            swiper.slideNext();
+        }
+    };
+
+    // محاسبه تعداد کل اسلایدها بر اساس slidesPerView
+    const totalSlides = Math.ceil([...commentsData, ...commentsData, ...commentsData].length / 3);
+
 
     
 
@@ -28,46 +47,46 @@ export const CommentSection: React.FC<CommentSectionPropsType> = (props) => {
         <PageTitle
           variant="centered"
           title="(نظـرات دانـش‌آمـوزان و اولیاء دربارۀ شهریـار ایــران)"
-          description="ایپسوم متن ساختگی با تولید سادگی نـامفـهوم از"
+          description="دیدگاه‌های صادقانه از زبان کسانی که ما را می‌شناسند"
         />
-        <div className="grid grid-cols-5 gap-4 items-center w-full">
-          <CommentCard
-            fullName="مـــحمدرضا سلطانـــــــی"
-            role="دانش آموز پایه هفتم"
-            rating={0}
-            date="2 خرداد 1402"
-            comment="این مدرسه جزو بهترین مدارس ایران هست، از وقتی ایـنجا ثبت‌نام کـردم عــملکردم خیلی بـهتر شده
-و خیلی رسیدگی خوبی دارن، کلی دوست جدید پیــــدا کردم و مدرسه کلی بــــرنامه‌های خفن و جـــذاب
-داره واسمون، راستی اردو هم اینجا زیاد داریم."
-            isActive={false}
-          />
-          <CommentCard
-            fullName="مـــحمدرضا سلطانـــــــی"
-            role="دانش آموز پایه هفتم"
-            rating={0}
-            date="2 خرداد 1402"
-            comment="این مدرسه جزو بهترین مدارس ایران هست، از وقتی ایـنجا ثبت‌نام کـردم عــملکردم خیلی بـهتر شده
-و خیلی رسیدگی خوبی دارن، کلی دوست جدید پیــــدا کردم و مدرسه کلی بــــرنامه‌های خفن و جـــذاب
-داره واسمون، راستی اردو هم اینجا زیاد داریم."
-            isActive={true}
-            className="col-span-3"
-          />
-          <CommentCard
-            fullName="مـــحمدرضا سلطانـــــــی"
-            role="دانش آموز پایه هفتم"
-            rating={0}
-            date="2 خرداد 1402"
-            comment="این مدرسه جزو بهترین مدارس ایران هست، از وقتی ایـنجا ثبت‌نام کـردم عــملکردم خیلی بـهتر شده
-و خیلی رسیدگی خوبی دارن، کلی دوست جدید پیــــدا کردم و مدرسه کلی بــــرنامه‌های خفن و جـــذاب
-داره واسمون، راستی اردو هم اینجا زیاد داریم."
-            isActive={false}
-          />
-        </div>
+        <Swiper
+          modules={[Mousewheel]}
+          spaceBetween={0}
+          slidesPerView={3}
+          mousewheel={{
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          }}
+          grabCursor={true}
+          dir="rtl"
+          className="max-w-full"
+          onSwiper={setSwiper}
+          onSlideChange={handleSlideChange}
+        >
+          {[...commentsData, ...commentsData, ...commentsData].map((comment, index) => (
+            <SwiperSlide
+              key={comment.id + "-" + index}
+              className="!h-full  shrink-0"
+            >
+              <CommentCard
+                id={+comment.id}
+                fullName={comment.fullName}
+                comment={comment.comment}
+                date={comment.date}
+                grade={comment.grade}
+                isActive={index === activeSlide}
+                isParent={comment.isParent}
+                parentName={comment.parentName}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <SliderThumbs
-          count={5}
-          active={0}
+          count={totalSlides}
+          active={Math.floor(activeSlide / 3)}
           hideNumbers
-          hideNextBtn
+          // onNext={handleNext}
         />
       </div>
     )

@@ -2,21 +2,24 @@ import * as React from "react";
 import clsx from "clsx";
 import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Avatar } from "@heroui/avatar";
-import {CometStar} from "@/components/Vectors";
+import {CometStar, Star} from "@/components/Vectors";
 import { Icon } from '@iconify/react';
 import {Divider} from "@heroui/divider";
 import { Chip } from "@heroui/chip";
+import jMoment from "jalali-moment";
 
 
 type CommentCardType = {
+    id: number;
     fullName: string;
-    role: string;
-    rating: number;
+    grade: string;
     date: string;
     avatarUrl?: string;
     comment?: string;
     className?: string;
     isActive?: boolean;
+    isParent?: boolean;
+    parentName?: string;
 };
 
 
@@ -26,14 +29,16 @@ type CommentCardType = {
 export const CommentCard: React.FC<CommentCardType> = (props) => {
 
     const {
+        id,
         fullName,
-        role,
+        grade,
         date,
-        rating,
         comment,
         className,
         avatarUrl,
         isActive,
+        isParent,
+        parentName,
     } = props
 
     const variant = isActive ? "wide" : "square"
@@ -43,33 +48,46 @@ export const CommentCard: React.FC<CommentCardType> = (props) => {
     return (
         <div
             data-active={isActive || false}
-            className={clsx("relative transition duration-500 rounded-3xl overflow-hidden group/comment shrink-0 w-full max-h-72", className)}
+            className={clsx("relative transition duration-500 rounded-3xl overflow-hidden group/comment shrink-0 h-78 min-w-68", className)}
         >
-            <Card className="relative transition duration-500 bg-white justify-center w-full h-full rounded-3xl p-3">
+            <Card className="relative transition duration-500 bg-white justify-center w-full h-full rounded-3xl p-3" shadow="none">
                 <CardHeader className="py-2">
                     <div className="flex flex-row justify-between gap-2 items-center w-full group-data-[active=false]/comment:justify-center group-data-[active=false]/comment:flex-col">
-                        <div className="flex items-center gap-3 group-data-[active=false]/comment:flex-col">
+                        <div className="flex items-center gap-5 group-data-[active=false]/comment:flex-col">
                             <Avatar
                                 src={avatarUrl}
                                 name={fullName}
                                 color="primary"
                                 size="lg"
                                 radius="lg"
-                                className="w-16 h-16 rounded-3xl text-xl"
+                                className="w-16 h-16 rounded-3xl text-base"
                             />
-                            <span className="font-semibold">
-                                {fullName}
+                            <span className="font-semibold text-sm">
+                                {isParent ? parentName : fullName}
                             </span>
                         </div>
-                        <Chip 
-                            color="primary"
-                            variant="light"
-                            size="lg"
-                            radius="lg"
-                            className="w-fit h-14 rounded-3xl font-semibold"
-                        >
-                            {role}
-                        </Chip>
+                        {!isParent && (
+                            <Chip 
+                                color="default"
+                                variant="light"
+                                size="lg"
+                                radius="lg"
+                                className="w-fit h-12 font-semibold text-xs rounded-2xl text-primary bg-primary/10"
+                            >
+                                دانش آموز {grade} مدرسه شهریار
+                            </Chip>
+                        )}
+                        {isParent && (
+                            <Chip 
+                                color="default"
+                                variant="light"
+                                size="lg"
+                                radius="lg"
+                                className="w-fit h-12 font-semibold text-xs rounded-2xl text-warning bg-warning/10"
+                            >
+                                اولیاء {fullName}
+                            </Chip>
+                        )}
                     </div>
                 </CardHeader>
                 <hr className="border-dashed border-t-2 border-divider group-data-[active=false]/comment:hidden"/>
@@ -90,18 +108,11 @@ export const CommentCard: React.FC<CommentCardType> = (props) => {
                 <hr className="border-dashed border-t-2 border-divider group-data-[active=false]/comment:hidden"/>
                 <CardFooter className="flex-col group-data-[active=false]/comment:h-20">
                     <div className="flex items-center font-semibold text-sm text-foreground/50 justify-end group-data-[active=false]/comment:justify-center w-full gap-3">
-                        <div className="flex items-center gap-0.75 group-data-[active=false]/comment:hidden">
-                            <span className="">
-                               امتیاز:
-                            </span>
-                            <span className="">
-                                {rating}
-                            </span>
-                        </div>
-                        <Divider orientation="vertical" className="h-4 text-black group-data-[active=false]/comment:hidden" />
                         <span className="flex items-center gap-1 text-foreground/50 group-data-[active=false]/comment:text-foreground">
-                            <Icon icon="fluent:calendar-date-20-regular" width="24" height="24" className="group-data-[active=false]/comment:hidden" />
-                            {date}
+                            {/* <Icon icon="fluent:calendar-date-20-regular" width="24" height="24" className="group-data-[active=false]/comment:hidden" /> */}
+                            <Star size={16} strokeClassName={isParent ? "fill-warning" : "fill-secondary"} />
+                            {jMoment(date).locale("fa").format("jDD jMMMM jYYYY")}
+                            <Star size={16} strokeClassName={isParent ? "fill-warning" : "fill-secondary"} />
                        </span>
                     </div>
                     {variant === "square" && (
@@ -113,16 +124,6 @@ export const CommentCard: React.FC<CommentCardType> = (props) => {
                             </div>
                         </div>
                     )}
-                    {/* <svg
-                        viewBox="0 0 269 36"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-full bottom-0 absolute text-primary z-10"
-                    >
-                        <path
-                            d="M252.723 35.824C261.559 35.824 268.723 28.6605 268.723 19.824V17.9392C264.449 16.9451 259.762 17.4014 255.391 19.7468C249.733 22.7819 242.932 22.7819 237.274 19.7468L223.022 12.1003C214.051 7.28678 203.581 6.07559 193.747 8.71362L187.087 10.4998C177.253 13.1376 166.784 11.9264 157.812 7.11304L153.413 4.75269C141.602 -1.58427 127.402 -1.58427 115.591 4.75269L111.191 7.11304C102.22 11.9264 91.7506 13.1376 81.917 10.4998L75.2568 8.71362C65.4231 6.07559 54.9532 7.28678 45.9814 12.1003L31.7295 19.7468C26.0722 22.7819 19.2706 22.7819 13.6133 19.7468C9.14558 17.3498 4.34879 16.9274 0 18.0085V19.824C0 28.6605 7.16344 35.824 16 35.824H252.723Z"
-                        />
-                    </svg> */}
                 </CardFooter>
             </Card>
         </div>

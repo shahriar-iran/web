@@ -1,10 +1,5 @@
 import * as React from "react"
-import { ApproachesCard } from "../../ApproachesCard/ApproachesCard";
-import { Icon } from "@iconify/react";
-import { Slider } from "../../Slider/Slider";
-import { SliderThumbs } from "@/components/SliderThumbs/SliderThumbs";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
-import type SwiperCore from 'swiper';
 import { FeatureCard } from "@/components/FeatureCard/FeatureCard";
 
 
@@ -85,6 +80,7 @@ export const FeaturesSection: React.FC<FeaturesSectionPropsType> = (props) => {
           {featuresList.map((v, idx) => {
               return (
                 <FeatureCard
+                  key={v.code}
                   title={v.title}
                   englishTitle={v.englishTitle}
                   image={v.image}
