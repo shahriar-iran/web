@@ -20,27 +20,27 @@ export const LinksBox: React.FC<LinksBoxProps> = (props) => {
     const links = [
         {
             title: "مدرسه هیبریدی",
-            url: "#",
+            url: "/hybrid",
         },
         {
             title: "اخــبار و مـــــقالات",
-            url: "#",
+            url: "/news",
         },
         {
             title: "افتخارات شهریار",
-            url: "#",
+            url: "/honors",
         },
         {
             title: "پــیش‌‌ثبت‌نام",
-            url: "#",
+            url: "/preregister",
         },
         {
             title: "تـــیم شـهریـار",
-            url: "#",
+            url: "/team",
         },
         {
             title: "دربــــــــــاره مـــا",
-            url: "#",
+            url: "/about",
         },
     ]
 

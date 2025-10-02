@@ -15,6 +15,7 @@ import { IntroVideoSection } from "@/components/Sections/IntroVideoSection/Intro
 import { AboutUsSummarySection } from "@/components/Sections/AboutUsSummarySection/AboutUsSummarySection";
 import { HomeIntroSection } from "@/components/Sections/HomeIntroSection/HomeIntroSection";
 import { TopRankingsCard } from "@/components/TopRankingsCard/TopRankingsCard";
+import { faqData } from "@/data/faqData";
 
 
 
@@ -155,7 +156,9 @@ export default function Page() {
               description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
             />
           </div>
-          <CusAccordion/>
+          <CusAccordion
+            items={faqData}
+          />
         </div>
         <div/>
       </section>

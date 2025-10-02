@@ -25,8 +25,8 @@ export const TopRankingsCard: React.FC<TopRankingsCardPropsType> = (props) => {
     return (
       <Card className="p-3 rounded-4xl gap-3 w-fit max-w-full border-2 border-primary text-sm" shadow="none" radius="lg">
         <CardBody className="overflow-hidden rounded-3xl rounded-tl-none p-0 flex items-start flex-col gap-0">
+          
           <div className="flex gap-2 items-center w-full h-full">
-            
             <div className="flex-1 h-full flex flex-col gap-4 items-start justify-between px-4 z-[1]">
               <div className="truncate w-full text-foreground font-semibold flex items-center gap-1">
                 <span>رتـــبه‌های بـــرتر کـــنکور ریاضی</span>
@@ -40,7 +40,6 @@ export const TopRankingsCard: React.FC<TopRankingsCardPropsType> = (props) => {
                 ))}
               </AvatarGroup>
             </div>
-
             <div className="relative p-5 bg-primary/10 rounded-t-3xl flex items-center justify-center">
               <div className="relative shrink-0 bg-primary p-0.5 rounded-[16px] w-fit h-fit">
                 <Avatar
@@ -56,7 +55,6 @@ export const TopRankingsCard: React.FC<TopRankingsCardPropsType> = (props) => {
                 <div className="w-full h-full bg-white rounded-bl-3xl"/>
               </div>
             </div>
-
           </div>
 
           <div className="w-full bg-primary/10 text-sm rounded-tr-3xl px-6 py-4 flex items-center justify-between gap-2">
