@@ -70,7 +70,7 @@ const approachesList = [
       title: "بازی‌وارسازی",
       englishTitle: "Gamification",
       icon: "solar:gamepad-minimalistic-bold-duotone",
-      description: "با به‌کارگیری عناصر بازی در آموزش، انگیزه درونی دانش‌آموزان را تقویت می‌کنیم."
+      description: "یادگیری را با چالش، امتیاز و رقابت هیجان‌انگیز می‌کنیم تا انگیزه دانش‌آموزان زنده بماند."
     },
   ]
 

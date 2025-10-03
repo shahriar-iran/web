@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutPropsType> = (props) => {
     } = props
 
     return (
-        <div className="min-h-screen w-full bg-background flex flex-col">
+        <div className="min-h-screen w-full bg-background flex flex-col overflow-x-hidden">
             <Header items={menuItems}/>
             <main className="flex-1 flex flex-col relative">
                 {children}

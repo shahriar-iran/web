@@ -1,10 +1,7 @@
-import { AboutCard } from "@/components/AboutCard/AboutCard";
-import { ArticleCard } from "@/components/ArticleCard/ArticleCard";
+
 import { CusAccordion } from "@/components/CusAccordion/CusAccordion";
 import { PageTitle } from "@/components/PageTitle/PageTitle";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { Image } from "@heroui/image";
-import NextImage from "next/image"
+
 
 
 
@@ -16,8 +13,13 @@ import { AboutUsSummarySection } from "@/components/Sections/AboutUsSummarySecti
 import { HomeIntroSection } from "@/components/Sections/HomeIntroSection/HomeIntroSection";
 import { TopRankingsCard } from "@/components/TopRankingsCard/TopRankingsCard";
 import { faqData } from "@/data/faqData";
+import { Metadata } from "next";
+import { FAQSection } from "@/components/Sections/FAQSection/FAQSection";
+import { NewsSection } from "@/components/Sections/NewsSection/NewsSection";
 
-
+export const metadata: Metadata = {
+  title: "صفحه اصلی"
+}
 
 export default function Page() {
     return (
@@ -34,132 +36,8 @@ export default function Page() {
         <FeaturesSection/>
         <CommentSection/>
         <IntroVideoSection/>
-        <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto px-3">
-          <PageTitle
-            variant="side"
-            title="جدیدترین اخبار شهریار ایران"
-            description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
-            <div className="flex flex-col gap-4">
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-            </div>
-            <div className="flex flex-col gap-4">
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-            </div>
-            <div className="flex flex-col gap-4">
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-              <ArticleCard
-                title="گزارش تصویری | دورهمی شاعرانه به مناسبت سالروز بزرگداشت سعدی"
-                footerItems={[
-                  {
-                    icon: (
-                      <Icon icon="solar:calendar-bold-duotone" width="20" height="20" />
-                    ),
-                    value: "02 اردیبهشت 1395"
-                  },
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-3 items-center w-full">
-          <div className="w-full max-w-7xl mx-auto px-3">
-            <PageTitle
-              variant="side"
-              title="جواب تمام سوالاتت اینجاست"
-              description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
-            />
-          </div>
-          <CusAccordion
-            items={faqData}
-          />
-        </div>
+        {/* <NewsSection/> */}
+        <FAQSection/>
         <div/>
       </section>
     );
