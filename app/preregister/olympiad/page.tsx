@@ -74,7 +74,9 @@ export default function Page() {
             description="ایپسوم متن ساختگی با تولید سادگی نـامفــــــهوم از صنعت..."
           />
         </div>
-        <CusAccordion/>
+        <CusAccordion
+          items={[]}
+        />
       </div>
       <div className="h-10"/>
     </section>
